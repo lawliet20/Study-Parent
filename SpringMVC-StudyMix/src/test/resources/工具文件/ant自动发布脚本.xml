@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="120_build_part_weixin" basedir="./" default="part_package">
+    <property name="ant.new.dir" value="F:/ant/ant_temp_file/weixin"/>
+    <property name="classes.new.dir" value="${ant.new.dir}/webapp/WEB-INF/classes"/>
+    <property name="classes.project.dir" value="${basedir}/target/classes"/>
+    <property name="clean.dir" value="${ant.new.dir}"/>
+    <property name="tomcat.home" value="/home/tomcat/weixin/apache-tomcat-weixin"/>
+    <property name="tailf_log_path" value="${tomcat.home}/logs/catalina.out"/>
+
+    <property name="server.ip" value="120.26.59.173"/>
+    <property name="remote.dir.des" value="/home/tomcat/weixin/apache-tomcat-weixin/webapps/ed-weixin"/>
+    <property name="server.usr" value="tomcat"/>
+    <property name="server.passwd" value="edou222"/>
+    <property name="app.zip.file.name" value="part.zip"/>
+    <property name="app.zip.file.path" value="${ant.new.dir}/${app.zip.file.name}"/>
+
+    <patternset id="ignored.files">
+        <exclude name="**/.svn/**"/>
+        <exclude name="**/.class/**"/>
+    </patternset>
+
+    <patternset id="code.class.files">
+        <include name="**/*.class"/>
+        <patternset refid="ignored.files"/>
+    </patternset>
+
+    <target name="init" description="Build initialization" depends="clean">
+        <tstamp>
+            <format property="appointed.time" pattern="MM/dd/yyyy hh:mm aa" locale="en"  offset="-300" unit="second"/>
+        </tstamp>
+        <copy todir="${classes.new.dir}" overwrite="true">
+            <fileset dir="${classes.project.dir}">
+                <patternset refid="code.class.files"/>
+                <date datetime="${appointed.time}" when="after"/>
+            </fileset>
+        </copy>
+        <copy todir="${ant.new.dir}/webapp" overwrite="true" includeemptydirs="false">
+            <fileset dir="${basedir}/src/main/webapp">
+                <patternset refid="ignored.files"/>
+                <date datetime="${appointed.time}" when="after"/>
+            </fileset>
+        </copy>
+        <copy todir="${classes.new.dir}" overwrite="true" includeemptydirs="false">
+            <fileset dir="${basedir}/src/main/resources">
+                <patternset refid="ignored.files"/>
+                <date datetime="${appointed.time}" when="after"/>
+            </fileset>
+        </copy>
+    </target>
+
+    <target name="clean" description="clean">
+        <delete dir="${clean.dir}"/>
+    </target>
+
+    <target name="part_package" depends="init" description="if failed,run rebuild_all_c before">
+        <mkdir dir="${classes.new.dir}"/>
+        <zip destfile="${app.zip.file.path}" basedir="${ant.new.dir}/webapp"/>
+    </target>
+
+    <target name="remote_upload">
+        <scp file="${app.zip.file.path}" todir="${server.usr}:${server.passwd}@${server.ip}:${remote.dir.des}" trust="true"/>
+    </target>
+
+    <target name="unzip">
+        <sshexec host="${server.ip}" username="${server.usr}"  password="${server.passwd}" trust="true" command="cd ${remote.dir.des};unzip -o ${app.zip.file.name}"/>
+    </target>
+
+    <target name="stop_tomcat">
+        <sshexec host="${server.ip}" username="${server.usr}"  password="${server.passwd}" trust="true" command="ppid=`ps -ef|grep 'Dcatalina\.home=${tomcat.home}.*start' | awk '{ print $2 }' | grep '^[0-9]\+$'`;if [ $ppid ]; then kill -9 $ppid;echo 'stop successful!';fi;"/>
+    </target>
+
+    <target name="start_tomcat">
+        <sshexec host="${server.ip}" username="${server.usr}"  password="${server.passwd}" trust="true" command="cd ${tomcat.home}/bin;./startup.sh;tail -f ${tailf_log_path}"/>
+    </target>
+
+    <target name="tailf_log">
+        <sshexec host="${server.ip}" username="${server.usr}"  password="${server.passwd}" trust="true" command="tail -f ${tailf_log_path}"/>
+    </target>
+    
+    <target name="locale">
+        <sshexec host="${server.ip}" username="${server.usr}"  password="${server.passwd}" trust="true" command="locale"/>
+    </target>
+    
+    <target name="part_upload_unzip">
+        <antcall target="part_package"/>
+        <antcall target="remote_upload"/>
+        <antcall target="unzip"/>
+    </target>
+    
+    <target name="all-op">
+        <antcall target="part_package"/>
+        <antcall target="remote_upload"/>
+        <antcall target="unzip"/>
+        <antcall target="stop_tomcat"/>
+        <antcall target="start_tomcat"/>
+    </target>
+</project>
