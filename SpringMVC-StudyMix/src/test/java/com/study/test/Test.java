@@ -21,6 +21,8 @@ public class Test {
         System.out.println("i wish you like me alose");
         
         System.out.println("do you like me ?");
+
+        System.out.println("what are you doing now ?");
     }
 	
 }
