@@ -10,7 +10,7 @@ public class Test {
 	private static volatile String cachedIpAddress;
 
 	public static void main(String[] args) {
-		
-	}
+        System.out.println("hello world");
+    }
 	
 }
