@@ -17,6 +17,8 @@ public class Test {
         System.out.println("hell xiaolili");
 
         System.out.println("i like you ");
+
+        System.out.println("i wish you like me alose");
     }
 	
 }
