@@ -29,6 +29,7 @@
         <module name="SpringMVC-studyJavaDesign" />
         <module name="SpringMVC-StudyMix" />
         <module name="SpringMVC-StudyTimeTask" />
+        <module name="Study-JavaBase" />
         <module name="StudyAop" />
         <module name="StudyThread" />
       </profile>
@@ -40,6 +41,7 @@
       <module name="SpringMVC-studyJavaDesign" target="1.7" />
       <module name="SpringMVC-StudyMix" target="1.7" />
       <module name="SpringMVC-StudyTimeTask" target="1.7" />
+      <module name="Study-JavaBase" target="1.7" />
       <module name="Study-Parent" target="1.7" />
       <module name="StudyAop" target="1.7" />
       <module name="StudyThread" target="1.7" />

@@ -159,5 +159,6 @@
         <module>StudyThread</module>
         <module>StudyThread</module>
         <module>StudyAop</module>
+        <module>Study-JavaBase</module>
     </modules>
 </project>
