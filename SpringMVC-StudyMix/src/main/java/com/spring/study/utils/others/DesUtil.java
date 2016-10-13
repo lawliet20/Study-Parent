@@ -14,1641 +14,1524 @@ import java.io.UnsupportedEncodingException;
  */
 
 /**
-
  * @author liyan
-
- *
-
  */
 
 public class DesUtil {
 
 
-/*****************************压缩替换S-Box�?**************************************************/
+    /**
+     * **************************压缩替换S-Box�?*************************************************
+     */
 
-private static final int[][] s1 = {{14,4, 13,1, 2, 15,11,8, 3, 10,6, 12,5, 9, 0, 7},
+    private static final int[][] s1 = {{14, 4, 13, 1, 2, 15, 11, 8, 3, 10, 6, 12, 5, 9, 0, 7},
 
- {0, 15,7, 4, 14,2, 13,1, 10,6, 12,11,9, 5, 3, 8},
+            {0, 15, 7, 4, 14, 2, 13, 1, 10, 6, 12, 11, 9, 5, 3, 8},
 
- {4, 1, 14,8, 13,6, 2, 11,15,12,9, 7, 3, 10,5, 0},
+            {4, 1, 14, 8, 13, 6, 2, 11, 15, 12, 9, 7, 3, 10, 5, 0},
 
- {15,12,8, 2, 4, 9, 1, 7, 5, 11,3, 14,10,0, 6, 13}};
-
-
-private static final int[][] s2 = {{15,1, 8, 14,6, 11,3, 4, 9, 7, 2, 13,12,0, 5, 10},
-
- {3, 13,4, 7, 15,2, 8, 14,12,0, 1, 10,6, 9, 11,5},
-
- {0, 14,7, 11,10,4, 13,1, 5, 8, 12,6, 9, 3, 2, 15},
-
- {13,8, 10,1, 3, 15,4, 2, 11,6, 7, 12,0, 5, 14,9}};
+            {15, 12, 8, 2, 4, 9, 1, 7, 5, 11, 3, 14, 10, 0, 6, 13}};
 
 
-private static final int[][] s3 = {{10,0, 9, 14,6, 3, 15,5, 1, 13,12,7, 11,4, 2, 8},
+    private static final int[][] s2 = {{15, 1, 8, 14, 6, 11, 3, 4, 9, 7, 2, 13, 12, 0, 5, 10},
 
- 	  {13,7, 0, 9, 3, 4, 6, 10,2, 8, 5, 14,12,11,15,1},
+            {3, 13, 4, 7, 15, 2, 8, 14, 12, 0, 1, 10, 6, 9, 11, 5},
 
-     {13,6, 4, 9, 8, 15,3, 0, 11,1, 2, 12,5, 10,14,7},
+            {0, 14, 7, 11, 10, 4, 13, 1, 5, 8, 12, 6, 9, 3, 2, 15},
 
-     {1, 10,13,0, 6, 9, 8, 7, 4, 15,14,3, 11,5, 2, 12}};
-
-
-private static final int[][] s4 = {{7, 13,14,3, 0, 6, 9, 10,1, 2, 8, 5, 11,12,4, 15},
-
-     {13,8, 11,5, 6, 15,0, 3, 4, 7, 2, 12,1, 10,14,9},//erorr
-
-     {10,6, 9, 0, 12,11,7, 13,15,1, 3, 14,5, 2, 8, 4},
-
-     {3, 15,0, 6, 10,1, 13,8, 9, 4, 5, 11,12,7, 2, 14}};
+            {13, 8, 10, 1, 3, 15, 4, 2, 11, 6, 7, 12, 0, 5, 14, 9}};
 
 
-private static final int[][] s5 = {{2, 12,4, 1, 7, 10,11,6, 8, 5, 3, 15,13,0, 14,9},
+    private static final int[][] s3 = {{10, 0, 9, 14, 6, 3, 15, 5, 1, 13, 12, 7, 11, 4, 2, 8},
 
-     {14,11,2, 12,4, 7, 13,1, 5, 0, 15,10,3, 9, 8, 6},
+            {13, 7, 0, 9, 3, 4, 6, 10, 2, 8, 5, 14, 12, 11, 15, 1},
 
-     {4, 2, 1, 11,10,13,7, 8, 15,9, 12,5, 6, 3, 0, 14},
+            {13, 6, 4, 9, 8, 15, 3, 0, 11, 1, 2, 12, 5, 10, 14, 7},
 
-     {11,8, 12,7, 1, 14,2, 13,6, 15,0, 9, 10,4, 5, 3}};
-
-
-private static final int[][] s6 = {{12, 1, 10, 15, 9, 2, 6, 8, 0, 13, 3, 4, 14, 7, 5, 11},
-
-     {10, 15, 4, 2, 7, 12, 9, 5, 6, 1, 13, 14, 0, 11, 3, 8},
-
-     {9, 14, 15, 5, 2, 8, 12, 3, 7, 0, 4, 10, 1, 13, 11, 6},
-
-     {4, 3, 2, 12, 9, 5, 15, 10, 11, 14, 1, 7, 6, 0, 8, 13}};
+            {1, 10, 13, 0, 6, 9, 8, 7, 4, 15, 14, 3, 11, 5, 2, 12}};
 
 
-private static final int[][] s7 = {{4, 11, 2, 14, 15, 0, 8, 13, 3, 12, 9, 7, 5, 10, 6, 1},
+    private static final int[][] s4 = {{7, 13, 14, 3, 0, 6, 9, 10, 1, 2, 8, 5, 11, 12, 4, 15},
 
-     {13, 0, 11, 7, 4, 9, 1, 10, 14, 3, 5, 12, 2, 15, 8, 6},
+            {13, 8, 11, 5, 6, 15, 0, 3, 4, 7, 2, 12, 1, 10, 14, 9},//erorr
 
-     {1, 4, 11, 13, 12, 3, 7, 14, 10, 15, 6, 8, 0, 5, 9, 2},
+            {10, 6, 9, 0, 12, 11, 7, 13, 15, 1, 3, 14, 5, 2, 8, 4},
 
-     {6, 11, 13, 8, 1, 4, 10, 7, 9, 5, 0, 15, 14, 2, 3, 12}};
-
-
-private static final int[][] s8 = {{13, 2, 8, 4, 6, 15, 11, 1, 10, 9, 3, 14, 5, 0, 12, 7},
-
-     {1, 15, 13, 8, 10, 3, 7, 4, 12, 5, 6, 11, 0, 14, 9, 2},
-
-     {7, 11, 4, 1, 9, 12, 14, 2, 0, 6, 10, 13, 15, 3, 5, 8},
-
-     {2, 1, 14, 7, 4, 10, 8, 13, 15, 12, 9, 0, 3, 5, 6, 11}};
+            {3, 15, 0, 6, 10, 1, 13, 8, 9, 4, 5, 11, 12, 7, 2, 14}};
 
 
-private static final int[] ip = {58, 50, 42, 34, 26, 18, 10, 2,
+    private static final int[][] s5 = {{2, 12, 4, 1, 7, 10, 11, 6, 8, 5, 3, 15, 13, 0, 14, 9},
 
-60, 52, 44, 36, 28, 20, 12, 4,
+            {14, 11, 2, 12, 4, 7, 13, 1, 5, 0, 15, 10, 3, 9, 8, 6},
 
-62, 54, 46, 38, 30, 22, 14, 6,
+            {4, 2, 1, 11, 10, 13, 7, 8, 15, 9, 12, 5, 6, 3, 0, 14},
 
-64, 56, 48, 40, 32, 24, 16, 8,
-
-57, 49, 41, 33, 25, 17, 9, 1,
-
-59, 51, 43, 35, 27, 19, 11, 3,
-
-61, 53, 45, 37, 29, 21, 13, 5,
-
-63, 55, 47, 39, 31, 23, 15, 7};
+            {11, 8, 12, 7, 1, 14, 2, 13, 6, 15, 0, 9, 10, 4, 5, 3}};
 
 
-private static final int[] _ip = {40, 8, 48, 16, 56, 24, 64, 32,
+    private static final int[][] s6 = {{12, 1, 10, 15, 9, 2, 6, 8, 0, 13, 3, 4, 14, 7, 5, 11},
 
-39, 7, 47, 15, 55, 23, 63, 31,
+            {10, 15, 4, 2, 7, 12, 9, 5, 6, 1, 13, 14, 0, 11, 3, 8},
 
-38, 6, 46, 14, 54, 22, 62, 30,
+            {9, 14, 15, 5, 2, 8, 12, 3, 7, 0, 4, 10, 1, 13, 11, 6},
 
-37, 5, 45, 13, 53, 21, 61, 29,
+            {4, 3, 2, 12, 9, 5, 15, 10, 11, 14, 1, 7, 6, 0, 8, 13}};
 
-36, 4, 44, 12, 52, 20, 60, 28,
 
-35, 3, 43, 11, 51, 19, 59, 27,
+    private static final int[][] s7 = {{4, 11, 2, 14, 15, 0, 8, 13, 3, 12, 9, 7, 5, 10, 6, 1},
 
-34, 2, 42, 10, 50, 18, 58, 26,
+            {13, 0, 11, 7, 4, 9, 1, 10, 14, 3, 5, 12, 2, 15, 8, 6},
 
-33, 1, 41, 9, 49, 17, 57, 25};
+            {1, 4, 11, 13, 12, 3, 7, 14, 10, 15, 6, 8, 0, 5, 9, 2},
+
+            {6, 11, 13, 8, 1, 4, 10, 7, 9, 5, 0, 15, 14, 2, 3, 12}};
+
+
+    private static final int[][] s8 = {{13, 2, 8, 4, 6, 15, 11, 1, 10, 9, 3, 14, 5, 0, 12, 7},
+
+            {1, 15, 13, 8, 10, 3, 7, 4, 12, 5, 6, 11, 0, 14, 9, 2},
+
+            {7, 11, 4, 1, 9, 12, 14, 2, 0, 6, 10, 13, 15, 3, 5, 8},
+
+            {2, 1, 14, 7, 4, 10, 8, 13, 15, 12, 9, 0, 3, 5, 6, 11}};
+
+
+    private static final int[] ip = {58, 50, 42, 34, 26, 18, 10, 2,
+
+            60, 52, 44, 36, 28, 20, 12, 4,
+
+            62, 54, 46, 38, 30, 22, 14, 6,
+
+            64, 56, 48, 40, 32, 24, 16, 8,
+
+            57, 49, 41, 33, 25, 17, 9, 1,
+
+            59, 51, 43, 35, 27, 19, 11, 3,
+
+            61, 53, 45, 37, 29, 21, 13, 5,
+
+            63, 55, 47, 39, 31, 23, 15, 7};
+
+
+    private static final int[] _ip = {40, 8, 48, 16, 56, 24, 64, 32,
+
+            39, 7, 47, 15, 55, 23, 63, 31,
+
+            38, 6, 46, 14, 54, 22, 62, 30,
+
+            37, 5, 45, 13, 53, 21, 61, 29,
+
+            36, 4, 44, 12, 52, 20, 60, 28,
+
+            35, 3, 43, 11, 51, 19, 59, 27,
+
+            34, 2, 42, 10, 50, 18, 58, 26,
+
+            33, 1, 41, 9, 49, 17, 57, 25};
 
 
 //每次密钥循环左移位数
 
-private static final int[] LS = {1, 1, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 1};
+    private static final int[] LS = {1, 1, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 1};
 
- 
 
-private static int[][] subKey = new int[16][48];
+    private static int[][] subKey = new int[16][48];
 
 
-private static int HEX = 0;
+    private static int HEX = 0;
 
-private static int ASC = 1;
+    private static int ASC = 1;
 
 
-/**
+    /**
+     * 将十六进制A--F转换成对应数�?
+     *
+     * @param ch
+     * @return
+     * @throws Exception
+     */
 
-* 将十六进制A--F转换成对应数�?
+    public static int getIntByChar(char ch) throws Exception {
 
-* @param ch
+        char t = Character.toUpperCase(ch);
 
-* @return
+        int i = 0;
 
-* @throws Exception 
+        switch (t) {
 
-*/
+            case '0':
 
-public static int getIntByChar(char ch) throws Exception{
+            case '1':
 
-char t = Character.toUpperCase(ch);
+            case '2':
 
-int i = 0;
+            case '3':
 
-switch(t){
+            case '4':
 
-case '0':
+            case '5':
 
-case '1':
+            case '6':
 
-case '2':
+            case '7':
 
-case '3':
+            case '8':
 
-case '4':
+            case '9':
 
-case '5':
+                i = Integer.parseInt(Character.toString(t));
 
-case '6':
+                break;
 
-case '7':
+            case 'A':
 
-case '8':
+                i = 10;
 
-case '9':
+                break;
 
-i = Integer.parseInt(Character.toString(t));
+            case 'B':
 
-break;
+                i = 11;
 
-case 'A':
+                break;
 
-i = 10;
+            case 'C':
 
-break;
+                i = 12;
 
-case 'B':
+                break;
 
-i = 11;
+            case 'D':
 
-break;
+                i = 13;
 
-case 'C':
+                break;
 
-i = 12;
+            case 'E':
 
-break;
+                i = 14;
 
-case 'D':
+                break;
 
-i = 13;
+            case 'F':
 
-break;
+                i = 15;
 
-case 'E':
+                break;
 
-i = 14;
+            default:
 
-break;
+                throw new Exception("getIntByChar was wrong");
 
-case 'F':
+        }
 
-i = 15;
+        return i;
 
-break;
+    }
 
-default:
 
-throw new Exception("getIntByChar was wrong");
+    /**
+     * 将字符串转换成二进制数组
+     *
+     * @param source : 16字节
+     * @return
+     */
 
-}
+    public static int[] string2Binary(String source) {
 
-return i;
+        int len = source.length();
 
-}
+        int[] dest = new int[len * 4];
 
+        char[] arr = source.toCharArray();
 
-/**
+        for (int i = 0; i < len; i++) {
 
-* 将字符串转换成二进制数组
+            int t = 0;
 
-* @param source : 16字节
+            try {
 
-* @return
-
-*/
-
-public static int[] string2Binary(String source){
-
-int len = source.length();
-
-int[] dest = new int[len*4];
-
-char[] arr = source.toCharArray();
-
-for(int i=0; i<len; i++){
-
-int t = 0;
-
-try {
-
-t = getIntByChar(arr[i]);
+                t = getIntByChar(arr[i]);
 
 //System.out.println(arr[i]);
 
-} catch (Exception e) {
+            } catch (Exception e) {
 
-e.printStackTrace();
+                e.printStackTrace();
 
-}
+            }
 
-String[] str = Integer.toBinaryString(t).split("");
+            String[] str = Integer.toBinaryString(t).split("");
 
-int k = i*4 + 3;
+            int k = i * 4 + 3;
 
-for(int j=str.length-1; j>0; j--){
+            for (int j = str.length - 1; j > 0; j--) {
 
-dest[k] = Integer.parseInt(str[j]);
+                dest[k] = Integer.parseInt(str[j]);
 
-k--;
+                k--;
 
-}
+            }
 
-}
+        }
 
-return dest;
+        return dest;
 
-}
+    }
 
 
-/**
+    /**
+     * 返回x的y次方
+     *
+     * @param x
+     * @param y
+     * @return
+     */
 
-* 返回x的y次方
+    public static int getXY(int x, int y) {
 
-* @param x
+        int temp = x;
 
-* @param y
+        if (y == 0) x = 1;
 
-* @return
+        for (int i = 2; i <= y; i++) {
 
-*/
+            x *= temp;
 
-public static int getXY(int x,int y){
+        }
 
-int temp = x;
+        return x;
 
-if(y == 0) x = 1;
+    }
 
-for(int i=2; i<=y; i++){
 
-x *= temp;  
+    /**
+     * s�?位长度的二进制字符串
+     *
+     * @param s
+     * @return
+     */
 
-}
+    public static String binary2Hex(String s) {
 
-return x;
+        int len = s.length();
 
-}
+        int result = 0;
 
+        int k = 0;
 
-/**
+        if (len > 4) return null;
 
-* s�?位长度的二进制字符串
+        for (int i = len; i > 0; i--) {
 
-* @param s
+            result += Integer.parseInt(s.substring(i - 1, i)) * getXY(2, k);
 
-* @return
+            k++;
 
-*/
+        }
 
-public static String binary2Hex(String s){
+        switch (result) {
 
-int len = s.length();
+            case 0:
 
-int result = 0;
+            case 1:
 
-int k = 0;
+            case 2:
 
-if(len > 4)return null;
+            case 3:
 
-for(int i=len; i>0; i--){
+            case 4:
 
-result += Integer.parseInt(s.substring(i-1, i))*getXY(2,k);
+            case 5:
 
-k++;
+            case 6:
 
-}
+            case 7:
 
-switch(result){
+            case 8:
 
-case 0:
+            case 9:
 
-case 1:
+                return "" + result;
 
-case 2:
+            case 10:
 
-case 3:
+                return "A";
 
-case 4:
+            case 11:
 
-case 5:
+                return "B";
 
-case 6:
+            case 12:
 
-case 7:
+                return "C";
 
-case 8:
+            case 13:
 
-case 9:
+                return "D";
 
-return ""+result;
+            case 14:
 
-case 10:
+                return "E";
 
-return "A";
+            case 15:
 
-case 11:
+                return "F";
 
-return "B";
+            default:
 
-case 12:
+                return null;
 
-return "C";
+        }
 
-case 13:
+    }
 
-return "D";
 
-case 14:
+    /**
+     * 将int转换成Hex
+     *
+     * @param i
+     * @return
+     * @throws Exception
+     */
 
-return "E";
+    public static String int2Hex(int i) {
 
-case 15:
+        switch (i) {
 
-return "F";
+            case 0:
 
-default :
+            case 1:
 
-return null;
+            case 2:
 
-}
+            case 3:
 
-}
+            case 4:
 
+            case 5:
 
-/**
+            case 6:
 
-* 将int转换成Hex
+            case 7:
 
-* @param i
+            case 8:
 
-* @return
+            case 9:
 
-* @throws Exception 
+                return "" + i;
 
-*/
+            case 10:
 
-public static String int2Hex(int i){
+                return "A";
 
-switch(i){
+            case 11:
 
-case 0:
+                return "B";
 
-case 1:
+            case 12:
 
-case 2:
+                return "C";
 
-case 3:
+            case 13:
 
-case 4:
+                return "D";
 
-case 5:
+            case 14:
 
-case 6:
+                return "E";
 
-case 7:
+            case 15:
 
-case 8:
+                return "F";
 
-case 9:
+            default:
 
-return ""+i;
+                return null;
 
-case 10:
+        }
 
-return "A";
+    }
 
-case 11:
 
-return "B";
+    /**
+     * 将二进制字符串转换成十六进制字符�?
+     *
+     * @param s
+     * @return
+     */
 
-case 12:
+    public static String binary2ASC(String s) {
 
-return "C";
+        String str = "";
 
-case 13:
+        int ii = 0;
 
-return "D";
-
-case 14:
-
-return "E";
-
-case 15:
-
-return "F";
-
-default :
-
-return null;
-
-}
-
-}
-
-
-/**
-
-* 将二进制字符串转换成十六进制字符�?
-
-* @param s
-
-* @return
-
-*/
-
-public static String binary2ASC(String s){
-
-String str = "";
-
-int ii = 0;
-
-int len = s.length();
+        int len = s.length();
 
 //不够4bit左补0
 
-if(len%4 != 0){
+        if (len % 4 != 0) {
 
-while(ii<4-len%4){
+            while (ii < 4 - len % 4) {
 
-s = "0" + s;
+                s = "0" + s;
 
-}
+            }
 
-}
+        }
 
-for(int i=0; i<len/4; i++){
+        for (int i = 0; i < len / 4; i++) {
 
-str += binary2Hex(s.substring(i*4, i*4+4));
+            str += binary2Hex(s.substring(i * 4, i * 4 + 4));
 
-}
+        }
 
-return str;
+        return str;
 
-}
+    }
 
 
-/**
+    /**
+     * IP初始置换
+     *
+     * @param source
+     * @return
+     */
 
-* IP初始置换
+    public static int[] changeIP(int[] source) {
 
-* @param source
+        int[] dest = new int[64];
 
-* @return
+        for (int i = 0; i < 64; i++) {
 
-*/
+            dest[i] = source[ip[i] - 1];
 
-public static int[] changeIP(int[] source){
+        }
 
-int[] dest = new int[64];
+        return dest;
 
-for(int i=0; i<64; i++){
+    }
 
-dest[i] = source[ip[i]-1];
 
-}
+    /**
+     * IP-1逆置�?
+     *
+     * @param source
+     * @return
+     */
 
-return dest;
+    public static int[] changeInverseIP(int[] source) {
 
-}
+        int[] dest = new int[64];
 
+        for (int i = 0; i < 64; i++) {
 
-/**
+            dest[i] = source[_ip[i] - 1];
 
-* IP-1逆置�?
+        }
 
-* @param source
+        return dest;
 
-* @return
+    }
 
-*/
 
-public static int[] changeInverseIP(int[] source){
+    /**
+     * �?2bit扩展�?8bit
+     *
+     * @param source
+     * @return
+     */
 
-int[] dest = new int[64];
+    public static int[] expend(int[] source) {
 
-for(int i=0; i<64; i++){
+        int[] ret = new int[48];
 
-dest[i] = source[_ip[i]-1];
+        int[] temp = {32, 1, 2, 3, 4, 5,
 
-}
+                4, 5, 6, 7, 8, 9,
 
-return dest;
+                8, 9, 10, 11, 12, 13,
 
-}
+                12, 13, 14, 15, 16, 17,
 
- 
+                16, 17, 18, 19, 20, 21,
 
-/**
+                20, 21, 22, 23, 24, 25,
 
-* �?2bit扩展�?8bit
+                24, 25, 26, 27, 28, 29,
 
-* @param source
+                28, 29, 30, 31, 32, 1};
 
-* @return
+        for (int i = 0; i < 48; i++) {
 
-*/
+            ret[i] = source[temp[i] - 1];
 
-public static int[] expend(int[] source){
+        }
 
-int[] ret = new int[48];
+        return ret;
 
-int[] temp = {32, 1, 2, 3, 4, 5,
+    }
 
-4, 5, 6, 7, 8, 9,
 
-8, 9, 10, 11, 12, 13,
+    /**
+     * �?8bit压缩�?2bit
+     *
+     * @param source(48bit)
+     * @return R(32bit)
+     * <p/>
+     * B=E(R)⊕K，将48 位的B 分成8 个分组，B=B1B2B3B4B5B6B7B8
+     */
 
-12, 13, 14, 15, 16, 17,
+    public static int[] press(int[] source) {
 
-16, 17, 18, 19, 20, 21,
+        int[] ret = new int[32];
 
-20, 21, 22, 23, 24, 25,
+        int[][] temp = new int[8][6];
 
-24, 25, 26, 27, 28, 29,
+        int[][][] s = {s1, s2, s3, s4, s5, s6, s7, s8};
 
-28, 29, 30, 31, 32, 1};
+        StringBuffer str = new StringBuffer();
 
-for(int i=0; i<48; i++){
+        for (int i = 0; i < 8; i++) {
 
-ret[i] = source[temp[i]-1];
+            for (int j = 0; j < 6; j++) {
 
-}
+                temp[i][j] = source[i * 6 + j];
 
-return ret;
+            }
 
-} 
+        }
 
-
-/**
-
-* �?8bit压缩�?2bit
-
-* @param source(48bit)
-
-* @return R(32bit)
-
-* B=E(R)⊕K，将48 位的B 分成8 个分组，B=B1B2B3B4B5B6B7B8
-
-*/
-
-public static int[] press(int[] source){
-
-int[] ret = new int[32];
-
-int[][] temp = new int[8][6];
-
-int[][][] s = {s1,s2,s3,s4,s5,s6,s7,s8};
-
-StringBuffer str = new StringBuffer();
-
-for(int i=0; i<8; i++){
-
-for(int j=0; j<6; j++){
-
-temp[i][j] = source[i*6+j];
-
-}
-
-}
-
-for(int i=0; i<8; i++){
+        for (int i = 0; i < 8; i++) {
 
 //(16)
 
-int x = temp[i][0]*2 + temp[i][5];
+            int x = temp[i][0] * 2 + temp[i][5];
 
 //(2345)
 
-int y = temp[i][1]*8 + temp[i][2]*4 + temp[i][3]*2 + temp[i][4];
+            int y = temp[i][1] * 8 + temp[i][2] * 4 + temp[i][3] * 2 + temp[i][4];
 
-int val = s[i][x][y];
+            int val = s[i][x][y];
 
-String ch = int2Hex(val);
+            String ch = int2Hex(val);
 
 //	 System.out.println("x=" + x + ",y=" + y + "-->" + ch);
 
 //String ch = Integer.toBinaryString(val);
 
-str.append(ch);
+            str.append(ch);
 
-}
+        }
 
 //System.out.println(str.toString());
 
-ret = string2Binary(str.toString());
+        ret = string2Binary(str.toString());
 
 //	 printArr(ret);
 
 //置换P
 
-ret = dataP(ret);
+        ret = dataP(ret);
 
-return ret;
+        return ret;
 
-}
-
-
-/**
-
-* 置换P(32bit)
-
-* @param source
-
-* @return
-
-*/
-
-public static int[] dataP(int[] source){
-
-int[] dest = new int[32];
-
-int[] temp = {16, 7, 20, 21,
-
- 29, 12, 28, 17,
-
- 1, 15, 23, 26,
-
- 5, 18, 31, 10,
-
- 2, 8, 24, 14,
-
- 32, 27, 3, 9,
-
- 19, 13, 30, 6,
-
- 22, 11, 4, 25};
-
-int len = source.length;
-
-for(int i=0; i<len; i++){
-
-dest[i] = source[temp[i]-1];
-
-}
-
-return dest;
-
-}
+    }
 
 
-/**
+    /**
+     * 置换P(32bit)
+     *
+     * @param source
+     * @return
+     */
 
-* @param R(�?2bit)
+    public static int[] dataP(int[] source) {
 
-* @param K(48bit的轮子密�?
+        int[] dest = new int[32];
 
-* @return 32bit
+        int[] temp = {16, 7, 20, 21,
 
-*/
+                29, 12, 28, 17,
 
-public static int[] f(int[] R,int[] K){
+                1, 15, 23, 26,
 
-int[] dest = new int[32];
+                5, 18, 31, 10,
 
-int[] temp = new int[48]; 
+                2, 8, 24, 14,
+
+                32, 27, 3, 9,
+
+                19, 13, 30, 6,
+
+                22, 11, 4, 25};
+
+        int len = source.length;
+
+        for (int i = 0; i < len; i++) {
+
+            dest[i] = source[temp[i] - 1];
+
+        }
+
+        return dest;
+
+    }
+
+
+    /**
+     * @param R(�?2bit)
+     * @param K(48bit的轮子密�?
+     * @return 32bit
+     */
+
+    public static int[] f(int[] R, int[] K) {
+
+        int[] dest = new int[32];
+
+        int[] temp = new int[48];
 
 //先将输入32bit扩展�?8bit
 
-int[] expendR = expend(R);//48bit
+        int[] expendR = expend(R);//48bit
 
 //与轮子密钥进行异或运�?
 
-temp = diffOr(expendR, K);
+        temp = diffOr(expendR, K);
 
 //压缩�?2bit
 
-dest = press(temp);
+        dest = press(temp);
 
 //System.out.println("need press data----->");
 
 //printArr(temp);
 
-return dest;
+        return dest;
 
-}
-
-
-/**
-
-* 两个等长的数组做异或
-
-* @param source1
-
-* @param source2
-
-* @return
-
-*/
-
-public static int[] diffOr(int[] source1,int[] source2){
-
-int len = source1.length;
-
-int[] dest = new int[len];
-
-for(int i=0; i<len; i++){
-
-dest[i] = source1[i] ^ source2[i];
-
-}
-
-return dest;
-
-}
+    }
 
 
-/**
+    /**
+     * 两个等长的数组做异或
+     *
+     * @param source1
+     * @param source2
+     * @return
+     */
 
-* DES加密--->对称密钥
+    public static int[] diffOr(int[] source1, int[] source2) {
 
-* D = Ln(32bit)+Rn(32bit)
+        int len = source1.length;
 
-* 经过16轮置�?
+        int[] dest = new int[len];
 
-* @param D(16byte)明文
+        for (int i = 0; i < len; i++) {
 
-* @param K(16byte)轮子密钥
+            dest[i] = source1[i] ^ source2[i];
 
-* @return (16byte)密文
+        }
 
-*/
+        return dest;
 
-public static String encryption(String D, String K){
+    }
 
-String str = "";
 
-int[] temp = new int[64];
+    /**
+     * DES加密--->对称密钥
+     * <p/>
+     * D = Ln(32bit)+Rn(32bit)
+     * <p/>
+     * 经过16轮置�?
+     *
+     * @param D(16byte)明文
+     * @param K(16byte)轮子密钥
+     * @return (16byte)密文
+     */
 
-int[] data = string2Binary(D);
+    public static String encryption(String D, String K) {
+
+        String str = "";
+
+        int[] temp = new int[64];
+
+        int[] data = string2Binary(D);
 
 //	 printArr(data);
 
 //第一步初始置�?
 
-data = changeIP(data);
+        data = changeIP(data);
 
 //	 printArr(data);
 
-int[][] left = new int[17][32];
+        int[][] left = new int[17][32];
 
-int[][] right = new int[17][32];
+        int[][] right = new int[17][32];
 
-for(int j=0; j<32; j++){
+        for (int j = 0; j < 32; j++) {
 
-left[0][j] = data[j];
+            left[0][j] = data[j];
 
-right[0][j] = data[j+32];
+            right[0][j] = data[j + 32];
 
-}
+        }
 
 //	 printArr(left[0]);
 
 //	 printArr(right[0]);
 
-setKey(K);//sub key ok
+        setKey(K);//sub key ok
 
-for(int i=1; i<17; i++){
+        for (int i = 1; i < 17; i++) {
 
 //获取(48bit)的轮子密�?
 
-int[] key = subKey[i-1];
+            int[] key = subKey[i - 1];
 
 //L1 = R0 
 
-left[i] = right[i-1];
+            left[i] = right[i - 1];
 
 //R1 = L0 ^ f(R0,K1)
 
-int[] fTemp = f(right[i-1],key);//32bit
+            int[] fTemp = f(right[i - 1], key);//32bit
 
-right[i] = diffOr(left[i-1],fTemp);
+            right[i] = diffOr(left[i - 1], fTemp);
 
-}
+        }
 
 //�?��组合的时候，左右调换**************************************************
 
-for(int i=0; i<32; i++){
+        for (int i = 0; i < 32; i++) {
 
-temp[i] = right[16][i];
+            temp[i] = right[16][i];
 
-temp[32+i] = left[16][i];
+            temp[32 + i] = left[16][i];
 
-}
+        }
 
-temp = changeInverseIP(temp);
+        temp = changeInverseIP(temp);
 
-str = binary2ASC(intArr2Str(temp));
+        str = binary2ASC(intArr2Str(temp));
 
-return str;
+        return str;
 
-}
+    }
 
 
-/**
+    /**
+     * DES解密--->对称密钥
+     * <p/>
+     * 解密算法与加密算法基本相同，不同之处仅在于轮子密钥的使用顺序逆序，即解密的第1
+     * <p/>
+     * 轮子密钥为加密的�?6 轮子密钥，解密的�? 轮子密钥为加密的�?5 轮子密钥，�?…，
+     * <p/>
+     * 解密的第16 轮子密钥为加密的�? 轮子密钥�?
+     *
+     * @param source密文
+     * @param key密钥
+     * @return
+     */
 
-* DES解密--->对称密钥
+    public static String discryption(String source, String key) {
 
-* 解密算法与加密算法基本相同，不同之处仅在于轮子密钥的使用顺序逆序，即解密的第1 
+        String str = "";
 
-* 轮子密钥为加密的�?6 轮子密钥，解密的�? 轮子密钥为加密的�?5 轮子密钥，�?…，
-
-* 解密的第16 轮子密钥为加密的�? 轮子密钥�?
-
-* @param source密文
-
-* @param key密钥
-
-* @return
-
-*/
-
-public static String discryption(String source,String key){
-
-String str = "";
-
-int[] data = string2Binary(source);//64bit
+        int[] data = string2Binary(source);//64bit
 
 //第一步初始置�?
 
-data = changeIP(data);
+        data = changeIP(data);
 
-int[] left = new int[32];
+        int[] left = new int[32];
 
-int[] right = new int[32];
+        int[] right = new int[32];
 
-int[] tmp = new int[32];
+        int[] tmp = new int[32];
 
-for(int j=0; j<32; j++){
+        for (int j = 0; j < 32; j++) {
 
-left[j] = data[j];
+            left[j] = data[j];
 
-right[j] = data[j+32];
+            right[j] = data[j + 32];
 
-}
+        }
 
-setKey(key);//sub key ok
+        setKey(key);//sub key ok
 
-for(int i=16; i>0; i--){
+        for (int i = 16; i > 0; i--) {
 
 //获取(48bit)的轮子密�?
 
 /*********不同之处**********/
 
-int[] sKey = subKey[i-1];
+            int[] sKey = subKey[i - 1];
 
-tmp = left;
+            tmp = left;
 
 //R1 = L0 
 
-left = right;
+            left = right;
 
 //L1 = R0 ^ f(L0,K1)
 
-int[] fTemp = f(right,sKey);//32bit
+            int[] fTemp = f(right, sKey);//32bit
 
-right = diffOr(tmp,fTemp);
+            right = diffOr(tmp, fTemp);
 
-}
+        }
 
 //�?��组合的时候，左右调换**************************************************
 
-for(int i=0; i<32; i++){
+        for (int i = 0; i < 32; i++) {
 
-data[i] = right[i];
+            data[i] = right[i];
 
-data[32+i] = left[i];
+            data[32 + i] = left[i];
 
-}
+        }
 
-data = changeInverseIP(data);
+        data = changeInverseIP(data);
 
-for(int i=0; i<data.length; i++){
+        for (int i = 0; i < data.length; i++) {
 
-str += data[i];
+            str += data[i];
 
-}
+        }
 
-str = binary2ASC(str);
+        str = binary2ASC(str);
 
-return str;
+        return str;
 
-}
+    }
 
 
-/**
+    /**
+     * 单�?长密钥DES(16byte)
+     *
+     * @param source
+     * @param key
+     * @param type   0:encrypt 1:discrypt
+     * @return
+     */
 
-* 单�?长密钥DES(16byte)
-
-* @param source
-
-* @param key
-
-* @param type 0:encrypt 1:discrypt
-
-* @return
-
-*/
-
-public static String DES_1(String source,String key,int type){
+    public static String DES_1(String source, String key, int type) {
 
 //if(source.length() != 16 || key.length() != 16)return null;
 
-if(type==0){
+        if (type == 0) {
 
-return encryption(source, key);
+            return encryption(source, key);
 
-}
+        }
 
-if(type==1){
+        if (type == 1) {
 
-return discryption(source, key);
+            return discryption(source, key);
 
-}
+        }
 
-return null;
+        return null;
 
-}
-
-
-/**
-
-* 
-
-* @param source
-
-* @param key
-
-* @param type 0:encrypt 1:discrypt
-
-* @return
-
-*/
-
-public static String DES_2(String source,String key,int type){
-
-return null;
-
-}
+    }
 
 
-/**
+    /**
+     * @param source
+     * @param key
+     * @param type   0:encrypt 1:discrypt
+     * @return
+     */
 
-* 三重DES算法(双�?长密�?32byte))
+    public static String DES_2(String source, String key, int type) {
 
-* 密钥K1和K2
+        return null;
 
-* 1、先用K1加密明文
+    }
 
-* 2、接�?��K2对上�?��的结果进行解�?
 
-* 3、然后用K1对上�?��的结果进行加�?
+    /**
+     * 三重DES算法(双�?长密�?32byte))
+     * <p/>
+     * 密钥K1和K2
+     * <p/>
+     * 1、先用K1加密明文
+     * <p/>
+     * 2、接�?��K2对上�?��的结果进行解�?
+     * <p/>
+     * 3、然后用K1对上�?��的结果进行加�?
+     *
+     * @param source
+     * @param key
+     * @param type   0:encrypt 1:discrypt
+     * @return
+     */
 
-* @param source
-
-* @param key
-
-* @param type 0:encrypt 1:discrypt
-
-* @return
-
-*/
-
-public static String DES_3(String source,String key,int type){
-	System.out.println("key.length():"+key.length());
-	System.out.println("source.length():"+source.length());
+    public static String DES_3(String source, String key, int type) {
+        System.out.println("key.length():" + key.length());
+        System.out.println("source.length():" + source.length());
 
 //if(key.length() != 32 || source.length() != 16)return null;
 
-String temp = null;
+        String temp = null;
 
-String K1 = key.substring(0, key.length()/2);
+        String K1 = key.substring(0, key.length() / 2);
 
-String K2 = key.substring(key.length()/2);
+        String K2 = key.substring(key.length() / 2);
 
-System.out.println("K1--->" + K1);
+        System.out.println("K1--->" + K1);
 
-System.out.println("K2--->" + K2);
+        System.out.println("K2--->" + K2);
 
-if(type==0){
+        if (type == 0) {
 
-temp = encryption(source, K1);
+            temp = encryption(source, K1);
 
-System.out.println("step1--->" + temp);
+            System.out.println("step1--->" + temp);
 
-temp = discryption(temp, K2);
+            temp = discryption(temp, K2);
 
-System.out.println("step2--->" + temp);
+            System.out.println("step2--->" + temp);
 
-return encryption(temp, K1);
+            return encryption(temp, K1);
 
-}
+        }
 
-if(type==1){
+        if (type == 1) {
 
-temp = discryption(source, K1);
+            temp = discryption(source, K1);
 
-temp = encryption(temp, K2);
+            temp = encryption(temp, K2);
 
-return discryption(temp, K1);
+            return discryption(temp, K1);
 
-}
+        }
 
-return null;
+        return null;
 
-}
+    }
 
 
 /************************************48bit的轮子密钥的生成**********************************************************/
 
-/**
+    /**
+     * �?4bit的密钥转换成56bit
+     *
+     * @param source
+     * @return
+     */
 
-* �?4bit的密钥转换成56bit
+    public static int[] keyPC_1(int[] source) {
 
-* @param source
+        int[] dest = new int[56];
 
-* @return
+        int[] temp = {57, 49, 41, 33, 25, 17, 9,
 
-*/
+                1, 58, 50, 42, 34, 26, 18,
 
-public static int[] keyPC_1(int[] source){
+                10, 2, 59, 51, 43, 35, 27,
 
-int[] dest = new int[56];
+                19, 11, 3, 60, 52, 44, 36,
 
-int[] temp = {57, 49, 41, 33, 25, 17, 9,
+                63, 55, 47, 39, 31, 23, 15,
 
- 1, 58, 50, 42, 34, 26, 18,
+                7, 62, 54, 46, 38, 30, 22,
 
- 10, 2, 59, 51, 43, 35, 27,
+                14, 6, 61, 53, 45, 37, 29,
 
- 19, 11, 3, 60, 52, 44, 36,
+                21, 13, 5, 28, 20, 12, 4};
 
- 63, 55, 47, 39, 31, 23, 15,
+        for (int i = 0; i < 56; i++) {
 
- 7, 62, 54, 46, 38, 30, 22,
+            dest[i] = source[temp[i] - 1];
 
- 14, 6, 61, 53, 45, 37, 29,
+        }
 
- 21, 13, 5, 28, 20, 12, 4};
+        return dest;
 
-for(int i=0; i<56; i++){
-
-dest[i] = source[temp[i]-1];
-
-}
-
-return dest;
-
-}
+    }
 
 
-/**
+    /**
+     * 将密钥循环左移i�?
+     *
+     * @param source 二进制密钥数�?
+     * @param i      循环左移位数
+     * @return
+     */
 
-* 将密钥循环左移i�?
+    public static int[] keyLeftMove(int[] source, int i) {
 
-* @param source 二进制密钥数�?
+        int temp = 0;
 
-* @param i 循环左移位数
+        int len = source.length;
 
-* @return
-
-*/
-
-public static int[] keyLeftMove(int[] source, int i){
-
-int temp = 0;
-
-int len = source.length;
-
-int ls = LS[i];
+        int ls = LS[i];
 
 //	 System.out.println("len" + len + ",LS[" + i + "]=" + ls);
 
-for(int k=0; k<ls; k++){
+        for (int k = 0; k < ls; k++) {
 
-temp = source[0];
+            temp = source[0];
 
-for(int j=0; j<len-1; j++){
+            for (int j = 0; j < len - 1; j++) {
 
-source[j] = source[j+1];
+                source[j] = source[j + 1];
 
-}
+            }
 
-source[len-1] = temp;
+            source[len - 1] = temp;
 
-}
+        }
 
-return source;
+        return source;
 
-}
-
-
-/**
-
-* �?6bit的密钥转换成48bit
-
-* @param source
-
-* @return
-
-*/
-
-public static int[] keyPC_2(int[] source){
-
-int[] dest = new int[48];
-
-int[] temp = {14, 17, 11, 24, 1, 5,
-
- 3, 28, 15, 6, 21, 10,
-
- 23, 19, 12, 4, 26, 8,
-
- 16, 7, 27, 20, 13, 2,
-
- 41, 52, 31, 37, 47, 55,
-
- 30, 40, 51, 45, 33, 48,
-
- 44, 49, 39, 56, 34, 53,
-
- 46, 42, 50, 36, 29, 32};
-
-for(int i=0; i<48; i++){
-
-dest[i] = source[temp[i]-1];
-
-}
-
-return dest;
-
-}
+    }
 
 
-/**
+    /**
+     * �?6bit的密钥转换成48bit
+     *
+     * @param source
+     * @return
+     */
 
-* 获取轮子密钥(48bit)
+    public static int[] keyPC_2(int[] source) {
 
-* @param source
+        int[] dest = new int[48];
 
-* @return
+        int[] temp = {14, 17, 11, 24, 1, 5,
 
-*/
+                3, 28, 15, 6, 21, 10,
 
-public static void setKey(String source){
+                23, 19, 12, 4, 26, 8,
 
-if(subKey.length > 0)subKey = new int[16][48];
+                16, 7, 27, 20, 13, 2,
+
+                41, 52, 31, 37, 47, 55,
+
+                30, 40, 51, 45, 33, 48,
+
+                44, 49, 39, 56, 34, 53,
+
+                46, 42, 50, 36, 29, 32};
+
+        for (int i = 0; i < 48; i++) {
+
+            dest[i] = source[temp[i] - 1];
+
+        }
+
+        return dest;
+
+    }
+
+
+    /**
+     * 获取轮子密钥(48bit)
+     *
+     * @param source
+     * @return
+     */
+
+    public static void setKey(String source) {
+
+        if (subKey.length > 0) subKey = new int[16][48];
 
 //装换�?4bit
 
-int[] temp = string2Binary(source);
+        int[] temp = string2Binary(source);
 
 //�?6bit均分成两部分
 
-int[] left = new int[28];
+        int[] left = new int[28];
 
-int[] right = new int[28];
+        int[] right = new int[28];
 
 //经过PC-1�?4bit转换�?6bit
 
-int[] temp1 = new int[56];
+        int[] temp1 = new int[56];
 
-temp1 = keyPC_1(temp);
+        temp1 = keyPC_1(temp);
 
 //printArr(temp1);
 
 //将经过转换的temp1均分成两部分
 
-for(int i=0; i<28; i++){
+        for (int i = 0; i < 28; i++) {
 
-left[i] = temp1[i];
+            left[i] = temp1[i];
 
-right[i] = temp1[i+28];
+            right[i] = temp1[i + 28];
 
-}
+        }
 
 //经过16次循环左移，然后PC-2置换
 
-for(int i=0; i<16; i++){
+        for (int i = 0; i < 16; i++) {
 
-left = keyLeftMove(left, LS[i]);
+            left = keyLeftMove(left, LS[i]);
 
-right = keyLeftMove(right, LS[i]);
+            right = keyLeftMove(right, LS[i]);
 
-for(int j=0; j<28; j++){
+            for (int j = 0; j < 28; j++) {
 
-temp1[j] = left[j];
+                temp1[j] = left[j];
 
-temp1[j+28] = right[j];
+                temp1[j + 28] = right[j];
 
-}
+            }
 
 //printArr(temp1);
 
-subKey[i] = keyPC_2(temp1);
+            subKey[i] = keyPC_2(temp1);
 
-}
+        }
 
-}
+    }
 
 
-public static void printArr(int[] source){
+    public static void printArr(int[] source) {
 
-int len = source.length;
+        int len = source.length;
 
-for(int i=0; i<len; i++){
+        for (int i = 0; i < len; i++) {
 
-System.out.print(source[i]);
+            System.out.print(source[i]);
 
-}
+        }
 
-System.out.println();
+        System.out.println();
 
-}
+    }
 
 
-/**
+    /**
+     * 将ASC字符串转�?6进制字符�?
+     *
+     * @param asc
+     * @return
+     */
 
-* 将ASC字符串转�?6进制字符�?
+    public static String ASC_2_HEX(String asc) {
 
-* @param asc
+        StringBuffer hex = new StringBuffer();
 
-* @return
+        try {
 
-*/
+            byte[] bs = asc.toUpperCase().getBytes("UTF-8");
 
-public static String ASC_2_HEX(String asc){
+            for (byte b : bs) {
 
-StringBuffer hex = new StringBuffer();
+                hex.append(Integer.toHexString(new Byte(b).intValue()));
 
-try {
+            }
 
-byte[] bs = asc.toUpperCase().getBytes("UTF-8");
+        } catch (UnsupportedEncodingException e) {
 
-for(byte b : bs){
+            e.printStackTrace();
 
-hex.append(Integer.toHexString(new Byte(b).intValue()));
+        }
 
-}
+        return hex.toString();
 
-} catch (UnsupportedEncodingException e) {
+    }
 
-e.printStackTrace();
 
-}
+    /**
+     * �?6进制的字符串转换成ASC的字符串
+     * <p/>
+     * �?6进制的字符串压缩成BCD�?30313233343536373839414243444546)-->(0123456789ABCDEF)
+     *
+     * @param hex
+     * @return
+     */
 
-return hex.toString();
+    public static String HEX_2_ASC(String hex) {
 
-}
+        String asc = null;
 
+        int len = hex.length();
 
-/**
+        byte[] bs = new byte[len / 2];
 
-* �?6进制的字符串转换成ASC的字符串
+        for (int i = 0; i < len / 2; i++) {
 
-* �?6进制的字符串压缩成BCD�?30313233343536373839414243444546)-->(0123456789ABCDEF)
+            bs[i] = Byte.parseByte(hex.substring(i * 2, i * 2 + 2), 16);
 
-* @param hex
+        }
 
-* @return
+        try {
 
-*/
+            asc = new String(bs, "UTF-8");
 
-public static String HEX_2_ASC(String hex){
+        } catch (UnsupportedEncodingException e) {
 
-String asc = null;
+            e.printStackTrace();
 
-int len = hex.length();
+        }
 
-byte[] bs = new byte[len/2];
+        return asc;
 
-for(int i=0; i<len/2; i++){
+    }
 
-bs[i] = Byte.parseByte(hex.substring(i*2, i*2+2), 16);
 
-}
+    /**
+     * 计算MAC(hex)
+     * <p/>
+     * ANSI-X9.9-MAC(16的整数�?不补)
+     * <p/>
+     * PBOC-DES-MAC(16的整数�?�?000000000000000)
+     * <p/>
+     * 使用单�?长密钥DES算法
+     *
+     * @param key密钥(16byte)
+     * @param vector初始向量0000000000000000
+     * @param data数据
+     * @return mac
+     */
 
-try {
+    public static String MAC(String key, String vector, String data, int type) {
 
-asc = new String(bs,"UTF-8");
+        if (type == ASC) {
 
-} catch (UnsupportedEncodingException e) {
+            data = ASC_2_HEX(data);
 
-e.printStackTrace();
+        }
 
-}
+        int len = data.length();
 
-return asc;
+        int arrLen = len / 16 + 1;
 
-}
+        String[] D = new String[arrLen];
 
+        if (vector == null) vector = "0000000000000000";
 
-/**
+        if (len % 16 == 0) {
 
-* 计算MAC(hex)
+            data += "8000000000000000";
 
-* ANSI-X9.9-MAC(16的整数�?不补)
+        } else {
 
-* PBOC-DES-MAC(16的整数�?�?000000000000000)
+            data += "80";
 
-* 使用单�?长密钥DES算法
+            for (int i = 0; i < 15 - len % 16; i++) {
 
-* @param key密钥(16byte)
+                data += "00";
 
-* @param vector初始向量0000000000000000
+            }
 
-* @param data数据
+        }
 
-* @return mac
+        for (int i = 0; i < arrLen; i++) {
 
-*/
+            D[i] = data.substring(i * 16, i * 16 + 16);
 
-public static String MAC(String key, String vector, String data, int type){
+            System.out.println("D[" + i + "]=" + D[i]);
 
-if(type == ASC){
-
-data = ASC_2_HEX(data);
-
-}
-
-int len = data.length();
-
-int arrLen = len/16 + 1;
-
-String[] D = new String[arrLen];
-
-if(vector == null)vector = "0000000000000000";
-
-if(len%16==0){
-
-data += "8000000000000000";
-
-}else{
-
-data += "80";
-
-for(int i=0; i<15-len%16; i++){
-
-data += "00";
-
-}
-
-}
-
-for(int i=0; i<arrLen; i++){
-
-D[i] = data.substring(i*16, i*16+16);
-
-System.out.println("D[" + i + "]=" + D[i]);
-
-}
+        }
 
 
 //D0 Xor Vector
 
-String I = xOr(D[0], vector);
+        String I = xOr(D[0], vector);
 
-String O = null;
+        String O = null;
 
 
-for(int i=1; i<arrLen; i++){
+        for (int i = 1; i < arrLen; i++) {
 
 //	 System.out.println(i + "**************");
 
 //	 System.out.println("I=" + I);
 
-O = DES_1(I, key, 0);
+            O = DES_1(I, key, 0);
 
 //	 System.out.println("O=" + O);
 
-I = xOr(D[i], O);
+            I = xOr(D[i], O);
 
 //	 System.out.println("I=" + I);
 
-}
+        }
 
 
-I = DES_1(I, key, 0);
+        I = DES_1(I, key, 0);
 
 
-return I;
+        return I;
 
-}
-
-
-/**
-
-* 将s1和s2做异或，然后返回
-
-* @param s1
-
-* @param s2
-
-* @return
-
-*/
-
-public static String xOr(String s1,String s2){
-
-int[] iArr = diffOr(string2Binary(s1), string2Binary(s2));
-
-return binary2ASC(intArr2Str(iArr));
-
-}
+    }
 
 
-/**
+    /**
+     * 将s1和s2做异或，然后返回
+     *
+     * @param s1
+     * @param s2
+     * @return
+     */
 
-* 将int类型数组拼接成字符串
+    public static String xOr(String s1, String s2) {
 
-* @param arr
+        int[] iArr = diffOr(string2Binary(s1), string2Binary(s2));
 
-* @return
+        return binary2ASC(intArr2Str(iArr));
 
-*/
-
-public static String intArr2Str(int[] arr){
-
-StringBuffer sb = new StringBuffer();
-
-for(int i=0; i<arr.length; i++){
-
-sb.append(arr[i]);
-
-}
-
-return sb.toString();
-
-}
+    }
 
 
-/**
+    /**
+     * 将int类型数组拼接成字符串
+     *
+     * @param arr
+     * @return
+     */
 
-* 将data分散
+    public static String intArr2Str(int[] arr) {
 
-* @param data
+        StringBuffer sb = new StringBuffer();
 
-* @param key
+        for (int i = 0; i < arr.length; i++) {
 
-* @param type
+            sb.append(arr[i]);
 
-* @return
+        }
 
-*/
+        return sb.toString();
 
-public static String divData(String data,String key,int type){
+    }
 
-String left = null;
 
-String right = null;
+    /**
+     * 将data分散
+     *
+     * @param data
+     * @param key
+     * @param type
+     * @return
+     */
 
-if(type == HEX){
+    public static String divData(String data, String key, int type) {
 
-left = key.substring(0, 16);
+        String left = null;
 
-right = key.substring(16,32);
+        String right = null;
 
-}
+        if (type == HEX) {
 
-if(type == ASC){
+            left = key.substring(0, 16);
 
-left = ASC_2_HEX(key.substring(0, 8));
+            right = key.substring(16, 32);
 
-right = ASC_2_HEX(key.substring(8,16));
+        }
 
-}
+        if (type == ASC) {
+
+            left = ASC_2_HEX(key.substring(0, 8));
+
+            right = ASC_2_HEX(key.substring(8, 16));
+
+        }
 
 //加密
 
-data = DES_1(data, left, 0);
+        data = DES_1(data, left, 0);
 
 //解密
 
-data = DES_1(data, right, 1);
+        data = DES_1(data, right, 1);
 
 //加密
 
-data = DES_1(data, left, 0);
+        data = DES_1(data, left, 0);
 
-return data;
+        return data;
 
-}
-
-
-/**
-
-* 取反(10001)--->(01110)
-
-* @param source
-
-* @return
-
-*/
-
-public static String reverse(String source){
-
-int[] data = string2Binary(source);
-
-int j = 0;
-
-for(int i : data){
-
-data[j++] = 1 - i;
-
-}
-
-return binary2ASC(intArr2Str(data));
-
-}
+    }
 
 
-/**
+    /**
+     * 取反(10001)--->(01110)
+     *
+     * @param source
+     * @return
+     */
 
-* 主密钥需要经过两次分散获得IC卡中的子密钥
+    public static String reverse(String source) {
 
-* @param issuerFlag发卡方标识符
+        int[] data = string2Binary(source);
 
-* @param appNo应用序列号即卡号
+        int j = 0;
 
-* @param mpk主密�?
+        for (int i : data) {
 
-* @return
+            data[j++] = 1 - i;
 
-*/
+        }
 
-public static String getDPK(String issuerFlag,String appNo,String mpk){
+        return binary2ASC(intArr2Str(data));
+
+    }
+
+
+    /**
+     * 主密钥需要经过两次分散获得IC卡中的子密钥
+     *
+     * @param issuerFlag发卡方标识符
+     * @param appNo应用序列号即卡号
+     * @param mpk主密�?
+     * @return
+     */
+
+    public static String getDPK(String issuerFlag, String appNo, String mpk) {
 
 //第一次分�?
 
-StringBuffer issuerMPK = new StringBuffer();
+        StringBuffer issuerMPK = new StringBuffer();
 
 //获取Issuer MPK左半�?
 
-issuerMPK.append(divData(issuerFlag, mpk, 0));
+        issuerMPK.append(divData(issuerFlag, mpk, 0));
 
 //获取Issuer MPK右半�?
 
-issuerMPK.append(divData(reverse(issuerFlag), mpk, 0));
+        issuerMPK.append(divData(reverse(issuerFlag), mpk, 0));
 
 //第二次分�?
 
-StringBuffer dpk = new StringBuffer();
+        StringBuffer dpk = new StringBuffer();
 
 //获取DPK左半�?
 
-dpk.append(divData(appNo, issuerMPK.toString(), 0));
+        dpk.append(divData(appNo, issuerMPK.toString(), 0));
 
 //获取DPK右半�?
 
-dpk.append(divData(reverse(appNo), issuerMPK.toString(), 0));
+        dpk.append(divData(reverse(appNo), issuerMPK.toString(), 0));
 
-return dpk.toString();
+        return dpk.toString();
 
-}
-
-
-public static void main(String[] args) throws Exception {
+    }
 
 
-System.out.println("/*************Tripe-DES*************/");
+    public static void main(String[] args) throws Exception {
+
+
+        System.out.println("/*************Tripe-DES*************/");
 
 //主密�?
 
-String masterKey = "31313131313131313131313131313131";
-String data = "B4E47EC39533CC650A1032CF920FB622";
-String md ="EC0EF8CB7AEAEAB5";
-String dt ="0000000000000000";
-System.out.println(new String(CryptoUtils.hex2byte(masterKey)));
-System.out.println(new String(CryptoUtils.hex2byte("B4E47EC39533CC650A1032CF920FB622")).length());
-String mk = DES_1(data, dt, 0);
-System.out.println("mk:"+mk);
+        String masterKey = "31313131313131313131313131313131";
+        String data = "B4E47EC39533CC650A1032CF920FB622";
+        String md = "EC0EF8CB7AEAEAB5";
+        String dt = "0000000000000000";
+        System.out.println(new String(CryptoUtils.hex2byte(masterKey)));
+        System.out.println(new String(CryptoUtils.hex2byte("B4E47EC39533CC650A1032CF920FB622")).length());
+        String mk = DES_1(data, dt, 0);
+        System.out.println("mk:" + mk);
 
 //数据
 
@@ -1661,8 +1544,7 @@ System.out.println("mk:"+mk);
 //
 //System.out.println(dpk);
 
-}
-
+    }
 
 
 }

@@ -26,7 +26,7 @@
 
     <target name="init" description="Build initialization" depends="clean">
         <tstamp>
-            <format property="appointed.time" pattern="MM/dd/yyyy hh:mm aa" locale="en"  offset="-300" unit="second"/>
+            <format property="appointed.time" pattern="MM/dd/yyyy hh:mm aa" locale="en" offset="-300" unit="second"/>
         </tstamp>
         <copy todir="${classes.new.dir}" overwrite="true">
             <fileset dir="${classes.project.dir}">
@@ -58,35 +58,41 @@
     </target>
 
     <target name="remote_upload">
-        <scp file="${app.zip.file.path}" todir="${server.usr}:${server.passwd}@${server.ip}:${remote.dir.des}" trust="true"/>
+        <scp file="${app.zip.file.path}" todir="${server.usr}:${server.passwd}@${server.ip}:${remote.dir.des}"
+             trust="true"/>
     </target>
 
     <target name="unzip">
-        <sshexec host="${server.ip}" username="${server.usr}"  password="${server.passwd}" trust="true" command="cd ${remote.dir.des};unzip -o ${app.zip.file.name}"/>
+        <sshexec host="${server.ip}" username="${server.usr}" password="${server.passwd}" trust="true"
+                 command="cd ${remote.dir.des};unzip -o ${app.zip.file.name}"/>
     </target>
 
     <target name="stop_tomcat">
-        <sshexec host="${server.ip}" username="${server.usr}"  password="${server.passwd}" trust="true" command="ppid=`ps -ef|grep 'Dcatalina\.home=${tomcat.home}.*start' | awk '{ print $2 }' | grep '^[0-9]\+$'`;if [ $ppid ]; then kill -9 $ppid;echo 'stop successful!';fi;"/>
+        <sshexec host="${server.ip}" username="${server.usr}" password="${server.passwd}" trust="true"
+                 command="ppid=`ps -ef|grep 'Dcatalina\.home=${tomcat.home}.*start' | awk '{ print $2 }' | grep '^[0-9]\+$'`;if [ $ppid ]; then kill -9 $ppid;echo 'stop successful!';fi;"/>
     </target>
 
     <target name="start_tomcat">
-        <sshexec host="${server.ip}" username="${server.usr}"  password="${server.passwd}" trust="true" command="cd ${tomcat.home}/bin;./startup.sh;tail -f ${tailf_log_path}"/>
+        <sshexec host="${server.ip}" username="${server.usr}" password="${server.passwd}" trust="true"
+                 command="cd ${tomcat.home}/bin;./startup.sh;tail -f ${tailf_log_path}"/>
     </target>
 
     <target name="tailf_log">
-        <sshexec host="${server.ip}" username="${server.usr}"  password="${server.passwd}" trust="true" command="tail -f ${tailf_log_path}"/>
+        <sshexec host="${server.ip}" username="${server.usr}" password="${server.passwd}" trust="true"
+                 command="tail -f ${tailf_log_path}"/>
     </target>
-    
+
     <target name="locale">
-        <sshexec host="${server.ip}" username="${server.usr}"  password="${server.passwd}" trust="true" command="locale"/>
+        <sshexec host="${server.ip}" username="${server.usr}" password="${server.passwd}" trust="true"
+                 command="locale"/>
     </target>
-    
+
     <target name="part_upload_unzip">
         <antcall target="part_package"/>
         <antcall target="remote_upload"/>
         <antcall target="unzip"/>
     </target>
-    
+
     <target name="all-op">
         <antcall target="part_package"/>
         <antcall target="remote_upload"/>

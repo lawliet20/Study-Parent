@@ -29,7 +29,7 @@ public class ReflectUtils {
         if (!(parameterizedType instanceof ParameterizedType)) {
             parameterizedType = clazz.getSuperclass().getGenericSuperclass();
         }
-        if (!(parameterizedType instanceof  ParameterizedType)) {
+        if (!(parameterizedType instanceof ParameterizedType)) {
             return null;
         }
         Type[] actualTypeArguments = ((ParameterizedType) parameterizedType).getActualTypeArguments();

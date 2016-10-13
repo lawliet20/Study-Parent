@@ -7,9 +7,9 @@ import java.util.Enumeration;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class Test {
-	private static volatile String cachedIpAddress;
+    private static volatile String cachedIpAddress;
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
         System.out.println("hello world");
 
         System.out.println("hello sherry");
@@ -19,10 +19,10 @@ public class Test {
         System.out.println("i like you ");
 
         System.out.println("i wish you like me alose");
-        
+
         System.out.println("do you like me ?");
 
         System.out.println("what are you doing now ?");
     }
-	
+
 }

@@ -76,7 +76,7 @@ public class Main {
                     // 判断变量类型
                     if (fieldType.endsWith("class java.lang.String")) {
                         // 获取到set方法
-                        Method m = object.getClass().getMethod(methodName,String.class);
+                        Method m = object.getClass().getMethod(methodName, String.class);
                         String value = null;
                         try {
                             // 从JsonObj中取出相应的值

@@ -99,7 +99,7 @@ public abstract class AbstractZkClient<TargetChildListener, TargetDataListener> 
             listeners.putIfAbsent(listener, createTargetDataListener(path, listener));
             targetListener = listeners.get(listener);
         }
-         addTargetDataListener(path, targetListener);
+        addTargetDataListener(path, targetListener);
     }
 
     public void removeDataListener(String path, DataListener listener) {

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ehcache name="es" >
-	<!--磁盘存储配置：用来指定缓存在磁盘上的存储位置。
-	可以使用JavaVM环境变量(user.home, user.dir, java.io.tmpdir)-->
+<ehcache name="es">
+    <!--磁盘存储配置：用来指定缓存在磁盘上的存储位置。
+    可以使用JavaVM环境变量(user.home, user.dir, java.io.tmpdir)-->
     <diskStore path="java.io.tmpdir"/>
 
-	<!--属性说明 http://haohaoxuexi.iteye.com/blog/2113728 -->
+    <!--属性说明 http://haohaoxuexi.iteye.com/blog/2113728 -->
     <defaultCache
             maxEntriesLocalHeap="1000"
             eternal="false"
@@ -56,13 +56,13 @@
 
 
     <!-- shiro 会话缓存 不需要序列化到磁盘 此处我们放到db中了 此处cache没必要过期 因为我们存放到db了 -->
-  	<!-- <cache name="shiro-activeSessionCache"
-           maxEntriesLocalHeap="10000"
-           overflowToDisk="false"
-           eternal="false"
-           diskPersistent="false"
-           timeToLiveSeconds="0"
-           timeToIdleSeconds="0"
-           statistics="true"/> -->
+    <!-- <cache name="shiro-activeSessionCache"
+         maxEntriesLocalHeap="10000"
+         overflowToDisk="false"
+         eternal="false"
+         diskPersistent="false"
+         timeToLiveSeconds="0"
+         timeToIdleSeconds="0"
+         statistics="true"/> -->
 
 </ehcache>

@@ -30,7 +30,9 @@
         <module name="SpringMVC-StudyMix" />
         <module name="SpringMVC-StudyTimeTask" />
         <module name="Study-JavaBase" />
+        <module name="Study-Shiro" />
         <module name="StudyAop" />
+        <module name="StudyIoc" />
         <module name="StudyThread" />
       </profile>
     </annotationProcessing>
@@ -43,7 +45,9 @@
       <module name="SpringMVC-StudyTimeTask" target="1.7" />
       <module name="Study-JavaBase" target="1.7" />
       <module name="Study-Parent" target="1.7" />
+      <module name="Study-Shiro" target="1.7" />
       <module name="StudyAop" target="1.7" />
+      <module name="StudyIoc" target="1.7" />
       <module name="StudyThread" target="1.7" />
     </bytecodeTargetLevel>
   </component>

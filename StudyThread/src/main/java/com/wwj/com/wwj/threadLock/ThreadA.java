@@ -6,7 +6,7 @@ package com.wwj.com.wwj.threadLock;
 public class ThreadA implements Runnable {
     private Service service;
 
-    public ThreadA(Service s){
+    public ThreadA(Service s) {
         this.service = s;
     }
 

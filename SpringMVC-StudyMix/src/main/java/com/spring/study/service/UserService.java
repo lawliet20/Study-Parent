@@ -7,9 +7,9 @@ import com.spring.study.model.User;
 
 public interface UserService {
 
-	public void sayHi(String name);
-	
-	public Serializable saveUser(User user);
-	
-	public List<User> queryUser();
+    public void sayHi(String name);
+
+    public Serializable saveUser(User user);
+
+    public List<User> queryUser();
 }

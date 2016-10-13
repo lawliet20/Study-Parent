@@ -6,10 +6,10 @@ package com.wwj.com.wwj.threadLock;
 public class Service {
     private static int num = 0;
 
-    public void addNum(){
-        synchronized (Service.class){
-            for(int i=0;i<10;i++){
-                System.out.println(Thread.currentThread().getName()+":"+(num++));
+    public void addNum() {
+        synchronized (Service.class) {
+            for (int i = 0; i < 10; i++) {
+                System.out.println(Thread.currentThread().getName() + ":" + (num++));
             }
         }
     }

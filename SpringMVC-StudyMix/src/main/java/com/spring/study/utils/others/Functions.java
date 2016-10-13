@@ -8,24 +8,24 @@ import org.springframework.util.CollectionUtils;
 public class Functions {
 
     public static boolean funin(@SuppressWarnings("rawtypes") Iterable iterable, Object element) {
-        if(iterable == null) {
+        if (iterable == null) {
             return false;
         }
         return CollectionUtils.contains(iterable.iterator(), element);
     }
-    
+
     /**
      * 显示指定个数，后面以点号代替
      */
     public static String stringOmit(String str, int n) {
-    	if(str == null){
-    		return "";
-    	}
-		if (str.length() > n) {
-			return str.substring(0, n) + "...";
-		}else{
-			return str;
-		}
+        if (str == null) {
+            return "";
+        }
+        if (str.length() > n) {
+            return str.substring(0, n) + "...";
+        } else {
+            return str;
+        }
     }
 }
 

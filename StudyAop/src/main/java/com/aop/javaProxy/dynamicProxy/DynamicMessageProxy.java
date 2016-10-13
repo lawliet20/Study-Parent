@@ -21,7 +21,7 @@ public class DynamicMessageProxy implements InvocationHandler {
         System.out.println("++++++++=============+++++++++");
         System.out.println("proxy:" + proxy.getClass());
         System.out.println("method:" + method);
-        System.out.println("arg[0]:"+args[0].toString());
+        System.out.println("arg[0]:" + args[0].toString());
         System.out.println("++++++++=============+++++++++");
         if (args != null && args.length == 1 && checkMessage((String) args[0])) {
             count++;

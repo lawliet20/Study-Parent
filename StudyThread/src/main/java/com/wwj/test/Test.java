@@ -11,10 +11,10 @@ import java.util.Map;
  */
 public class Test {
 
-   private static ThreadLocal<Map<String,String>> sl = new ThreadLocal<Map<String, String>>(){
+    private static ThreadLocal<Map<String, String>> sl = new ThreadLocal<Map<String, String>>() {
         @Override
-        protected Map<String,String> initialValue(){
-            Map<String,String> threadMap = new HashMap<String,String>();
+        protected Map<String, String> initialValue() {
+            Map<String, String> threadMap = new HashMap<String, String>();
             return threadMap;
         }
     };
@@ -26,9 +26,9 @@ public class Test {
         ThreadA ta1 = new ThreadA(s1);
         ThreadA ta2 = new ThreadA(s2);
         ThreadA ta3 = new ThreadA(s3);
-        Thread t1 = new Thread(ta1,"线程1");
-        Thread t2 = new Thread(ta2,"线程2");
-        Thread t3 = new Thread(ta3,"线程3");
+        Thread t1 = new Thread(ta1, "线程1");
+        Thread t2 = new Thread(ta2, "线程2");
+        Thread t3 = new Thread(ta3, "线程3");
         t1.start();
         t2.start();
         t3.start();

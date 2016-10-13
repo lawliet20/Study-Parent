@@ -34,6 +34,8 @@
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/SpringMVC-dubboService" />
     <file type="web" url="file://$PROJECT_DIR$/SpringMVC-StudyMix" />
+    <file type="web" url="file://$PROJECT_DIR$/Study-JavaBase" />
+    <file type="web" url="file://$PROJECT_DIR$/StudyIoc" />
   </component>
   <component name="IdProvider" IDEtalkID="CA7E65E6D635C517106F4BC66C9CE45F" />
   <component name="MavenProjectsManager">

@@ -17,57 +17,63 @@ import javax.persistence.Table;
 @Table(name = "role", catalog = "")
 public class Role implements java.io.Serializable {
 
-	// Fields
+    // Fields
 
-	private Integer roleId;
-	private String roleName;
-	private Set<UserRole> userRoles = new HashSet<UserRole>(0);
+    private Integer roleId;
+    private String roleName;
+    private Set<UserRole> userRoles = new HashSet<UserRole>(0);
 
-	// Constructors
+    // Constructors
 
-	/** default constructor */
-	public Role() {
-	}
+    /**
+     * default constructor
+     */
+    public Role() {
+    }
 
-	/** minimal constructor */
-	public Role(Integer roleId) {
-		this.roleId = roleId;
-	}
+    /**
+     * minimal constructor
+     */
+    public Role(Integer roleId) {
+        this.roleId = roleId;
+    }
 
-	/** full constructor */
-	public Role(Integer roleId, String roleName, Set<UserRole> userRoles) {
-		this.roleId = roleId;
-		this.roleName = roleName;
-		this.userRoles = userRoles;
-	}
+    /**
+     * full constructor
+     */
+    public Role(Integer roleId, String roleName, Set<UserRole> userRoles) {
+        this.roleId = roleId;
+        this.roleName = roleName;
+        this.userRoles = userRoles;
+    }
 
-	// Property accessors
-	@Id
-	@Column(name = "role_id", unique = true, nullable = false)
-	public Integer getRoleId() {
-		return this.roleId;
-	}
+    // Property accessors
+    @Id
+    @Column(name = "role_id", unique = true, nullable = false)
+    public Integer getRoleId() {
+        return this.roleId;
+    }
 
-	public void setRoleId(Integer roleId) {
-		this.roleId = roleId;
-	}
+    public void setRoleId(Integer roleId) {
+        this.roleId = roleId;
+    }
 
-	@Column(name = "role_name")
-	public String getRoleName() {
-		return this.roleName;
-	}
+    @Column(name = "role_name")
+    public String getRoleName() {
+        return this.roleName;
+    }
 
-	public void setRoleName(String roleName) {
-		this.roleName = roleName;
-	}
+    public void setRoleName(String roleName) {
+        this.roleName = roleName;
+    }
 
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "role")
-	public Set<UserRole> getUserRoles() {
-		return this.userRoles;
-	}
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "role")
+    public Set<UserRole> getUserRoles() {
+        return this.userRoles;
+    }
 
-	public void setUserRoles(Set<UserRole> userRoles) {
-		this.userRoles = userRoles;
-	}
+    public void setUserRoles(Set<UserRole> userRoles) {
+        this.userRoles = userRoles;
+    }
 
 }

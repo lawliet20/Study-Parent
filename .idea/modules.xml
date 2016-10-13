@@ -10,7 +10,9 @@
       <module fileurl="file://$PROJECT_DIR$/SpringMVC-studyJavaDesign/SpringMVC-studyJavaDesign.iml" filepath="$PROJECT_DIR$/SpringMVC-studyJavaDesign/SpringMVC-studyJavaDesign.iml" />
       <module fileurl="file://$PROJECT_DIR$/Study-JavaBase/Study-JavaBase.iml" filepath="$PROJECT_DIR$/Study-JavaBase/Study-JavaBase.iml" />
       <module fileurl="file://$PROJECT_DIR$/Study-Parent.iml" filepath="$PROJECT_DIR$/Study-Parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Study-Shiro/Study-Shiro.iml" filepath="$PROJECT_DIR$/Study-Shiro/Study-Shiro.iml" />
       <module fileurl="file://$PROJECT_DIR$/StudyAop/StudyAop.iml" filepath="$PROJECT_DIR$/StudyAop/StudyAop.iml" />
+      <module fileurl="file://$PROJECT_DIR$/StudyIoc/StudyIoc.iml" filepath="$PROJECT_DIR$/StudyIoc/StudyIoc.iml" />
       <module fileurl="file://$PROJECT_DIR$/StudyThread/StudyThread.iml" filepath="$PROJECT_DIR$/StudyThread/StudyThread.iml" />
       <module fileurl="file://$PROJECT_DIR$/SpringMVC-StudyTimeTask/src/main/java/com/migu/timetask/timetask.iml" filepath="$PROJECT_DIR$/SpringMVC-StudyTimeTask/src/main/java/com/migu/timetask/timetask.iml" />
     </modules>

@@ -19,7 +19,9 @@ public class ConfUtil {
         init();
     }
 
-    /** 初始化属性文件。 取key=value中key和value存入propties中,过滤空行，注释行(#)。 */
+    /**
+     * 初始化属性文件。 取key=value中key和value存入propties中,过滤空行，注释行(#)。
+     */
     @SuppressWarnings("rawtypes")
     private static void init() {
         for (Map.Entry entry : PROP_FILE_NAME_MAP.entrySet()) {

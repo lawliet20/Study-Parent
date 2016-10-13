@@ -15,59 +15,65 @@ import javax.persistence.Table;
 @Table(name = "user_role", catalog = "")
 public class UserRole implements java.io.Serializable {
 
-	// Fields
+    // Fields
 
-	private Integer id;
-	private User user;
-	private Role role;
+    private Integer id;
+    private User user;
+    private Role role;
 
-	// Constructors
+    // Constructors
 
-	/** default constructor */
-	public UserRole() {
-	}
+    /**
+     * default constructor
+     */
+    public UserRole() {
+    }
 
-	/** minimal constructor */
-	public UserRole(Integer id) {
-		this.id = id;
-	}
+    /**
+     * minimal constructor
+     */
+    public UserRole(Integer id) {
+        this.id = id;
+    }
 
-	/** full constructor */
-	public UserRole(Integer id, User user, Role role) {
-		this.id = id;
-		this.user = user;
-		this.role = role;
-	}
+    /**
+     * full constructor
+     */
+    public UserRole(Integer id, User user, Role role) {
+        this.id = id;
+        this.user = user;
+        this.role = role;
+    }
 
-	// Property accessors
-	@Id
-	@Column(name = "id", unique = true, nullable = false)
-	public Integer getId() {
-		return this.id;
-	}
+    // Property accessors
+    @Id
+    @Column(name = "id", unique = true, nullable = false)
+    public Integer getId() {
+        return this.id;
+    }
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "user_id")
-	public User getUser() {
-		return this.user;
-	}
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id")
+    public User getUser() {
+        return this.user;
+    }
 
-	public void setUser(User user) {
-		this.user = user;
-	}
+    public void setUser(User user) {
+        this.user = user;
+    }
 
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "role_id")
-	public Role getRole() {
-		return this.role;
-	}
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "role_id")
+    public Role getRole() {
+        return this.role;
+    }
 
-	public void setRole(Role role) {
-		this.role = role;
-	}
+    public void setRole(Role role) {
+        this.role = role;
+    }
 
 }

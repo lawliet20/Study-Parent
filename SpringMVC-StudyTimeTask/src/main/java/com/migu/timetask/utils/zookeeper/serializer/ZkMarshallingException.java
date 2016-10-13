@@ -5,9 +5,9 @@ package com.github.ltsopensource.zookeeper.serializer;
  */
 public class ZkMarshallingException extends RuntimeException {
 
-	private static final long serialVersionUID = 2489236644437409454L;
+    private static final long serialVersionUID = 2489236644437409454L;
 
-	public ZkMarshallingException() {
+    public ZkMarshallingException() {
         super();
     }
 

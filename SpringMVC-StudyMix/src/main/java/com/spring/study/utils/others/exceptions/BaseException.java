@@ -5,7 +5,6 @@ import org.apache.commons.lang3.StringUtils;
 import com.spring.study.utils.others.web.MessageUtils;
 
 
-
 /**
  * 基础异常
  */
@@ -43,7 +42,7 @@ public class BaseException extends RuntimeException {
     public BaseException(String module, String defaultMessage) {
         this(module, null, null, defaultMessage);
     }
-    
+
     public BaseException(String code, Object[] args) {
         this(null, code, args, null);
     }

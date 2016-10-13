@@ -19,85 +19,82 @@ public class RedisClient {
     private JedisPool jedisPool;//非切片连接池
     private ShardedJedis shardedJedis;//切片额客户端连接
     private ShardedJedisPool shardedJedisPool;//切片连接池
-    
+
     public static void main(String[] args) {
-    	new RedisClient().show(); 
-	}
-    
-    public RedisClient() 
-    { 
-        initialPool(); 
-        initialShardedPool(); 
-        shardedJedis = shardedJedisPool.getResource(); 
-        jedis = jedisPool.getResource(); 
-    } 
- 
+        new RedisClient().show();
+    }
+
+    public RedisClient() {
+        initialPool();
+        initialShardedPool();
+        shardedJedis = shardedJedisPool.getResource();
+        jedis = jedisPool.getResource();
+    }
+
     /**
      * 初始化非切片池
      */
-    private void initialPool() 
-    { 
+    private void initialPool() {
         // 池基本配置 
-        JedisPoolConfig config = new JedisPoolConfig(); 
+        JedisPoolConfig config = new JedisPoolConfig();
         config.setMaxTotal(20);
-        config.setMaxIdle(5); 
-        config.setMaxWaitMillis(1000l); 
-        config.setTestOnBorrow(false); 
-        
-        jedisPool = new JedisPool(config,"127.0.0.1",6379);
+        config.setMaxIdle(5);
+        config.setMaxWaitMillis(1000l);
+        config.setTestOnBorrow(false);
+
+        jedisPool = new JedisPool(config, "127.0.0.1", 6379);
     }
-    
-    /** 
-     * 初始化切片池 
-     */ 
-    private void initialShardedPool() 
-    { 
+
+    /**
+     * 初始化切片池
+     */
+    private void initialShardedPool() {
         // 池基本配置 
-        JedisPoolConfig config = new JedisPoolConfig(); 
+        JedisPoolConfig config = new JedisPoolConfig();
         config.setMaxTotal(20);
-        config.setMaxIdle(5); 
-        config.setMaxWaitMillis(1000l); 
-        config.setTestOnBorrow(false); 
+        config.setMaxIdle(5);
+        config.setMaxWaitMillis(1000l);
+        config.setTestOnBorrow(false);
         // slave链接 
-        List<JedisShardInfo> shards = new ArrayList<JedisShardInfo>(); 
-        shards.add(new JedisShardInfo("127.0.0.1", 6379, "tiger")); 
+        List<JedisShardInfo> shards = new ArrayList<JedisShardInfo>();
+        shards.add(new JedisShardInfo("127.0.0.1", 6379, "tiger"));
 
         // 构造池 
-        shardedJedisPool = new ShardedJedisPool(config, shards); 
-    } 
+        shardedJedisPool = new ShardedJedisPool(config, shards);
+    }
 
-    public void show() {     
-        KeyOperate(); 
-        StringOperate(); 
-        ListOperate(); 
+    public void show() {
+        KeyOperate();
+        StringOperate();
+        ListOperate();
         SetOperate();
         SortedSetOperate();
-        HashOperate(); 
+        HashOperate();
         jedisPool.returnResource(jedis);
         shardedJedisPool.returnResource(shardedJedis);
-    } 
+    }
 
-      private void KeyOperate() {
-         System.out.println("KeyOperate...");
-      }
+    private void KeyOperate() {
+        System.out.println("KeyOperate...");
+    }
 
-      private void StringOperate() {
-         System.out.println("StringOperate...");
-      }
+    private void StringOperate() {
+        System.out.println("StringOperate...");
+    }
 
-      private void ListOperate() {
-         System.out.println("ListOperate...");
-      }
+    private void ListOperate() {
+        System.out.println("ListOperate...");
+    }
 
-      private void SetOperate() {
-         System.out.println("SetOperate...");
-      }
+    private void SetOperate() {
+        System.out.println("SetOperate...");
+    }
 
-      private void SortedSetOperate() {
-         System.out.println("SortedSetOperate...");
-      }
-    
-      private void HashOperate() {
-         System.out.println("HashOperate...");
-      }
+    private void SortedSetOperate() {
+        System.out.println("SortedSetOperate...");
+    }
+
+    private void HashOperate() {
+        System.out.println("HashOperate...");
+    }
 }

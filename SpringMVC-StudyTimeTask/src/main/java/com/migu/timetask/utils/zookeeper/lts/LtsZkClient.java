@@ -25,6 +25,7 @@ import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * LTS 自带实现的zkclient
+ *
  * @author Robert HG (254963746@qq.com) on 2/18/16.
  */
 public class LtsZkClient extends AbstractZkClient<ChildListener, DataListener> implements Watcher {
@@ -85,7 +86,6 @@ public class LtsZkClient extends AbstractZkClient<ChildListener, DataListener> i
                         + ", sessionTimeout="
                         + getSessionTimeout());
                 notifyConnected();
-
 
 
             } else if (Event.KeeperState.Disconnected == event.getState()) {

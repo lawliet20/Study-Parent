@@ -8,7 +8,7 @@ package com.aop.javaProxy;
 public class EmailMessage implements MessageHandler {
     @Override
     public void sendMessage(String msg) {
-        System.out.println(msg+" send!!");
+        System.out.println(msg + " send!!");
     }
 }
 

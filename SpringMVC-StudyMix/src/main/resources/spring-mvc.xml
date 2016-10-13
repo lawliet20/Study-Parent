@@ -1,57 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans" xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p" xmlns:context="http://www.springframework.org/schema/context" xsi:schemaLocation="http://www.springframework.org/schema/beans 
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context" xsi:schemaLocation="http://www.springframework.org/schema/beans
 http://www.springframework.org/schema/beans/spring-beans-3.0.xsd 
 http://www.springframework.org/schema/context 
 http://www.springframework.org/schema/context/spring-context-3.0.xsd 
 http://www.springframework.org/schema/mvc 
 http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
 
-	<!-- 自动扫描controller包下的所有类，使其认为spring mvc的控制器 -->
-	<context:component-scan base-package="com.spring.study.controller" />
+    <!-- 自动扫描controller包下的所有类，使其认为spring mvc的控制器 -->
+    <context:component-scan base-package="com.spring.study.controller"/>
 
-	<!-- 避免IE执行AJAX时,返回JSON出现下载文件 -->
-	<bean id="mappingJackson2HttpMessageConverter" class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
-		<property name="supportedMediaTypes">
-			<list>
-				<value>text/html;charset=UTF-8</value>
-			</list>
-		</property>
-	</bean>
+    <!-- 避免IE执行AJAX时,返回JSON出现下载文件 -->
+    <bean id="mappingJackson2HttpMessageConverter"
+          class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+        <property name="supportedMediaTypes">
+            <list>
+                <value>text/html;charset=UTF-8</value>
+            </list>
+        </property>
+    </bean>
 
-	<!-- 启动Spring MVC的注解功能，完成请求和注解POJO的映射 -->
-	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
-		<property name="messageConverters">
-			<list>
-				<!-- json转换器 -->
-				<ref bean="mappingJackson2HttpMessageConverter" />
-			</list>
-		</property>
-	</bean>
+    <!-- 启动Spring MVC的注解功能，完成请求和注解POJO的映射 -->
+    <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+        <property name="messageConverters">
+            <list>
+                <!-- json转换器 -->
+                <ref bean="mappingJackson2HttpMessageConverter"/>
+            </list>
+        </property>
+    </bean>
 
-	<!-- 对模型视图名称的解析，即在模型视图名称添加前后缀  -->
-	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<property name="prefix" value="/" />
-		<property name="suffix" value=".jsp" />
-	</bean>
-	<!-- 文件上传时用的 -->
-	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
-		<property name="defaultEncoding">
-			<value>UTF-8</value>
-		</property>
-		<property name="maxUploadSize">
-			<value>32505856</value><!-- 上传文件大小限制为31M，31*1024*1024 -->
-		</property>
-		<property name="maxInMemorySize">
-			<value>4096</value>
-		</property>
-		<property name="uploadTempDir">
-			<value>/uploadfile</value>
-		</property>
-	</bean>
-	<!-- 配置拦截器 -->
-	<!-- <mvc:interceptors> <bean class="sy.interceptor.MyInterceptor"></bean>拦截器类 <mvc:interceptor>配置拦截规则 <mvc:mapping path="/user.do"/> <mvc:mapping path="/test.*"/> </mvc:interceptor> </mvc:interceptors> -->
+    <!-- 对模型视图名称的解析，即在模型视图名称添加前后缀  -->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+    <!-- 文件上传时用的 -->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="defaultEncoding">
+            <value>UTF-8</value>
+        </property>
+        <property name="maxUploadSize">
+            <value>32505856</value>
+            <!-- 上传文件大小限制为31M，31*1024*1024 -->
+        </property>
+        <property name="maxInMemorySize">
+            <value>4096</value>
+        </property>
+        <property name="uploadTempDir">
+            <value>/uploadfile</value>
+        </property>
+    </bean>
+    <!-- 配置拦截器 -->
+    <!-- <mvc:interceptors> <bean class="sy.interceptor.MyInterceptor"></bean>拦截器类 <mvc:interceptor>配置拦截规则 <mvc:mapping path="/user.do"/> <mvc:mapping path="/test.*"/> </mvc:interceptor> </mvc:interceptors> -->
 
-	<mvc:annotation-driven />
-	<!-- 静态资源映射 -->
-	<mvc:resources location="/resources/" mapping="/resources/**" />
+    <mvc:annotation-driven/>
+    <!-- 静态资源映射 -->
+    <mvc:resources location="/resources/" mapping="/resources/**"/>
+
 </beans>

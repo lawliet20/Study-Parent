@@ -13,22 +13,22 @@ import com.spring.study.service.UserService;
 
 @Service("userService")
 public class UserServiceImpl implements UserService {
-	@Resource
-	private UserDao userDao;
+    @Resource
+    private UserDao userDao;
 
-	@Override
-	public Serializable saveUser(User user) {
-		return userDao.saveUser(user);
-	}
+    @Override
+    public Serializable saveUser(User user) {
+        return userDao.saveUser(user);
+    }
 
-	@Override
-	public void sayHi(String name) {
-		System.out.println("my name is "+name);
-	}
+    @Override
+    public void sayHi(String name) {
+        System.out.println("my name is " + name);
+    }
 
-	@Override
-	public List<User> queryUser() {
-		return userDao.queryAllUser();
-	}
+    @Override
+    public List<User> queryUser() {
+        return userDao.queryAllUser();
+    }
 
 }

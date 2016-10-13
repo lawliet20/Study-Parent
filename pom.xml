@@ -1,164 +1,166 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<groupId>Study-Parent</groupId>
-	<artifactId>Study-Parent</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<packaging>pom</packaging>
-	<name>Study-Parent</name>
-	<description/>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>Study-Parent</groupId>
+    <artifactId>Study-Parent</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>Study-Parent</name>
+    <description/>
 
-	<!-- 指定项目编码 -->
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<spring.version>4.1.4.RELEASE</spring.version>
-		<jackson.version>2.5.0</jackson.version>
-		<java.home>F:\javatool\jdk\jdk1.7</java.home>
-	</properties>
+    <!-- 指定项目编码 -->
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <spring.version>4.1.4.RELEASE</spring.version>
+        <jackson.version>2.5.0</jackson.version>
+        <java.home>F:\javatool\jdk\jdk1.7</java.home>
+    </properties>
 
-	<!-- 指定maven私服 -->
-	<!-- <repositories> <repository> <id>mickong Releases</id> <name>mickong Releases</name> <url>http://120.26.59.173:8081/nexus/content/groups/public/</url> </repository> </repositories> -->
+    <!-- 指定maven私服 -->
+    <!-- <repositories> <repository> <id>mickong Releases</id> <name>mickong Releases</name> <url>http://120.26.59.173:8081/nexus/content/groups/public/</url> </repository> </repositories> -->
 
-	<!-- 根据参数自动打包（本地�?测试、生产包 -->
-	<profiles>
-		<profile>
-			<id>dev</id>
-			<properties>
-				<package.environment>dev</package.environment>
-			</properties>
-			<activation>
-				<!-- 默认本地打包 -->
-				<activeByDefault>true</activeByDefault>
-			</activation>
-		</profile>
-		<profile>
-			<id>test</id>
-			<properties>
-				<package.environment>test</package.environment>
-			</properties>
-		</profile>
-		<profile>
-			<id>product</id>
-			<properties>
-				<package.environment>product</package.environment>
-			</properties>
-		</profile>
-	</profiles>
+    <!-- 根据参数自动打包（本地�?测试、生产包 -->
+    <profiles>
+        <profile>
+            <id>dev</id>
+            <properties>
+                <package.environment>dev</package.environment>
+            </properties>
+            <activation>
+                <!-- 默认本地打包 -->
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+        <profile>
+            <id>test</id>
+            <properties>
+                <package.environment>test</package.environment>
+            </properties>
+        </profile>
+        <profile>
+            <id>product</id>
+            <properties>
+                <package.environment>product</package.environment>
+            </properties>
+        </profile>
+    </profiles>
 
-	<!-- 依赖插件 -->
-	<build>
-		<resources>
-			<resource>
-				<directory>src/main/resources</directory>
-				<excludes>
-					<exclude>env/**</exclude>
-				</excludes>
-			</resource>
-			<resource>
-				<directory>src/main/resources/env/${package.environment}</directory>
-			</resource>
-		</resources>
+    <!-- 依赖插件 -->
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <excludes>
+                    <exclude>env/**</exclude>
+                </excludes>
+            </resource>
+            <resource>
+                <directory>src/main/resources/env/${package.environment}</directory>
+            </resource>
+        </resources>
 
-		<plugins>
-			<!-- war包插�? -->
-			<!--<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-war-plugin</artifactId>
-				<version>2.4</version>
-				<configuration>
-					<version>3.0</version>
-					&lt;!&ndash; 忽略测试代码编译报错 &ndash;&gt;
-					<testFailureIgnore>true</testFailureIgnore>
-					<directory>src/main/resources/${package.environment}</directory>
-					<targetPath>WEB-INF/classes</targetPath>
-					<warSourceExcludes>WEB-INF/lib/**,WEB-INF/classes/**</warSourceExcludes>
-					<filtering>true</filtering>
-				</configuration>
-			</plugin>-->
+        <plugins>
+            <!-- war包插件 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.4</version>
+                <configuration>
+                    <version>3.0</version>
+                    <!--忽略测试代码编译报错 -->
+                    <testFailureIgnore>true</testFailureIgnore>
+                    <directory>src/main/resources/${package.environment}</directory>
+                    <targetPath>WEB-INF/classes</targetPath>
+                    <warSourceExcludes>WEB-INF/lib/**,WEB-INF/classes/**</warSourceExcludes>
+                    <filtering>true</filtering>
+                </configuration>
+            </plugin>
 
-			<!-- 编译插件 -->
-			<plugin>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<configuration>
-					<source>1.7</source>
-					<target>1.7</target>
-					<encoding>utf-8</encoding>
-					<compilerArguments>
-						<verbose/>
-						<bootclasspath>${java.home}\jre\lib\rt.jar;${java.home}\jre\lib\jce.jar</bootclasspath>
-					</compilerArguments>
-				</configuration>
-			</plugin>
+            <!-- 编译插件 -->
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                    <encoding>utf-8</encoding>
+                    <compilerArguments>
+                        <verbose/>
+                        <bootclasspath>${java.home}\jre\lib\rt.jar;${java.home}\jre\lib\jce.jar</bootclasspath>
+                    </compilerArguments>
+                </configuration>
+            </plugin>
 
-			<!-- 源码插件 -->
-			<plugin>
-				<artifactId>maven-resources-plugin</artifactId>
-				<configuration>
-					<encoding>utf-8</encoding>
-				</configuration>
-			</plugin>
+            <!-- 源码插件 -->
+            <plugin>
+                <artifactId>maven-resources-plugin</artifactId>
+                <configuration>
+                    <encoding>utf-8</encoding>
+                </configuration>
+            </plugin>
 
-			<!-- javadoc插件 -->
-			<plugin>
-				<artifactId>maven-javadoc-plugin</artifactId>
-				<configuration>
-					<encoding>utf-8</encoding>
-				</configuration>
-			</plugin>
+            <!-- javadoc插件 -->
+            <plugin>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <configuration>
+                    <encoding>utf-8</encoding>
+                </configuration>
+            </plugin>
 
-			<plugin>
-				<artifactId>maven-surefire-plugin</artifactId>
-				<version>2.7.2</version>
-				<configuration>
-					<forkMode>once</forkMode>
-					<argLine>-Dfile.encoding=UTF-8</argLine>
-				</configuration>
-			</plugin>
+            <plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.7.2</version>
+                <configuration>
+                    <forkMode>once</forkMode>
+                    <argLine>-Dfile.encoding=UTF-8</argLine>
+                </configuration>
+            </plugin>
 
-			<!-- jetty插件 -->
-			<plugin>
-				<groupId>org.mortbay.jetty</groupId>
-				<artifactId>maven-jetty-plugin</artifactId>
-				<version>6.1.15.pre0</version>
-				<configuration>
-					<scanIntervalSeconds>3</scanIntervalSeconds>
-					<stopKey>foo</stopKey>
-					<stopPort>9999</stopPort>
-				</configuration>
-				<executions>
-					<execution>
-						<id>start-jetty</id>
-						<phase>pre-integration-test</phase>
-						<goals>
-							<goal>run</goal>
-						</goals>
-						<configuration>
-							<scanIntervalSeconds>0</scanIntervalSeconds>
-							<daemon>true</daemon>
-						</configuration>
-					</execution>
-					<execution>
-						<id>stop-jetty</id>
-						<phase>post-integration-test</phase>
-						<goals>
-							<goal>stop</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-		</plugins>
-	</build>
+            <!-- jetty插件 -->
+            <plugin>
+                <groupId>org.mortbay.jetty</groupId>
+                <artifactId>maven-jetty-plugin</artifactId>
+                <version>6.1.15.pre0</version>
+                <configuration>
+                    <scanIntervalSeconds>3</scanIntervalSeconds>
+                    <stopKey>foo</stopKey>
+                    <stopPort>9999</stopPort>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>start-jetty</id>
+                        <phase>pre-integration-test</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <scanIntervalSeconds>0</scanIntervalSeconds>
+                            <daemon>true</daemon>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>stop-jetty</id>
+                        <phase>post-integration-test</phase>
+                        <goals>
+                            <goal>stop</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 
-	<modules>
-		<module>SpringMVC-StudyMix</module>
-		<module>SpringMVC-dubboService</module>
-		<module>SpringMVC-dubboProvider</module>
-		<module>SpringMVC-dubboProvider2</module>
-		<module>SpringMVC-studyJavaDesign</module>
-    <module>SpringMVC-StudyTimeTask</module>
-        <module>StudyThread</module>
+    <modules>
+        <module>SpringMVC-StudyMix</module>
+        <module>SpringMVC-dubboService</module>
+        <module>SpringMVC-dubboProvider</module>
+        <module>SpringMVC-dubboProvider2</module>
+        <module>SpringMVC-studyJavaDesign</module>
+        <module>SpringMVC-StudyTimeTask</module>
         <module>StudyThread</module>
         <module>StudyAop</module>
         <module>Study-JavaBase</module>
+        <module>StudyIoc</module>
+        <module>Study-Shiro</module>
     </modules>
 </project>
