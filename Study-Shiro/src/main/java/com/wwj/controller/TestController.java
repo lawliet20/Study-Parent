@@ -20,7 +20,8 @@ public class TestController {
     private static final Logger logger = LoggerFactory.getLogger(TestController.class);
 
     @RequestMapping("/test")
-    public void login(User user,HttpServletRequest request,HttpServletResponse response){
+    public void login(User user,HttpServletRequest request,HttpServletResponse response) throws Exception {
         System.out.println("test.......");
+        //throw new Exception("test exception...");
     }
 }
