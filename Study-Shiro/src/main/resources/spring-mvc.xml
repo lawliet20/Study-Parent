@@ -15,10 +15,10 @@
         <context:include-filter type="annotation" expression="org.springframework.web.bind.annotation.ControllerAdvice"/>
     </context:component-scan>
 
-    <aop:config proxy-target-class="true"></aop:config>
-    <bean class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">
-        <property name="securityManager" ref="securityManager"/>
-    </bean>
+    <!--<aop:config proxy-target-class="true"></aop:config>-->
+    <!--<bean class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">-->
+        <!--<property name="securityManager" ref="securityManager"/>-->
+    <!--</bean>-->
 
     <mvc:annotation-driven/>
     <mvc:view-controller path="/" view-name="index"/>
@@ -41,4 +41,7 @@
     <bean class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">
         <property name="securityManager" ref="securityManager"/>
     </bean>
+
+    <!-- 静态资源映射 -->
+    <mvc:resources location="/resources/" mapping="/resources/**"/>
 </beans>

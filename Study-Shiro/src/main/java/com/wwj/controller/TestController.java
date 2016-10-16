@@ -2,6 +2,7 @@ package com.wwj.controller;
 
 import com.wwj.model.User;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
+import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -18,7 +19,6 @@ import javax.servlet.http.HttpServletResponse;
 public class TestController {
     private static final Logger logger = LoggerFactory.getLogger(TestController.class);
 
-    @RequiresPermissions("user:view")
     @RequestMapping("/test")
     public void login(User user,HttpServletRequest request,HttpServletResponse response){
         System.out.println("test.......");

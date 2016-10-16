@@ -1,7 +1,7 @@
 package com.wwj.shiro;
 
 import com.wwj.utils.ShiroSessionUtil;
-import com.wwj.utils.constant.ConstantInfo;
+import com.wwj.utils.constant.Constant;
 import org.apache.shiro.authc.AuthenticationInfo;
 import org.apache.shiro.authc.AuthenticationToken;
 import org.apache.shiro.authc.ExcessiveAttemptsException;
@@ -44,7 +44,7 @@ public class RetryLimitHashedCredentialsMatcher extends HashedCredentialsMatcher
             passwordRetryCache.remove(username);
         }
         else{
-            ShiroSessionUtil.delAttr(ConstantInfo.currentUser);
+            ShiroSessionUtil.delAttr(Constant.currentUser);
         }
         return matches;
     }

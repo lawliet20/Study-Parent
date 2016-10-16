@@ -1,4 +1,4 @@
-package com.wwj.shiro.entity;
+package com.wwj.model;
 
 import java.io.Serializable;
 

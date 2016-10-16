@@ -1,7 +1,8 @@
 package com.wwj.shiro.service;
 
 
-import com.wwj.shiro.entity.UrlFilter;
+
+import com.wwj.model.UrlFilter;
 
 import java.util.List;
 

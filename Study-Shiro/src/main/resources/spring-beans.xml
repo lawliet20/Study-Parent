@@ -20,6 +20,7 @@
     <bean id="permissionDao" class="com.wwj.dao.PermissionDaoImpl" parent="baseDao"/>
     <bean id="roleDao" class="com.wwj.dao.RoleDaoImpl" parent="baseDao"/>
     <bean id="userDao" class="com.wwj.dao.UserDaoImpl" parent="baseDao"/>
+    <bean id="urlFilterDao" class="com.wwj.dao.UrlFilterDaoImpl" parent="baseDao"/>
 
     <!-- Service -->
     <bean id="permissionService" class="com.wwj.service.PermissionServiceImpl">

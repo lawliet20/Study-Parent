@@ -3,11 +3,12 @@ package com.wwj.shiro;
 import com.wwj.model.User;
 import com.wwj.service.UserService;
 import com.wwj.utils.ShiroSessionUtil;
-import com.wwj.utils.constant.ConstantInfo;
+import com.wwj.utils.constant.Constant;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
+import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
 import org.apache.shiro.subject.PrincipalCollection;
 import org.apache.shiro.util.ByteSource;
 
@@ -48,7 +49,7 @@ public class UserRealm extends AuthorizingRealm {
 
         //将当前用户保存到shiro-session中
         //TODO 将敏感信息置空 例如：密码、盐值等
-        ShiroSessionUtil.setAttr(ConstantInfo.currentUser,user);
+        ShiroSessionUtil.setAttr(Constant.currentUser,user);
 
         //交给AuthenticatingRealm使用CredentialsMatcher进行密码匹配，如果觉得人家的不好可以自定义实现
         SimpleAuthenticationInfo authenticationInfo = new SimpleAuthenticationInfo(
@@ -86,6 +87,9 @@ public class UserRealm extends AuthorizingRealm {
     public void clearAllCache() {
         clearAllCachedAuthenticationInfo();
         clearAllCachedAuthorizationInfo();
+
+        ShiroFilterFactoryBean f = new ShiroFilterFactoryBean();
+        //setFilterChainResolver
     }
 
 }

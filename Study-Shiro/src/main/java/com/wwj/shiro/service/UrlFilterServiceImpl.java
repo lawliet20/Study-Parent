@@ -1,11 +1,11 @@
 package com.wwj.shiro.service;
 
-import com.wwj.shiro.dao.UrlFilterDao;
-import com.wwj.shiro.entity.UrlFilter;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.wwj.dao.UrlFilterDao;
+import com.wwj.model.UrlFilter;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
+import javax.annotation.Resource;
 import java.util.List;
 
 /**
@@ -16,11 +16,11 @@ import java.util.List;
 @Service
 public class UrlFilterServiceImpl implements UrlFilterService {
 
-    @Autowired
+    @Resource
     private UrlFilterDao urlFilterDao;
 
-    @Autowired
-    private ShiroFilerChainManager shiroFilerChainManager;
+    @Resource
+    private ShiroFilterChainManager shiroFilerChainManager;
 
     @Override
     public UrlFilter createUrlFilter(UrlFilter urlFilter) {
@@ -28,8 +28,6 @@ public class UrlFilterServiceImpl implements UrlFilterService {
         initFilterChain();
         return urlFilter;
     }
-
-
 
     @Override
     public UrlFilter updateUrlFilter(UrlFilter urlFilter) {
@@ -54,9 +52,19 @@ public class UrlFilterServiceImpl implements UrlFilterService {
         return urlFilterDao.findAll();
     }
 
+    /**
+     * 项目启动时，会从数据库读取数据，初始化权限
+     */
     @PostConstruct
     public void initFilterChain() {
         shiroFilerChainManager.initFilterChains(findAll());
     }
 
+    public void setUrlFilterDao(UrlFilterDao urlFilterDao) {
+        this.urlFilterDao = urlFilterDao;
+    }
+
+    public void setShiroFilerChainManager(ShiroFilterChainManager shiroFilerChainManager) {
+        this.shiroFilerChainManager = shiroFilerChainManager;
+    }
 }
