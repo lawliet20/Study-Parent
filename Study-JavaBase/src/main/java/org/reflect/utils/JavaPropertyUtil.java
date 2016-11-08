@@ -60,9 +60,6 @@ public class JavaPropertyUtil {
     }
 
     public static void main(String[] args) {
-        StrUtil strUtil = new StrUtil();
-        System.out.println(strUtil.love);
-        setProperty(strUtil,"love","w");
-        System.out.println(strUtil.love);
+
     }
 }

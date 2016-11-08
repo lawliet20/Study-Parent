@@ -33,6 +33,7 @@
         <property name="suffix" value=".jsp"/>
     </bean>
 
+    <mvc:default-servlet-handler/>
     <!-- 静态资源映射 -->
     <mvc:resources location="/resources/" mapping="/resources/**"/>
 

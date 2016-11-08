@@ -1,8 +1,6 @@
 package com.wwj.shiro.filter;
 
 import com.wwj.service.UserService;
-import com.wwj.utils.constant.Constant;
-import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.web.filter.PathMatchingFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 

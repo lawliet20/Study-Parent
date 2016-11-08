@@ -61,4 +61,11 @@ public interface UserService {
      */
     public Set<String> findPermissions(String username);
 
+    /**
+     * 根据用户角色查询权限
+     * @param roles
+     * @return
+     */
+    public Set<String> findPermissions(Set<String> roles);
+
 }

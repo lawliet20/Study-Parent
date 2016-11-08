@@ -2,12 +2,9 @@ package com.wwj.dao;
 
 
 import com.wwj.model.UrlFilter;
-import com.wwj.model.User;
-import org.apache.shiro.SecurityUtils;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.support.JdbcDaoSupport;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**

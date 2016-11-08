@@ -1,9 +1,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ include file="/WEB-INF/common/common.jspf"%>
+<script type="text/javascript" src="${BASE_PATH}/resources/jquery/jquery-3.0.0.js"></script>
 <html>
-<c:set var="BASE" value="${pageContext.request.contextPath}" ></c:set>
-<script type="text/javascript" src="${BASE}/resources/jquery/jquery-3.0.0.js"></script>
+
 <head>
     <title>登录成功页面</title>
     <script type="text/javascript">
@@ -23,7 +22,7 @@
         }
 
         function formSubmit(){
-            $("#urlPerForm").attr("action","${BASE}/urlFilter/update");
+            $("#urlPerForm").attr("action","${BASE_PATH}/urlFilter/update");
             $("#urlPerForm").submit();
         }
 

@@ -39,6 +39,12 @@
             <artifactId>commons-collections4</artifactId>
             <version>4.0</version>
         </dependency>
+        <!--JACKSON json工具-->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.4.4</version>
+        </dependency>
 
         <dependency>
             <groupId>commons-logging</groupId>
@@ -81,6 +87,7 @@
             <version>1.2.2</version>
         </dependency>
 
+        <!--数据库相关jar-->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
@@ -92,6 +99,7 @@
             <version>0.2.23</version>
         </dependency>
 
+        <!--servlet相关-->
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>

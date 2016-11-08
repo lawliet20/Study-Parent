@@ -10,5 +10,19 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>Study-JavaBase</artifactId>
 
+    <dependencies>
+        <!--工具类 apache commons lang-->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.3.2</version>
+        </dependency>
+        <!--工具类 apache commons collections-->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-collections4</artifactId>
+            <version>4.0</version>
+        </dependency>
+    </dependencies>
 
 </project>

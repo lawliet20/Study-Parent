@@ -5,5 +5,9 @@ package com.wwj.utils.constant;
  */
 public class Constant {
 
-    public static final String currentUser = "user";
+    public static final String CURRENT_USER = "user";
+    public static final String USER_PERMISSION = "userPermission";
+    public static final String USER_ROLES = "userRoles";
+    public static final String BASE_PATH = "contextPath";
+
 }

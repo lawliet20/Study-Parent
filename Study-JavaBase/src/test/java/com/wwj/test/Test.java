@@ -1,23 +1,39 @@
 package com.wwj.test;
 
-import java.util.StringTokenizer;
+import com.wwj.enums.Enum;
 
 /**
  * Created by sherry on 16/9/4.
  */
 public class Test {
 
+    public static Enum e = Enum.COOL;
+
     public static void main(String[] args) {
-        String str = "http://www.baidu.com hello,world name:wwj";
-        StringTokenizer st = new StringTokenizer(str, ",:");
-        String[] strs = str.split(":|,|//");
-//        while (st.hasMoreElements()) {
-//
-//            System.out.println("token : " + st.nextToken());
-//
-//        }
-        for(int i=0;i<strs.length;i++){
-            System.out.println("### "+strs[i]);
+        while (true) {
+
+            test1();
         }
     }
+
+    public static void test1() {
+        switch (e) {
+            case COOL:
+                System.out.println(e.getName());
+                e = Enum.COMFORT;
+                break;
+            case COMFORT:
+                System.out.println(e.getName());
+                e = Enum.HOT;
+                break;
+            case HOT:
+                System.out.println(e.getName());
+                break;
+            default:
+                e = Enum.COOL;
+                break;
+        }
+    }
+
+
 }

@@ -26,4 +26,6 @@ public interface UserDao {
     Set<String> findRoles(String username);
 
     Set<String> findPermissions(String username);
+
+    public Set<String> findPermissions(Set<String> roles);
 }

@@ -1,23 +1,32 @@
-<!DOCTYPE html>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ include file="/WEB-INF/common/common.jspf"%>
 <html>
 <head>
-    <meta charset="utf-8">
-    <title>Bootstrap 实例 - 垂直的胶囊式导航菜单</title>
-    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>菜单栏</title>
+    <meta charset="UTF-8">
+    
+
+    <script TYPE="TEXT/JAVASCRIPT">
+        $(function () {
+            //alert("$(BASE_PATH)");
+        })
+    </script>
 </head>
 <body>
-​
-<p>垂直的胶囊式导航菜单</p>
-<ul class="nav nav-pills nav-stacked">
-    <li class="active"><a href="#">Home</a></li>
-    <li><a href="#">SVN</a></li>
-    <li><a href="#">iOS</a></li>
-    <li><a href="#">VB.Net</a></li>
-    <li><a href="#">Java</a></li>
-    <li><a href="#">PHP</a></li>
+<ul id="tt" class="easyui-tree">
+    <li>
+        <span>菜单栏</span>
+        <ul>
+            <c:forEach var="menu" items="${menus}">
+                <li>
+                    <span>我的菜单</span>
+                    <ul>
+                        <li><span><a href="${BASE_PATH}/${menu.url}">${menu.name}</a></span></li>
+                    </ul>
+                </li>
+            </c:forEach>
+        </ul>
+    </li>
 </ul>
-​
 </body>
 </html>

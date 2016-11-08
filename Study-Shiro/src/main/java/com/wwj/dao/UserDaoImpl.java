@@ -1,17 +1,18 @@
 package com.wwj.dao;
 
 import com.wwj.model.User;
+import com.wwj.utils.CastUtil;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.PreparedStatementCreator;
+import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
+import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.core.support.JdbcDaoSupport;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 /**
  * <p>User: Zhang Kaitao
@@ -110,8 +111,18 @@ public class UserDaoImpl extends JdbcDaoSupport implements UserDao {
 
     @Override
     public Set<String> findPermissions(String username) {
-        //TODO 此处可以优化，比如查询到role后，一起获取roleId，然后直接根据roleId获取即可
         String sql = "select permission from sys_users u, sys_roles r, sys_permissions p, sys_users_roles ur, sys_roles_permissions rp where u.username=? and u.id=ur.user_id and r.id=ur.role_id and r.id=rp.role_id and p.id=rp.permission_id";
         return new HashSet(getJdbcTemplate().queryForList(sql, String.class, username));
     }
+
+    @Override
+    public Set<String> findPermissions(Set<String> roles){
+        String sql = "select permission from sys_permissions p,sys_roles r,sys_roles_permissions rp " +
+                "where r.id in(:roleIds) and rp.role_id=r.id and rp.permission_id=p.id";
+        NamedParameterJdbcTemplate namedParameterJdbcTemplate = new NamedParameterJdbcTemplate(getJdbcTemplate());
+        MapSqlParameterSource parameters = new MapSqlParameterSource();
+        parameters.addValue("roleIds",new ArrayList<>(roles));
+        return new HashSet(namedParameterJdbcTemplate.queryForList(sql,parameters,String.class));
+    }
+
 }

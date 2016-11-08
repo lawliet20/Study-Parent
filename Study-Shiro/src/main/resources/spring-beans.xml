@@ -21,25 +21,26 @@
     <bean id="roleDao" class="com.wwj.dao.RoleDaoImpl" parent="baseDao"/>
     <bean id="userDao" class="com.wwj.dao.UserDaoImpl" parent="baseDao"/>
     <bean id="urlFilterDao" class="com.wwj.dao.UrlFilterDaoImpl" parent="baseDao"/>
+    <bean id="resourceDao" class="com.wwj.dao.ResourceDaoImpl" parent="baseDao"/>
 
     <!-- Service -->
-    <bean id="permissionService" class="com.wwj.service.PermissionServiceImpl">
-        <property name="permissionDao" ref="permissionDao"/>
-    </bean>
+    <!--<bean id="permissionService" class="com.wwj.service.PermissionServiceImpl">-->
+        <!--<property name="permissionDao" ref="permissionDao"/>-->
+    <!--</bean>-->
 
-    <bean id="roleService" class="com.wwj.service.RoleServiceImpl">
-        <property name="roleDao" ref="roleDao"/>
-    </bean>
+    <!--<bean id="roleService" class="com.wwj.service.RoleServiceImpl">-->
+        <!--<property name="roleDao" ref="roleDao"/>-->
+    <!--</bean>-->
 
-    <bean id="passwordHelper" class="com.wwj.service.PasswordHelper">
-        <property name="algorithmName" value="md5"/>
-        <property name="hashIterations" value="2"/>
-    </bean>
+    <!--<bean id="passwordHelper" class="com.wwj.service.PasswordHelper">-->
+        <!--<property name="algorithmName" value="md5"/>-->
+        <!--<property name="hashIterations" value="2"/>-->
+    <!--</bean>-->
 
-    <bean id="userService" class="com.wwj.service.UserServiceImpl">
-        <property name="userDao" ref="userDao"/>
-        <property name="passwordHelper" ref="passwordHelper"/>
-    </bean>
+    <!--<bean id="userService" class="com.wwj.service.UserServiceImpl">-->
+        <!--<property name="userDao" ref="userDao"/>-->
+        <!--<property name="passwordHelper" ref="passwordHelper"/>-->
+    <!--</bean>-->
 
 
 </beans>

@@ -2,6 +2,9 @@ package com.wwj.utils;
 
 import org.apache.commons.lang3.StringUtils;
 
+import java.util.Iterator;
+import java.util.Set;
+
 /**
  * Created by sherry on 16/9/21.
  */
@@ -80,4 +83,28 @@ public class CastUtil {
         }
         return value;
     }
+
+    /**
+     * 转成String类型并用指定符号分隔,默认逗号分隔
+     */
+    public static String castStrWithSpilt(Set<String> array){
+        return castStrWithSpilt(array,",");
+    }
+
+    /**
+     * 转成String类型并用指定符号分隔
+     */
+    public static String castStrWithSpilt(Set<String> array,String split){
+        if(null == array){
+            return "";
+        }
+        StringBuffer sb = new StringBuffer();
+        Iterator iterator = array.iterator();
+        while(iterator.hasNext()){
+            sb.append(iterator.next()+split);
+        }
+        String res = sb.toString();
+        return res.substring(0,res.length()-1);
+    }
+
 }

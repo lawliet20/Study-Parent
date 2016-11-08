@@ -4,6 +4,8 @@ package com.wwj.service;
 import com.wwj.dao.RoleDao;
 import com.wwj.model.Role;
 
+import javax.annotation.Resource;
+
 /**
  * <p>User: Zhang Kaitao
  * <p>Date: 14-1-28
@@ -11,6 +13,7 @@ import com.wwj.model.Role;
  */
 public class RoleServiceImpl implements RoleService {
 
+    @Resource
     private RoleDao roleDao;
 
     public RoleDao getRoleDao() {
