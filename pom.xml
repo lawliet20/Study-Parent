@@ -162,5 +162,6 @@
         <module>Study-JavaBase</module>
         <module>StudyIoc</module>
         <module>Study-Shiro</module>
+        <module>Study-Zookeeper</module>
     </modules>
 </project>

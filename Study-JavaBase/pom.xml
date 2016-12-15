@@ -11,6 +11,12 @@
     <artifactId>Study-JavaBase</artifactId>
 
     <dependencies>
+        <!--SLFJ 提供日志功能-->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.7.7</version>
+        </dependency>
         <!--工具类 apache commons lang-->
         <dependency>
             <groupId>org.apache.commons</groupId>
@@ -23,6 +29,20 @@
             <artifactId>commons-collections4</artifactId>
             <version>4.0</version>
         </dependency>
+        <!--xml工具类-->
+        <dependency>
+            <groupId>com.thoughtworks.xstream</groupId>
+            <artifactId>xstream</artifactId>
+            <version>1.4.9</version>
+        </dependency>
+        <!--cglib第三方-->
+        <dependency>
+            <groupId>cglib</groupId>
+            <artifactId>cglib</artifactId>
+            <version>3.1</version>
+        </dependency>
+
+
     </dependencies>
 
 </project>
