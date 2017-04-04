@@ -11,6 +11,9 @@ import org.apache.curator.retry.ExponentialBackoffRetry;
 import org.apache.zookeeper.WatchedEvent;
 import org.apache.zookeeper.Watcher;
 import org.apache.zookeeper.data.Stat;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -22,27 +25,25 @@ import java.util.concurrent.Executors;
 public class ListenerTest {
 
     private static final String PATH = "/crud";
-
     private static CuratorFramework client;
 
-    public static void main(String[] args) throws Exception {
-        ListenerTest zk = new ListenerTest();
-        zk.initConnection();
-
-        zk.setWatcher();
-        //zk.setListener2();
-        //zk.setChildrenListener();
-        //zk.setNodeListener();
-        //zk.setTreeListener();
-        //zk.setCuratorWatcher();
+    @Before
+    public void before(){
+        initConnection();
     }
 
+    @After
+    public void flushRes(){
+        if(null != client){
+            client.close();
+        }
+    }
 
     /**
      * 一次性监听
      */
+    @Test
     public void setWatcher() throws Exception {
-        client.start();
         //注册观察者，当节点变动的时候触发
         byte[] data = client.getData().usingWatcher(new Watcher() {
             @Override
@@ -50,17 +51,18 @@ public class ListenerTest {
                 System.out.println("监控：" + watchedEvent);
             }
         }).forPath(PATH);
+        client.create().creatingParentsIfNeeded().forPath("/test2","hh".getBytes());
         client.setData().forPath("/test2", "keke".getBytes());
         client.setData().forPath("/test2", "keke2".getBytes());
         client.setData().forPath("/test2", "keke3".getBytes());
         System.out.println(PATH + "节点数据:" + new String(data));
-        client.close();
     }
 
     /**
      * 一次性监听
      * getdata的时候触发
      */
+    @Test
     public void setCuratorWatcher() throws Exception {
         CuratorWatcher watcher = new CuratorWatcher() {
             @Override
@@ -76,18 +78,16 @@ public class ListenerTest {
             }
         };
 
-        client.start();
         Stat stat = new Stat();
         byte[] data = client.getData().storingStatIn(stat).usingWatcher(watcher).forPath(PATH);
         System.out.println("version:"+stat.getVersion());
-        System.out.println("data:"+new String(data));
-
-        client.close();
+        System.out.println("data:" + new String(data));
     }
 
     /**
      * 一次性的监听操作,使用后就无法在继续监听了
      */
+    @Test
     public void setListener2() throws Exception {
         //对节点的增、删、改、查都会触发、且只会触发一次。同时在连接关闭时也会触发一次。
         CuratorListener curatorListener = new CuratorListener() {
@@ -102,17 +102,16 @@ public class ListenerTest {
                 }
             }
         };
-        client.start();
         client.getCuratorListenable().addListener(curatorListener);
 
         client.create().forPath("/ddd", "ddd".getBytes());
-        Thread.sleep(1000);
+        Thread.sleep(3000);
         client.getData().forPath("/ddd");
-        Thread.sleep(1000);
+        Thread.sleep(3000);
         client.setData().forPath("/ddd", "fff".getBytes());
-        Thread.sleep(1000);
+        Thread.sleep(3000);
         client.delete().forPath("/ddd");
-        Thread.sleep(1000);
+        Thread.sleep(3000);
     }
 
     /**
@@ -123,10 +122,10 @@ public class ListenerTest {
      * <p/>
      * 注意：这里连续的增删改需要有间隔、否则可能不能保证每次监听都被触发（具体原因不详）
      */
+    @Test
     public void setChildrenListener() throws Exception {
 
         ExecutorService pool = Executors.newCachedThreadPool();
-        client.start();
         final PathChildrenCache cache = new PathChildrenCache(client, PATH, true);
         cache.start(PathChildrenCache.StartMode.POST_INITIALIZED_EVENT);
 
@@ -154,29 +153,27 @@ public class ListenerTest {
         cache.getListenable().addListener(childrenListener, pool);
 
         client.create().forPath(PATH + "/test01", "01".getBytes());
-        Thread.sleep(10);
+        Thread.sleep(1000);
         client.create().forPath(PATH + "/test02", "02".getBytes());
-        Thread.sleep(10);
+        Thread.sleep(1000);
         client.setData().forPath(PATH + "/test01", "01_V2".getBytes());
-        Thread.sleep(10);
+        Thread.sleep(1000);
         client.delete().forPath(PATH + "/test01");
-        Thread.sleep(10);
+        Thread.sleep(1000);
         client.delete().forPath(PATH + "/test02");
-        Thread.sleep(10);
+        Thread.sleep(1000);
 
         cache.close();
-        client.close();
-
     }
 
     /**
      * 监控本节点的变化情况
      * 监听本节点的变化  节点可以进行修改操作、删除节点后会再次创建(空节点)
      */
+    @Test
     public void setNodeListener() throws Exception {
         //在注册监听器的时候，如果传入此参数，当事件触发时，逻辑由线程池处理
         ExecutorService pool = Executors.newCachedThreadPool();
-        client.start();
         //设置节点的cache,这是默认为false，如果为true则事件不触发
         final NodeCache nodeCache = new NodeCache(client, PATH);
         nodeCache.start();
@@ -192,10 +189,9 @@ public class ListenerTest {
                 }
             }
         };
-
         nodeCache.getListenable().addListener(listener, pool);
 
-        nodeCache.getListenable().addListener(listener);
+        System.out.println(PATH+"节点是否存在："+client.checkExists().forPath(PATH));
         client.create().creatingParentsIfNeeded().forPath(PATH, "01".getBytes());
         Thread.sleep(10);
         client.setData().forPath(PATH, "02".getBytes());
@@ -203,15 +199,14 @@ public class ListenerTest {
         client.delete().deletingChildrenIfNeeded().forPath(PATH);
         Thread.sleep(1000 * 2);
         nodeCache.close();
-        client.close();
         System.out.println("OK!");
     }
 
     /**
      * 可以监控整个树上的所有节点，类似上面两种cache的组合。
      */
+    @Test
     public void setTreeListener() throws Exception {
-        client.start();
         TreeCache cache = new TreeCache(client, PATH);
         cache.start();
         TreeCacheListener listener = new TreeCacheListener() {
@@ -245,7 +240,6 @@ public class ListenerTest {
         client.delete().deletingChildrenIfNeeded().forPath(PATH);
         Thread.sleep(1000 * 2);
         cache.close();
-        client.close();
         System.out.println("OK!");
     }
 
@@ -263,13 +257,7 @@ public class ListenerTest {
 //                .namespace("zkListener")
                 .build();
         this.client = client;
-    }
-
-    /**
-     * 关闭连接
-     */
-    public void close() {
-        client.close();
+        client.start();
     }
 
 }

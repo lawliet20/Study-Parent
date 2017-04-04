@@ -3,16 +3,10 @@ package com.study.quartzDemo;
 //简单的任务管理类
 //QuartzManager.java
 
-import java.text.ParseException;
-
-import org.quartz.CronTrigger;
-import org.quartz.Job;
-import org.quartz.JobDetail;
-import org.quartz.Scheduler;
-import org.quartz.SchedulerException;
-import org.quartz.SchedulerFactory;
-import org.quartz.Trigger;
+import org.quartz.*;
 import org.quartz.impl.StdSchedulerFactory;
+
+import java.text.ParseException;
 
 /** */
 

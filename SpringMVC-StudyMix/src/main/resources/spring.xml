@@ -7,23 +7,29 @@ http://www.springframework.org/schema/context
 http://www.springframework.org/schema/context/spring-context-3.0.xsd
 ">
 
-    <!-- 引入属性文件 -->
+    <!-- 引入属性文件(这里可以在maven里做配置，做成动态的) -->
     <context:property-placeholder location="classpath:config.properties"/>
+
+    <!--spring security-->
+    <import resource="spring-security.xml"/>
 
     <!-- 自动扫描(自动注入) -->
     <context:component-scan base-package="com.spring.study.service,com.spring.study.dao"/>
 
+    <!-- 引入hibernate -->
+    <import resource="spring-hibernate.xml"/>
+
     <!-- 引入ehcache缓存 -->
     <import resource="spring-ehcache.xml"/>
 
-    <!-- 引入redis缓存 -->
-    <!-- <import resource="spring-redis.xml"/> -->
+    <!--&lt;!&ndash; 引入redis缓存 &ndash;&gt;-->
+    <!--&lt;!&ndash; <import resource="spring-redis.xml"/> &ndash;&gt;-->
 
-    <!-- 引入dubbo -->
-    <import resource="spring-dubboCustomer.xml"/>
+    <!--&lt;!&ndash; 引入dubbo &ndash;&gt;-->
+    <!--<import resource="spring-dubboCustomer.xml"/>-->
 
-    <!-- 统一异常处理配置 -->
-    <bean id="exceptionHandler" class="com.spring.study.exception.MyExceptionHandler"/>
+    <!--&lt;!&ndash; 统一异常处理配置 &ndash;&gt;-->
+    <!--<bean id="exceptionHandler" class="com.spring.study.exception.MyExceptionHandler"/>-->
 
 
 </beans>

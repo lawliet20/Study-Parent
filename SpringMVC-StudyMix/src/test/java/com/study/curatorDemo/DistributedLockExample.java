@@ -1,13 +1,12 @@
 package com.study.curatorDemo;
 
-import java.util.List;
-
+import com.google.common.collect.Lists;
 import org.apache.curator.framework.CuratorFramework;
 import org.apache.curator.framework.recipes.locks.InterProcessLock;
 import org.apache.curator.framework.recipes.locks.InterProcessReadWriteLock;
 import org.apache.curator.utils.CloseableUtils;
 
-import com.google.common.collect.Lists;
+import java.util.List;
 
 /**
  * 分布式锁实例

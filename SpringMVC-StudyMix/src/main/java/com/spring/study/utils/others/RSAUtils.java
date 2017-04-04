@@ -1,7 +1,7 @@
 package com.spring.study.utils.others;
 
+import javax.crypto.Cipher;
 import java.math.BigInteger;
-import java.security.Key;
 import java.security.KeyFactory;
 import java.security.KeyPair;
 import java.security.KeyPairGenerator;
@@ -11,12 +11,6 @@ import java.security.interfaces.RSAPublicKey;
 import java.security.spec.RSAPrivateKeySpec;
 import java.security.spec.RSAPublicKeySpec;
 import java.util.HashMap;
-import java.util.Random;
-
-import javax.crypto.Cipher;
-
-import sun.misc.BASE64Decoder;
-import sun.misc.BASE64Encoder;
 
 public class RSAUtils {
 

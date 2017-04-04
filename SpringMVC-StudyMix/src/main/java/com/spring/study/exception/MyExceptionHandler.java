@@ -1,13 +1,12 @@
 package com.spring.study.exception;
 
-import java.util.HashMap;
-import java.util.Map;
+import org.springframework.web.servlet.HandlerExceptionResolver;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import org.springframework.web.servlet.HandlerExceptionResolver;
-import org.springframework.web.servlet.ModelAndView;
+import java.util.HashMap;
+import java.util.Map;
 
 public class MyExceptionHandler implements HandlerExceptionResolver {
 
@@ -28,7 +27,7 @@ public class MyExceptionHandler implements HandlerExceptionResolver {
             //return new ModelAndView("error", model);
         }
         System.out.println(ex.getMessage());
-        return new ModelAndView("error", model);
+        return new ModelAndView("err-page/error", model);
     }
 
 }

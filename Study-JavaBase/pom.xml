@@ -11,12 +11,33 @@
     <artifactId>Study-JavaBase</artifactId>
 
     <dependencies>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.9</version>
+            <scope>test</scope>
+        </dependency>
+
         <!--SLFJ 提供日志功能-->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-log4j12</artifactId>
             <version>1.7.7</version>
         </dependency>
+        <!--工具类httpClient-->
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.5.1</version>
+        </dependency>
+        <!--解析html的java工具包-->
+        <dependency>
+            <groupId>org.htmlparser</groupId>
+            <artifactId>htmlparser</artifactId>
+            <version>1.6</version>
+        </dependency>
+
         <!--工具类 apache commons lang-->
         <dependency>
             <groupId>org.apache.commons</groupId>
@@ -34,6 +55,12 @@
             <groupId>com.thoughtworks.xstream</groupId>
             <artifactId>xstream</artifactId>
             <version>1.4.9</version>
+        </dependency>
+        <!--第三方工具包-->
+        <dependency>
+            <groupId>com.xiaoleilu</groupId>
+            <artifactId>hutool</artifactId>
+            <version>2.16.1</version>
         </dependency>
         <!--cglib第三方-->
         <dependency>

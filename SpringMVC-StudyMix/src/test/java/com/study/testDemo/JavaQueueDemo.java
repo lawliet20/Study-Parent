@@ -2,7 +2,6 @@ package com.study.testDemo;
 
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
-import java.util.concurrent.ConcurrentLinkedQueue;
 
 /**
  * 测试java队列

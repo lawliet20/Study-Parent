@@ -1,23 +1,19 @@
 package com.spring.study.controller;
 
-import java.io.Serializable;
-import java.util.List;
+import com.spring.study.exception.BusinessException;
+import com.spring.study.model.User;
+import com.spring.study.service.UserService;
+import com.xiaoleilu.hutool.crypto.SecureUtil;
+import net.sf.ehcache.Cache;
+import net.sf.ehcache.CacheManager;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
-
-import net.sf.ehcache.Cache;
-import net.sf.ehcache.CacheManager;
-import net.sf.ehcache.Element;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-
-import com.spring.study.exception.BusinessException;
-import com.spring.study.model.User;
-import com.spring.study.service.UserService;
+import java.io.Serializable;
+import java.util.List;
 
 @Controller
 @RequestMapping("/user")
@@ -36,9 +32,9 @@ public class UserController {
     @RequestMapping("/saveUser")
     public String saveUser() {
         User user = new User();
-        user.setUserId(new Integer(44));
+        user.setUserId(98);
         user.setUserName("wwj");
-        user.setPassword("123456");
+        user.setPassword(SecureUtil.md5("123456"));
         Serializable s = userService.saveUser(user);
         System.out.println("Serializable:" + s);
         return "index";

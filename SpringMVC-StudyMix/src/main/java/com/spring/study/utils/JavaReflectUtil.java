@@ -1,11 +1,11 @@
 package com.spring.study.utils;
 
+import com.spring.study.model.pageModel.Message;
+
 import java.lang.reflect.Array;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
-
-import com.spring.study.model.pageModel.Message;
 
 /**
  * java反射机制demo

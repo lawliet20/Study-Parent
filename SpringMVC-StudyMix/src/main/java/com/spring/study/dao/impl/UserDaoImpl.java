@@ -1,16 +1,14 @@
 package com.spring.study.dao.impl;
 
-import java.io.Serializable;
-import java.util.List;
-
-import javax.annotation.Resource;
-
+import com.spring.study.dao.UserDao;
+import com.spring.study.model.User;
 import org.hibernate.SQLQuery;
 import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Repository;
 
-import com.spring.study.dao.UserDao;
-import com.spring.study.model.User;
+import javax.annotation.Resource;
+import java.io.Serializable;
+import java.util.List;
 
 @Repository("userDao")
 public class UserDaoImpl implements UserDao {
@@ -24,10 +22,11 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public List<User> queryAllUser() {
-//		SQLQuery sq = sessionFactory.getCurrentSession().createSQLQuery("select * from user where name!=:name");
-//		sq.setParameter("name", "wwj");
-//		List<User> list = sq.addEntity(User.class).list();
-//		return list;
-        return (List<User>) ((SQLQuery) sessionFactory.getCurrentSession().createSQLQuery("select * from user where user_name != :name").setParameter("name", "wwj")).addEntity(User.class).list();
+        return (List<User>) ((SQLQuery) sessionFactory.getCurrentSession().createSQLQuery("select * from user ")).addEntity(User.class).list();
+    }
+
+    @Override
+    public List<User> queryUserByName(String name) {
+       return (List<User>) ((SQLQuery) sessionFactory.getCurrentSession().createSQLQuery("select * from user where user_name = :name").setParameter("name", name)).addEntity(User.class).list();
     }
 }

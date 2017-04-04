@@ -1,13 +1,12 @@
 package com.spring.study.utils;
 
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.JedisPoolConfig;
-import redis.clients.jedis.JedisShardInfo;
+
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 public class JedisUtil {
 

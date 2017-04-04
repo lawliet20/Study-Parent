@@ -1,35 +1,23 @@
 package com.study.test;
 
-import java.io.IOException;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Set;
-import java.util.concurrent.TimeUnit;
-
-import javax.annotation.PostConstruct;
-import javax.annotation.Resource;
-
-import net.sf.ehcache.CacheManager;
-import net.sf.ehcache.Cache;
-import net.sf.ehcache.Element;
-
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.util.StringUtils;
-
-import redis.clients.jedis.Jedis;
-
-import com.alibaba.fastjson.JSON;
 import com.dubbo.model.PageUser;
 import com.dubbo.service.DemoService;
 import com.spring.study.model.User;
 import com.spring.study.service.ExceptionService;
 import com.spring.study.service.UserService;
 import com.spring.study.utils.JedisUtil;
-import com.spring.study.utils.ObjectUtil;
+import net.sf.ehcache.Cache;
+import net.sf.ehcache.CacheManager;
+import net.sf.ehcache.Element;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.util.StringUtils;
+
+import javax.annotation.PostConstruct;
+import javax.annotation.Resource;
+import java.util.List;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 // 类似于extend SpringJUnit4ClassRunner

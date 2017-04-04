@@ -2,39 +2,39 @@ package com.wwj.utils;
 
 import org.apache.commons.collections4.MapUtils;
 
-import java.util.*;
+import java.util.Collection;
+import java.util.Map;
 
 /**
- * 集合工具类
- * Created by sherry on 2016/11/13.
+ * Created by sherry on 16/9/21.
  */
 public class CollectionUtil {
 
     /**
-     * 判断容器是否为空
+     * 判断Collection是否为空
      */
-    public static boolean isEmpty(Collection collection) {
-        return null == collection || collection.isEmpty();
+    public static boolean isEmpty(Collection collection){
+        return collection.isEmpty();
     }
 
     /**
-     * 判断容器不为空
+     * 判断Collection是否非空
      */
-    public static boolean isNotEmpty(Collection collection) {
-        return !isEmpty(collection);
+    public static boolean isNotEmpty(Collection collection){
+        return !collection.isEmpty();
     }
 
     /**
-     * 判断map为空
+     * 判断map是否为空
      */
-    public static boolean isEmpty(Map map) {
-        return null == map || MapUtils.isEmpty(map);
+    public static boolean isEmpty(Map<?,?> map){
+        return MapUtils.isEmpty(map);
     }
 
     /**
-     * 判断map不为空
+     * 判断map是否非空
      */
-    public static boolean isNotEmpty(Map map) {
+    public static boolean isNotEmpty(Map<?,?> map){
         return !isEmpty(map);
     }
 }

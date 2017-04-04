@@ -1,9 +1,9 @@
 package com.spring.study.service;
 
+import com.spring.study.model.User;
+
 import java.io.Serializable;
 import java.util.List;
-
-import com.spring.study.model.User;
 
 public interface UserService {
 

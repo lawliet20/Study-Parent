@@ -1,8 +1,7 @@
 package com.spring.study.utils.others;
 
+import javax.swing.*;
 import java.lang.reflect.Field;
-
-import javax.swing.JLabel;
 
 public class ClassUtils {
 

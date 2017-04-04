@@ -1,13 +1,12 @@
 package com.study.curatorDemo;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.util.List;
-
+import com.google.common.collect.Lists;
 import org.apache.curator.framework.CuratorFramework;
 import org.apache.curator.utils.CloseableUtils;
 
-import com.google.common.collect.Lists;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.List;
 
 /**
  * leader选举

@@ -1,5 +1,7 @@
 package com.javadesgin.study.代理模式.java动态代理;
 
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Proxy;
 
 /**

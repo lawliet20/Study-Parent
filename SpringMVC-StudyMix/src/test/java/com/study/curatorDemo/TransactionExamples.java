@@ -1,11 +1,11 @@
 package com.study.curatorDemo;
 
-import java.util.Collection;
-
 import org.apache.curator.framework.CuratorFramework;
 import org.apache.curator.framework.api.transaction.CuratorTransaction;
 import org.apache.curator.framework.api.transaction.CuratorTransactionResult;
 import org.apache.curator.utils.CloseableUtils;
+
+import java.util.Collection;
 
 /**
  * 事务操作

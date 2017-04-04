@@ -1,10 +1,10 @@
 package com.spring.study.dynamicDataSource;
 
+import org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource;
+
+import javax.sql.DataSource;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
-import javax.sql.DataSource;
-
-import org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource;
 
 /**
  * 动态数据源

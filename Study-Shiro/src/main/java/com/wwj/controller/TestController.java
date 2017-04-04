@@ -1,8 +1,6 @@
 package com.wwj.controller;
 
 import com.wwj.model.User;
-import org.apache.shiro.authz.annotation.RequiresPermissions;
-import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -20,8 +18,20 @@ public class TestController {
     private static final Logger logger = LoggerFactory.getLogger(TestController.class);
 
     @RequestMapping("/test")
-    public void login(User user,HttpServletRequest request,HttpServletResponse response) throws Exception {
+    public void test(User user,HttpServletRequest request,HttpServletResponse response) throws Exception {
         System.out.println("test.......");
+        //throw new Exception("test exception...");
+    }
+
+    @RequestMapping("/test1")
+    public void test1(User user,HttpServletRequest request,HttpServletResponse response) throws Exception {
+        System.out.println("test1.......");
+        //throw new Exception("test exception...");
+    }
+
+    @RequestMapping("/test2")
+    public void tets2(User user,HttpServletRequest request,HttpServletResponse response) throws Exception {
+        System.out.println("test1.......");
         //throw new Exception("test exception...");
     }
 }

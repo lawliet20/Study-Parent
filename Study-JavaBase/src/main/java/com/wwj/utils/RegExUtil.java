@@ -1,5 +1,6 @@
 package com.wwj.utils;
 
+import java.util.HashMap;
 import java.util.regex.Pattern;
 
 /**
@@ -8,13 +9,7 @@ import java.util.regex.Pattern;
  *
  * @since 1.0
  */
-public class RegExUtil {
-
-    public static void main(String[] args) {
-        System.out.println(time("23:59:59"));
-
-
-    }
+public class RegexUtil {
 
     /**
      * 12小时制正则
@@ -62,5 +57,12 @@ public class RegExUtil {
         Pattern pattern = Pattern.compile(regex);
         boolean res = pattern.matcher(str).matches();
         return res;
+    }
+
+    public static void main(String[] args) {
+        String regex = "[^\\\\u00-\\\\uFF a-z A-Z ]{1,}";
+        String str = "水电费水电费";
+        System.out.println(parse(regex,str));
+        new HashMap<>();
     }
 }

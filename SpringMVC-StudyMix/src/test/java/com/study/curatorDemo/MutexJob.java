@@ -1,9 +1,9 @@
 package com.study.curatorDemo;
 
+import org.apache.curator.framework.recipes.locks.InterProcessLock;
+
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
-
-import org.apache.curator.framework.recipes.locks.InterProcessLock;
 
 /**
  * 互斥任务

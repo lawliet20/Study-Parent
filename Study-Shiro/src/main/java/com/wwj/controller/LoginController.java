@@ -1,7 +1,8 @@
 package com.wwj.controller;
 
-import com.wwj.model.UrlFilter;
+import com.wwj.controller.base.BaseController;
 import com.wwj.model.User;
+import com.wwj.service.UserService;
 import com.wwj.utils.ShiroSessionUtil;
 import com.wwj.utils.constant.Constant;
 import org.apache.shiro.SecurityUtils;
@@ -18,13 +19,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.List;
+import java.util.Set;
 
 /**
  * Created by sherry on 16/10/8.
  */
 @Controller("loginController")
-public class LoginController {
+public class LoginController extends BaseController{
     private static final Logger logger = LoggerFactory.getLogger(LoginController.class);
 
     @RequestMapping("/login")
@@ -35,12 +36,8 @@ public class LoginController {
         //token.setRememberMe(true);
         try {
             currentUser.login(token);
-            // 保存用户信息到http-session
-            User userInfo = (User) ShiroSessionUtil.getAttr(Constant.currentUser);
-            request.getSession().setAttribute(Constant.currentUser, userInfo);
-            //List<UrlFilter> perList = urlFilterService.findAll();
-            //request.setAttribute("perList", perList);
-            //SecurityUtils.getSubject().getSession().setAttribute("perList", perList);
+            //登录成功后： 保存用户信息到session
+            saveUserInfoInSession(request);
         } catch (UnknownAccountException e) {
             e.printStackTrace();
             logger.info("用户名无效");
@@ -56,4 +53,5 @@ public class LoginController {
         }
         return "success";
     }
+
 }

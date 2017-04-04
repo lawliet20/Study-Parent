@@ -4,11 +4,7 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.ParsePosition;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
-import java.util.Map;
-import java.util.StringTokenizer;
+import java.util.*;
 
 public class DateUtils {
     // 用来全局控制 上一周，本周，下一周的周数变化

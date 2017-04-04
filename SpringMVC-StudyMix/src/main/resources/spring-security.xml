@@ -1,0 +1,115 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:security="http://www.springframework.org/schema/security"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+          http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+          http://www.springframework.org/schema/security
+          http://www.springframework.org/schema/security/spring-security-3.2.xsd">
+
+    <!--参考链接： http://wiki.jikexueyuan.com/project/spring-security/authenticationProvider.html-->
+
+
+    <!--需要进行权限控制的url配置-->
+    <security:http auto-config="true" create-session="always" access-denied-page="/err-page/403.jsp"
+                   disable-url-rewriting="true">
+        <!--<security:intercept-url pattern="/**" access="ROLE_USER,ROLE_ADMIN,ROLE_STATIC"/>-->
+        <!--静态资源和首页不需要权限控制(这里index.jsp后面要加"/"否则不生效)-->
+        <security:intercept-url pattern="/index.jsp/" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
+        <security:intercept-url pattern="/resources/**" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
+        <!--配置登陆页-->
+        <!--<security:form-login login-page="login.jsp" "-->
+        <!--security默认表单提交Action路径-->
+        <!--login-processing-url="/j_spring_security_check"-->
+        <!--authentication-failure-url="login.jsp?err=true"-->
+        <!--登录成功后跳转页面-->
+        <!--default-target-url="index.jsp" always-use-default-target="true"-->
+        <!--登录成功后处理类-->
+        <!--authentication-success-handler-ref="authenticationSuccess"-->
+        <!--登录失败后处理类-->
+        <!--authentication-failure-handler-ref="exceptionMappingAuthenticationFailureHandler"/>-->
+        <!--&lt;!&ndash;配置登出页面&ndash;&gt;-->
+        <!--<security:logout invalidate-session="true" logout-url="/j_spring_security_logout"-->
+                         <!--success-handler-ref="logoutSuccessHandler"/>-->
+        <!-- 会话管理，设置最多登录异常，error-if-maximum-exceeded = false为第二次登录就会使前一个登录失效 -->
+        <!--<security:session-management invalid-session-url="/login.jsp?expired=true">-->
+        <!--<security:concurrency-control max-sessions="1" error-if-maximum-exceeded="false"-->
+        <!--expired-url="/login.jsp?expired=true"/>-->
+        <!--</security:session-management>-->
+        <!-- 添加自定义的过滤器 放在FILTER_SECURITY_INTERCEPTOR之前有效 -->
+        <security:custom-filter ref="customFilterSecurityInterceptor" before="FILTER_SECURITY_INTERCEPTOR"/>
+        <security:anonymous enabled="false"/>
+    </security:http>
+
+    <!--配置用户信息提供者-->
+    <security:authentication-manager alias="authenticationManager">
+        <security:authentication-provider user-service-ref="myDetailsService">
+            <!--<security:password-encoder hash="md5" base64="true">-->
+            <!--<security:salt-source user-property="salt" />-->
+            <!--</security:password-encoder>-->
+        </security:authentication-provider>
+    </security:authentication-manager>
+
+    <!-- 登陆成功跳转 -->
+    <bean id="authenticationSuccess" class="com.spring.study.security.AuthenticationSuccessHandler">
+        <property name="defaultTargetUrl" value="/index"/>
+    </bean>
+
+    <!-- 注销成功 -->
+    <bean id="logoutSuccessHandler" class="com.spring.study.security.CustomLogoutSuccessHandler">
+        <property name="defaultTargetUrl" value="/login.jsp"/>
+    </bean>
+
+    <bean id="exceptionMappingAuthenticationFailureHandler"
+          class="org.springframework.security.web.authentication.ExceptionMappingAuthenticationFailureHandler">
+        <property name="exceptionMappings">
+            <props>
+                <prop key="org.springframework.security.authentication.DisabledException">/login.jsp?role=false</prop>
+                <prop key="org.springframework.security.authentication.BadCredentialsException">/login.jsp?error=true
+                </prop>
+                <prop key="org.springframework.security.authentication.LockedException">/login.jsp?locked=true</prop>
+            </props>
+        </property>
+    </bean>
+
+    <!--自定义过滤器-->
+    <bean id="customFilterSecurityInterceptor"
+          class="com.spring.study.security.filter.CustomFilterSecurityInterceptor"/>
+    <!--资源数据定义器-->
+    <bean id="customFilterInvocationSecurityMetadataSource"
+          class="com.spring.study.security.service.CustomFilterInvocationSecurityMetadataSource"/>
+    <!--访问决策器-->
+    <bean id="customAccessDecisionManager" class="com.spring.study.security.service.CustomAccessDecisionManager"/>
+
+    <!--<bean id="switchUserProcessingFilter" class="org.springframework.security.web.authentication.switchuser.SwitchUserFilter">-->
+    <!--<property name="userDetailsService" ref="myDetailsService" />-->
+    <!--<property name="switchUserUrl" value="/j_spring_security_switch_user" />-->
+    <!--<property name="exitUserUrl" value="/j_spring_security_exit_user" />-->
+    <!--<property name="targetUrl" value="/index" />-->
+    <!--</bean>-->
+
+    <!--自定义实现userDetailService-->
+    <bean id="myDetailsService" class="com.spring.study.security.service.UserDetailsServiceImpl"/>
+
+    <!--&lt;!&ndash;security自带userDetailService&ndash;&gt;-->
+    <!--<bean id="userDetailsService" class="org.springframework.security.core.userdetails.jdbc.JdbcDaoImpl">-->
+    <!--<property name="dataSource" ref="dataSource"/>-->
+    <!--</bean>-->
+
+    <!--<security:authentication-manager>-->
+    <!--<security:authentication-provider>-->
+    <!--<security:jdbc-user-service data-source-ref="dataSource" role-prefix="none"-->
+    <!--</security:authentication-provider>-->
+    <!--</security:authentication-manager>-->
+
+    <!--验证基于写死的用户名和密码-->
+    <!--<security:authentication-manager>-->
+    <!--<security:authentication-provider>-->
+    <!--<security:user-service>-->
+    <!--<security:user name="user" password="user" authorities="ROLE_USER"/>-->
+    <!--<security:user name="admin" password="admin" authorities="ROLE_USER, ROLE_ADMIN"/>-->
+    <!--</security:user-service>-->
+    <!--</security:authentication-provider>-->
+    <!--</security:authentication-manager>-->
+
+
+</beans>
