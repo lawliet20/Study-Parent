@@ -163,5 +163,9 @@
         <module>StudyIoc</module>
         <module>Study-Shiro</module>
         <module>Study-Zookeeper</module>
+        <module>Study-Redis</module>
+        <module>Study-Spider</module>
+        <module>Study-SpringSecurity</module>
+        <module>StudySpringBoot</module>
     </modules>
 </project>

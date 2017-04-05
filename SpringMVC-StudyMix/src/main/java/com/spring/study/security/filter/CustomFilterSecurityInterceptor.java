@@ -21,21 +21,18 @@ public class CustomFilterSecurityInterceptor extends
         AbstractSecurityInterceptor implements Filter {
 
     // 注入资源数据定义器
-    @Resource
-    @Qualifier("customFilterInvocationSecurityMetadataSource")
+    @Resource(name="customFilterInvocationSecurityMetadataSource")
     private FilterInvocationSecurityMetadataSource securityMetadataSource;
 
     // 注入访问决策器
-    @Resource
-    @Qualifier("customAccessDecisionManager")
+    @Resource(name="customAccessDecisionManager")
     @Override
     public void setAccessDecisionManager(AccessDecisionManager accessDecisionManager) {
         super.setAccessDecisionManager(accessDecisionManager);
     }
 
     // 注入认证管理器
-    @Resource
-    @Qualifier("authenticationManager")
+    @Resource(name="authenticationManager")
     @Override
     public void setAuthenticationManager(AuthenticationManager newManager) {
         super.setAuthenticationManager(newManager);

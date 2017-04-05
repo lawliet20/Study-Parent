@@ -6,16 +6,16 @@
           http://www.springframework.org/schema/security
           http://www.springframework.org/schema/security/spring-security-3.2.xsd">
 
+    <!--############此配置文件也可以不写，通过java类注解的形式实现。参考：http://blog.csdn.net/buyaore_wo/article/details/48680981###################-->
     <!--参考链接： http://wiki.jikexueyuan.com/project/spring-security/authenticationProvider.html-->
-
 
     <!--需要进行权限控制的url配置-->
     <security:http auto-config="true" create-session="always" access-denied-page="/err-page/403.jsp"
                    disable-url-rewriting="true">
-        <!--<security:intercept-url pattern="/**" access="ROLE_USER,ROLE_ADMIN,ROLE_STATIC"/>-->
+        <security:intercept-url pattern="/**" access="ROLE_USER,ROLE_ADMIN,ROLE_STATIC"/>
         <!--静态资源和首页不需要权限控制(这里index.jsp后面要加"/"否则不生效)-->
-        <security:intercept-url pattern="/index.jsp/" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
-        <security:intercept-url pattern="/resources/**" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
+        <!--<security:intercept-url pattern="/index.jsp/" access="IS_AUTHENTICATED_ANONYMOUSLY"/>-->
+        <!--<security:intercept-url pattern="/resources/**" access="IS_AUTHENTICATED_ANONYMOUSLY"/>-->
         <!--配置登陆页-->
         <!--<security:form-login login-page="login.jsp" "-->
         <!--security默认表单提交Action路径-->
@@ -29,7 +29,7 @@
         <!--authentication-failure-handler-ref="exceptionMappingAuthenticationFailureHandler"/>-->
         <!--&lt;!&ndash;配置登出页面&ndash;&gt;-->
         <!--<security:logout invalidate-session="true" logout-url="/j_spring_security_logout"-->
-                         <!--success-handler-ref="logoutSuccessHandler"/>-->
+        <!--success-handler-ref="logoutSuccessHandler"/>-->
         <!-- 会话管理，设置最多登录异常，error-if-maximum-exceeded = false为第二次登录就会使前一个登录失效 -->
         <!--<security:session-management invalid-session-url="/login.jsp?expired=true">-->
         <!--<security:concurrency-control max-sessions="1" error-if-maximum-exceeded="false"-->

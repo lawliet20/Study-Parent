@@ -1,0 +1,2 @@
+此package是注解形式实现spring-security.xml的功能。
+        此package下注解打开后，spring-security.xml将不需要再被引入。

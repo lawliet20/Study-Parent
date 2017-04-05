@@ -8,7 +8,7 @@
         </element>
       </element>
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/SpringMVC-dubboService/target/MANIFEST.MF" />
+        <element id="file-copy" path="$PROJECT_DIR$/SpringMVC-dubboService/target/SpingMVC_dubboService-0.0.1-SNAPSHOT/META-INF/MANIFEST.MF" />
       </element>
       <element id="javaee-facet-resources" facet="SpingMVC_dubboService/web/Web" />
     </root>
