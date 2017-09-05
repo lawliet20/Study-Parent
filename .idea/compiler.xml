@@ -1,53 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-    <option name="DEFAULT_COMPILER" value="Javac" />
-    <resourceExtensions />
-    <wildcardResourcePatterns>
-      <entry name="!?*.java" />
-      <entry name="!?*.form" />
-      <entry name="!?*.class" />
-      <entry name="!?*.groovy" />
-      <entry name="!?*.scala" />
-      <entry name="!?*.flex" />
-      <entry name="!?*.kt" />
-      <entry name="!?*.clj" />
-      <entry name="!?*.aj" />
-    </wildcardResourcePatterns>
     <annotationProcessing>
-      <profile default="true" name="Default" enabled="false">
-        <processorPath useClasspath="true" />
-      </profile>
-      <profile default="false" name="Maven default annotation processors profile" enabled="true">
+      <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="true" />
         <module name="SpingMVC_dubboService" />
-        <module name="SpringMVC-dubboProvider (1)" />
         <module name="SpringMVC-dubboProvider (2)" />
         <module name="SpringMVC-studyJavaDesign" />
         <module name="SpringMVC-StudyMix" />
         <module name="SpringMVC-StudyTimeTask" />
         <module name="Study-JavaBase" />
+        <module name="Study-Redis" />
         <module name="Study-Shiro" />
-        <module name="StudyAop" />
+        <module name="Study-Spider" />
+        <module name="Study-SpringSecurity" />
+        <module name="Study-Zookeeper" />
+        <module name="StudyActivitiDemo" />
+      </profile>
+      <profile name="Annotation profile for StudyIoc" enabled="true">
+        <sourceOutputDir name="../StudyIoc/target/generated-sources/annotations" />
+        <sourceTestOutputDir name="../StudyIoc/target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
         <module name="StudyIoc" />
+      </profile>
+      <profile name="Annotation profile for StudyThread" enabled="true">
+        <sourceOutputDir name="../StudyThread/target/generated-sources/annotations" />
+        <sourceTestOutputDir name="../StudyThread/target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
         <module name="StudyThread" />
+      </profile>
+      <profile name="Annotation profile for StudyAop" enabled="true">
+        <sourceOutputDir name="../StudyAop/target/generated-sources/annotations" />
+        <sourceTestOutputDir name="../StudyAop/target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="StudyAop" />
+      </profile>
+      <profile name="Annotation profile for Study-Parent" enabled="true">
+        <sourceOutputDir name="../SpringMVC-dubboProvider2/target/generated-sources/annotations" />
+        <sourceTestOutputDir name="../SpringMVC-dubboProvider2/target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="SpringMVC-dubboProvider (1)" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="SpingMVC_dubboService" target="1.6" />
-      <module name="SpringMVC-dubboProvider (1)" target="1.7" />
-      <module name="SpringMVC-dubboProvider (2)" target="1.7" />
-      <module name="SpringMVC-studyJavaDesign" target="1.7" />
-      <module name="SpringMVC-StudyMix" target="1.7" />
-      <module name="SpringMVC-StudyTimeTask" target="1.7" />
-      <module name="Study-JavaBase" target="1.7" />
-      <module name="Study-Parent" target="1.7" />
-      <module name="Study-Shiro" target="1.7" />
+      <module name="SpingMVC_dubboService" target="1.8" />
+      <module name="SpringMVC-dubboProvider (1)" target="1.8" />
+      <module name="SpringMVC-dubboProvider (2)" target="1.8" />
+      <module name="SpringMVC-studyJavaDesign" target="1.8" />
+      <module name="SpringMVC-StudyMix" target="1.8" />
+      <module name="SpringMVC-StudyTimeTask" target="1.8" />
+      <module name="Study-JavaBase" target="1.8" />
+      <module name="Study-Parent" target="1.8" />
+      <module name="Study-Redis" target="1.8" />
+      <module name="Study-Shiro" target="1.8" />
+      <module name="Study-Spider" target="1.8" />
+      <module name="Study-SpringSecurity" target="1.8" />
+      <module name="Study-Zookeeper" target="1.8" />
+      <module name="StudyActivitiDemo" target="1.8" />
       <module name="StudyAop" target="1.7" />
       <module name="StudyIoc" target="1.7" />
+      <module name="StudySpringBatch" target="1.5" />
       <module name="StudyThread" target="1.7" />
     </bytecodeTargetLevel>
   </component>

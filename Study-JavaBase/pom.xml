@@ -68,8 +68,44 @@
             <artifactId>cglib</artifactId>
             <version>3.1</version>
         </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.8.7</version>
+        </dependency>
+        <!--JUG uuid生成工具-->
+        <dependency>
+            <groupId>org.safehaus.jug</groupId>
+            <artifactId>jug</artifactId>
+            <version>2.0.0</version>
+            <classifier>lgpl</classifier>
+        </dependency>
 
-
+        <!--webservice-->
+        <!--web service 以下都是cxf必备的-->
+        <!--org.apache.cxf.transport.servlet.CXFServlet-->
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-transports-http</artifactId>
+            <version>3.1.8</version>
+        </dependency>
+        <!--不加这个包会报错Unable to locate spring NamespaceHandler for XML schema namespace [http://cxf.apache.org/jaxws]-->
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-frontend-jaxws</artifactId>
+            <version>3.1.8</version>
+        </dependency>
+        <!--java实现webservice，不部署到tomcat，需要jetty包支持-->
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-transports-http-jetty</artifactId>
+            <version>3.1.8</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-core</artifactId>
+            <version>1.2.2</version>
+        </dependency>
     </dependencies>
 
 </project>

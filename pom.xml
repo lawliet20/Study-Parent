@@ -61,28 +61,12 @@
         </resources>
 
         <plugins>
-            <!-- war包插件 -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-war-plugin</artifactId>
-                <version>2.4</version>
-                <configuration>
-                    <version>3.0</version>
-                    <!--忽略测试代码编译报错 -->
-                    <testFailureIgnore>true</testFailureIgnore>
-                    <directory>src/main/resources/${package.environment}</directory>
-                    <targetPath>WEB-INF/classes</targetPath>
-                    <warSourceExcludes>WEB-INF/lib/**,WEB-INF/classes/**</warSourceExcludes>
-                    <filtering>true</filtering>
-                </configuration>
-            </plugin>
-
             <!-- 编译插件 -->
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <source>1.7</source>
-                    <target>1.7</target>
+                    <source>1.8</source>
+                    <target>1.8</target>
                     <encoding>utf-8</encoding>
                     <compilerArguments>
                         <verbose/>
@@ -157,15 +141,12 @@
         <module>SpringMVC-dubboProvider2</module>
         <module>SpringMVC-studyJavaDesign</module>
         <module>SpringMVC-StudyTimeTask</module>
-        <module>StudyThread</module>
-        <module>StudyAop</module>
         <module>Study-JavaBase</module>
-        <module>StudyIoc</module>
         <module>Study-Shiro</module>
         <module>Study-Zookeeper</module>
         <module>Study-Redis</module>
         <module>Study-Spider</module>
         <module>Study-SpringSecurity</module>
-        <module>StudySpringBoot</module>
+
     </modules>
 </project>

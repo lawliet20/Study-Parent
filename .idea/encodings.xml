@@ -8,12 +8,17 @@
     <file url="file://$PROJECT_DIR$/SpringMVC-dubboProvider2" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/SpringMVC-dubboService" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/SpringMVC-studyJavaDesign" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Study-ActivitiDemo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Study-Aop" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Study-IOC" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Study-JavaBase" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Study-Redis" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Study-Shiro" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Study-Spider" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Study-SpringBoot" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Study-SpringSecurity" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Study-Thread" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Study-Zookeeper" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/StudyAop" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/StudyIoc" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/StudyThread" charset="UTF-8" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

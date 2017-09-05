@@ -11,20 +11,7 @@
  */
 package com.wwj.timeTask;
 
-import org.quartz.CronScheduleBuilder;
-import org.quartz.CronTrigger;
-import org.quartz.JobBuilder;
-import org.quartz.JobDetail;
-import org.quartz.JobExecutionContext;
-import org.quartz.JobKey;
-import org.quartz.JobListener;
-import org.quartz.Scheduler;
-import org.quartz.SchedulerException;
-import org.quartz.SchedulerFactory;
-import org.quartz.Trigger;
-import org.quartz.TriggerBuilder;
-import org.quartz.TriggerListener;
-import org.quartz.Trigger.CompletedExecutionInstruction;
+import org.quartz.*;
 import org.quartz.impl.StdSchedulerFactory;
 import org.quartz.impl.matchers.KeyMatcher;
 
@@ -78,7 +65,7 @@ public class QuartzManager {
      * @param time
      */
     @SuppressWarnings("unchecked")
-    public static void addJob(String jobName, Class cls, String time, JobListener jobListener) {
+    /*public static void addJob(String jobName, Class cls, String time, JobListener jobListener) {
         try {
             JobKey jobKey = new JobKey(jobName, JOB_GROUP_NAME);
             JobDetail job = JobBuilder.newJob(cls).withIdentity(jobKey).build();
@@ -89,7 +76,7 @@ public class QuartzManager {
             // Listener attached to jobKey
             scheduler.getListenerManager().addJobListener(jobListener, KeyMatcher.keyEquals(jobKey));
 
-            scheduler.getListenerManager().addTriggerListener(new com.wwj.timeTask.TriggerListener());
+            scheduler.getListenerManager().addTriggerListener(new TriggerListener());
             // Listener attached to group named "group 1" only.
             // scheduler.getListenerManager().addJobListener(
             // new HelloJobListener(), GroupMatcher.jobGroupEquals("group1")
@@ -100,7 +87,7 @@ public class QuartzManager {
         } catch (SchedulerException e) {
             e.printStackTrace();
         }
-    }
+    }*/
 
     /**
      * 添加一个定时任务,并在jobGroup添加一个监听
@@ -109,7 +96,6 @@ public class QuartzManager {
      * @param cls
      * @param time
      */
-    @SuppressWarnings("unchecked")
     public static void addJob(String jobName, String jobGroup, String triggerGroup, Class cls, String time, JobListener jobListener) {
         try {
             JobKey jobKey = new JobKey(jobName, jobGroup);

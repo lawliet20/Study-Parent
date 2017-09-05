@@ -132,3 +132,4 @@ public class OAuth2ServerConfig {
             return handler;
         }
     }
+}
