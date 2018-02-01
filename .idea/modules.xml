@@ -2,24 +2,34 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/SpringMVC-dubboService/SpingMVC_dubboService.iml" filepath="$PROJECT_DIR$/SpringMVC-dubboService/SpingMVC_dubboService.iml" />
       <module fileurl="file://$PROJECT_DIR$/SpringMVC-StudyMix/SpringMVC-StudyMix.iml" filepath="$PROJECT_DIR$/SpringMVC-StudyMix/SpringMVC-StudyMix.iml" />
       <module fileurl="file://$PROJECT_DIR$/SpringMVC-StudyTimeTask/SpringMVC-StudyTimeTask.iml" filepath="$PROJECT_DIR$/SpringMVC-StudyTimeTask/SpringMVC-StudyTimeTask.iml" />
-      <module fileurl="file://$PROJECT_DIR$/SpringMVC-dubboProvider/SpringMVC-dubboProvider (1).iml" filepath="$PROJECT_DIR$/SpringMVC-dubboProvider/SpringMVC-dubboProvider (1).iml" />
-      <module fileurl="file://$PROJECT_DIR$/SpringMVC-dubboProvider2/SpringMVC-dubboProvider (2).iml" filepath="$PROJECT_DIR$/SpringMVC-dubboProvider2/SpringMVC-dubboProvider (2).iml" />
-      <module fileurl="file://$PROJECT_DIR$/SpringMVC-studyJavaDesign/SpringMVC-studyJavaDesign.iml" filepath="$PROJECT_DIR$/SpringMVC-studyJavaDesign/SpringMVC-studyJavaDesign.iml" />
       <module fileurl="file://$PROJECT_DIR$/Study-JavaBase/Study-JavaBase.iml" filepath="$PROJECT_DIR$/Study-JavaBase/Study-JavaBase.iml" />
       <module fileurl="file://$PROJECT_DIR$/Study-Parent.iml" filepath="$PROJECT_DIR$/Study-Parent.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Study-Redis/Study-Redis.iml" filepath="$PROJECT_DIR$/Study-Redis/Study-Redis.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Study-Shiro/Study-Shiro.iml" filepath="$PROJECT_DIR$/Study-Shiro/Study-Shiro.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Study-Spider/Study-Spider.iml" filepath="$PROJECT_DIR$/Study-Spider/Study-Spider.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Study-SpringSecurity/Study-SpringSecurity.iml" filepath="$PROJECT_DIR$/Study-SpringSecurity/Study-SpringSecurity.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Study-Zookeeper/Study-Zookeeper.iml" filepath="$PROJECT_DIR$/Study-Zookeeper/Study-Zookeeper.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Study-ActivitiDemo/StudyActivitiDemo.iml" filepath="$PROJECT_DIR$/Study-ActivitiDemo/StudyActivitiDemo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Study-Aop/StudyAop.iml" filepath="$PROJECT_DIR$/Study-Aop/StudyAop.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Study-IOC/StudyIoc.iml" filepath="$PROJECT_DIR$/Study-IOC/StudyIoc.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Study-Thread/StudyThread.iml" filepath="$PROJECT_DIR$/Study-Thread/StudyThread.iml" />
-      <module fileurl="file://$PROJECT_DIR$/SpringMVC-StudyTimeTask/src/main/java/com/migu/timetask/timetask.iml" filepath="$PROJECT_DIR$/SpringMVC-StudyTimeTask/src/main/java/com/migu/timetask/timetask.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringMVC-dubboService/src/main/main.iml" filepath="$PROJECT_DIR$/SpringMVC-dubboService/src/main/main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringMVC-studyJavaDesign/src/main/main1.iml" filepath="$PROJECT_DIR$/SpringMVC-studyJavaDesign/src/main/main1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Study-Shiro/src/main/main10.iml" filepath="$PROJECT_DIR$/Study-Shiro/src/main/main10.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Study-JavaBase/src/main/main11.iml" filepath="$PROJECT_DIR$/Study-JavaBase/src/main/main11.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringMVC-dubboProvider/src/main/main2.iml" filepath="$PROJECT_DIR$/SpringMVC-dubboProvider/src/main/main2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Study-Aop/src/main/main3.iml" filepath="$PROJECT_DIR$/Study-Aop/src/main/main3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Study-Spider/src/main/main4.iml" filepath="$PROJECT_DIR$/Study-Spider/src/main/main4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringMVC-dubboProvider2/src/main/main5.iml" filepath="$PROJECT_DIR$/SpringMVC-dubboProvider2/src/main/main5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringMVC-StudyTimeTask/src/main/main6.iml" filepath="$PROJECT_DIR$/SpringMVC-StudyTimeTask/src/main/main6.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JavaUtils/src/main/main7.iml" filepath="$PROJECT_DIR$/JavaUtils/src/main/main7.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringMVC-StudyMix/src/main/main8.iml" filepath="$PROJECT_DIR$/SpringMVC-StudyMix/src/main/main8.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Study-IOC/src/main/main9.iml" filepath="$PROJECT_DIR$/Study-IOC/src/main/main9.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Study-ActivitiDemo/src/test/test.iml" filepath="$PROJECT_DIR$/Study-ActivitiDemo/src/test/test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Study-Shiro/src/test/test1.iml" filepath="$PROJECT_DIR$/Study-Shiro/src/test/test1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Study-Zookeeper/src/test/test10.iml" filepath="$PROJECT_DIR$/Study-Zookeeper/src/test/test10.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringMVC-dubboService/src/test/test11.iml" filepath="$PROJECT_DIR$/SpringMVC-dubboService/src/test/test11.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringMVC-StudyMix/src/test/test2.iml" filepath="$PROJECT_DIR$/SpringMVC-StudyMix/src/test/test2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Study-IOC/src/test/test3.iml" filepath="$PROJECT_DIR$/Study-IOC/src/test/test3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Study-JavaBase/src/test/test4.iml" filepath="$PROJECT_DIR$/Study-JavaBase/src/test/test4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Study-Thread/src/test/test5.iml" filepath="$PROJECT_DIR$/Study-Thread/src/test/test5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Study-Redis/src/test/test6.iml" filepath="$PROJECT_DIR$/Study-Redis/src/test/test6.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringMVC-dubboProvider2/src/test/test7.iml" filepath="$PROJECT_DIR$/SpringMVC-dubboProvider2/src/test/test7.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringMVC-StudyTimeTask/src/test/test8.iml" filepath="$PROJECT_DIR$/SpringMVC-StudyTimeTask/src/test/test8.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringMVC-studyJavaDesign/src/test/test9.iml" filepath="$PROJECT_DIR$/SpringMVC-studyJavaDesign/src/test/test9.iml" />
     </modules>
   </component>
 </project>

@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="SpingMVC_dubboService:war">
-    <output-path>$PROJECT_DIR$/SpringMVC-dubboService/target</output-path>
-    <root id="archive" name="SpingMVC_dubboService-0.0.1-SNAPSHOT.war">
-      <element id="artifact" artifact-name="SpingMVC_dubboService:war exploded" />
-    </root>
-  </artifact>
-</component>

@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="commons-vfs-1.01">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/SpringMVC-StudyTimeTask/bin/src/main/commons-vfs-1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bin/SpringMVC-StudyTimeTask/bin/src/main/commons-vfs-1.0.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

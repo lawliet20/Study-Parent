@@ -1,11 +1,9 @@
 package com.wwj.队列;
 
-import org.apache.commons.lang3.RandomUtils;
 import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 import java.util.concurrent.*;
 
 /**
@@ -71,7 +69,7 @@ public class QueueTest {
             System.out.println(i + "-队列插入结果：" + queue.offer("编号->" + i));
         }
         System.out.println("=================");
-        for (int i = 0; i < 12; i++) {
+        while (!queue.isEmpty()) {
             System.out.println("返回队列中的元素：" + queue.poll());
         }
         System.out.println("队列中现在的元素长度：" + queue.size());
@@ -86,14 +84,23 @@ public class QueueTest {
     @Test
     public void priorityBlockingQueueTest() {
         BlockingQueue queue = new PriorityBlockingQueue();
+        List<String> strList = new ArrayList();
         for (int i = 0; i < 12; i++) {
-            System.out.println(i + "-队列插入结果：" + queue.offer("编号->" + i));
+            strList.add("编号->" + i);
+//            System.out.println(i + "-队列插入结果：" + queue.offer("编号->" + i));
         }
+        queue.addAll(strList);
         System.out.println("=================");
-        for (int i = 0; i < 12; i++) {
-            System.out.println("返回队列中的元素：" + queue.poll());
-        }
-        System.out.println("队列中现在的元素长度：" + queue.size());
+//        for (int i = 0; i < 12; i++) {
+//            System.out.println("返回队列中的元素：" + queue.poll());
+//        }
+//        System.out.println("队列中现在的元素长度：" + queue.size());
+        ExecutorService executorService = Executors.newFixedThreadPool(4);
+        executorService.execute(new MyThread(queue));
+        executorService.execute(new MyThread(queue));
+        executorService.execute(new MyThread(queue));
+        executorService.execute(new MyThread(queue));
+//        executorService.shutdown();
     }
 
     /**
@@ -146,6 +153,30 @@ public class QueueTest {
      */
     public void delayQueueTest() throws InterruptedException {
         //参考DelayTest
+    }
+
+    class MyThread extends Thread {
+        private BlockingQueue<String> queue;
+
+        public MyThread(BlockingQueue<String> blockingQueue) {
+            this.queue = blockingQueue;
+        }
+
+        @Override
+        public void run() {
+            System.out.println("queue length:" + queue.size());
+            while (!queue.isEmpty()) {
+                String str = queue.poll();
+                if (null != str) {
+                    try {
+                        System.out.println("线程" + Thread.currentThread().getId() + ":" + str);
+//                        Thread.sleep(10);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        }
     }
 
 }

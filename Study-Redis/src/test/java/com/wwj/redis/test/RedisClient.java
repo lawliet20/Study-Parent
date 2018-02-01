@@ -55,14 +55,14 @@ public class RedisClient {
         config.setTestOnBorrow(false);
         // slave链接
         List<JedisShardInfo> shards = new ArrayList<JedisShardInfo>();
-        shards.add(new JedisShardInfo("127.0.0.1", 7001, "master"));
+        shards.add(new JedisShardInfo("127.0.0.1", 6379, "master"));
 
         // 构造池
         shardedJedisPool = new ShardedJedisPool(config, shards);
     }
 
     public void show() {
-        // key检测
+        /*// key检测
         testKey();
         // string检测
         testString();
@@ -71,10 +71,10 @@ public class RedisClient {
         // set检测
         testSet();
         // sortedSet检测
-        testSortedSet();
+        testSortedSet();*/
         // hash检测
         testHash();
-        shardedJedis.close();
+//        shardedJedis.close();
     }
 
     private void testKey() {
@@ -218,16 +218,17 @@ public class RedisClient {
         // 获取指定的值
         System.out.println(shardedJedis.hget("hashs", "entryKey"));
         // 批量获取指定的值
-        System.out
-                .println(shardedJedis.hmget("hashs", "entryKey", "entryKey1"));
+        System.out.println(shardedJedis.hmget("hashs", "entryKey", "entryKey1"));
         // 删除指定的值
         System.out.println(shardedJedis.hdel("hashs", "entryKey"));
+//        System.out.println(shardedJedis.del("hashs"));
         // 为key中的域 field 的值加上增量 increment
         System.out.println(shardedJedis.hincrBy("hashs", "entryKey", 123l));
         // 获取所有的keys
         System.out.println(shardedJedis.hkeys("hashs"));
         // 获取所有的values
         System.out.println(shardedJedis.hvals("hashs"));
+
     }
 
 

@@ -134,19 +134,19 @@
         </plugins>
     </build>
 
-    <modules>
-        <module>SpringMVC-StudyMix</module>
-        <module>SpringMVC-dubboService</module>
-        <module>SpringMVC-dubboProvider</module>
-        <module>SpringMVC-dubboProvider2</module>
-        <module>SpringMVC-studyJavaDesign</module>
-        <module>SpringMVC-StudyTimeTask</module>
-        <module>Study-JavaBase</module>
-        <module>Study-Shiro</module>
-        <module>Study-Zookeeper</module>
-        <module>Study-Redis</module>
-        <module>Study-Spider</module>
-        <module>Study-SpringSecurity</module>
-
-    </modules>
+    <!--<modules>-->
+        <!--<module>SpringMVC-StudyMix</module>-->
+        <!--<module>SpringMVC-dubboService</module>-->
+        <!--<module>SpringMVC-dubboProvider</module>-->
+        <!--<module>SpringMVC-dubboProvider2</module>-->
+        <!--<module>SpringMVC-studyJavaDesign</module>-->
+        <!--<module>SpringMVC-StudyTimeTask</module>-->
+        <!--<module>Study-JavaBase</module>-->
+        <!--<module>Study-Shiro</module>-->
+        <!--<module>Study-Zookeeper</module>-->
+        <!--<module>Study-Redis</module>-->
+        <!--<module>Study-Spider</module>-->
+        <!--<module>Study-SpringSecurity</module>-->
+        <!--<module>JavaUtils</module>-->
+    <!--</modules>-->
 </project>

@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="Study-JavaBase:war">
-    <output-path>$PROJECT_DIR$/Study-JavaBase/target</output-path>
-    <root id="archive" name="Study-JavaBase-0.0.1-SNAPSHOT.war">
-      <element id="artifact" artifact-name="Study-JavaBase:war exploded" />
-    </root>
-  </artifact>
-</component>

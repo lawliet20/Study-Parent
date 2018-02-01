@@ -111,9 +111,9 @@ public class DelayTest {
         new Consumer().start();
         long daltime = System.currentTimeMillis() / 1000;
         DelayAlarm a = new DelayAlarm("001", daltime, 1L);
-        DelayAlarm b = new DelayAlarm("002", daltime, 3L);
-        DelayAlarm c = new DelayAlarm("003", daltime, 5L);
-        DelayAlarm d = new DelayAlarm("004", daltime, 2L);
+        DelayAlarm b = new DelayAlarm("002", daltime, 2L);
+        DelayAlarm c = new DelayAlarm("003", daltime, 3L);
+        DelayAlarm d = new DelayAlarm("004", daltime, 4L);
         DelayAlarm f = new DelayAlarm("005", daltime, 10L);
         push(a);
         push(b);
