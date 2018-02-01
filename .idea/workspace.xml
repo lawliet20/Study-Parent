@@ -1,372 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6c04f624-640e-48b5-afcb-482ee40e15dd" name="Default" comment="add method">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_googlecode_javaewah_JavaEWAH_1_1_6.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jaudiotagger_2_0_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_4_3_11_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_4_3_11_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_4_3_11_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_4_3_11_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_4_3_11_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_4_3_11_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JavaUtils/src/main/java/com/util/date/LocalDateUtil.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JavaUtils/src/main/java/com/util/excel/ExcelUtil.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JavaUtils/src/main/java/com/util/http/HttpClientUtil.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SpringMVC-StudyMix/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SpringMVC-StudyTimeTask/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SpringMVC-dubboProvider/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SpringMVC-dubboProvider2/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SpringMVC-dubboService/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SpringMVC-studyJavaDesign/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Study-ActivitiDemo/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Study-Aop/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Study-IOC/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Study-JavaBase/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Study-JavaBase/src/test/java/com/wwj/AES对称加密/QEncodeUtil.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Study-JavaBase/src/test/java/com/wwj/BitSetTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Study-JavaBase/src/test/java/com/wwj/jdk18新特性/CompletableFutureTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Study-JavaBase/src/test/java/com/wwj/jdk18新特性/异步请求/DiscountService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Study-JavaBase/src/test/java/com/wwj/jdk18新特性/异步请求/Quote.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Study-JavaBase/src/test/java/com/wwj/jdk18新特性/异步请求/ShopExercise.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Study-JavaBase/src/test/java/com/wwj/算法相关/BitMapTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Study-Redis/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Study-Shiro/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Study-Spider/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Study-SpringSecurity/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Study-Thread/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Study-Thread/src/test/java/com/wwj/Test.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Study-Thread/src/test/java/com/wwj/队列/BlockingQueueTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Study-Zookeeper/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/StudyActivitiDemo/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/StudyAop/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/StudyIoc/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/StudyThread/.gitignore" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.classpath" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/.name" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/artifacts/SpingMVC_dubboService_war.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/artifacts/SpingMVC_dubboService_war_exploded.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/artifacts/StudyIoc_war.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/artifacts/StudyIoc_war_exploded.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/artifacts/Study_JavaBase_war.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/artifacts/Study_JavaBase_war_exploded.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/artifacts/Study_Shiro_Web_exploded.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/artifacts/Study_Shiro_war_exploded.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__antlr_antlr_2_7_7.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_access_1_0_13.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_classic_1_0_13.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_core_1_0_13.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_druid_0_2_7.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_dubbo_2_5_3.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_fastjson_1_1_15.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_fastjson_1_1_34.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_fastjson_1_2_38.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_2_3.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_4_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_5_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_2_3.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_4_4.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_5_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_2_3.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_4_4.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_5_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_virtuald_curvesapi_1_03.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_h2database_h2_1_4_184.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_mail_javax_mail_1_5_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_xml_bind_jaxb_impl_2_1_7.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_xml_bind_jaxb_xjc_2_1_7.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_xiaoleilu_hutool_2_16_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_xiaoleilu_hutool_all_3_0_3.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_zaxxer_HikariCP_2_6_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_6.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_collections_commons_collections_3_2_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_configuration_commons_configuration_1_7.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_dbcp_commons_dbcp_1_4.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_digester_commons_digester_1_8_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_fileupload_commons_fileupload_1_3.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_io_commons_io_2_0_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_io_commons_io_2_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_io_commons_io_2_4.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_lang_commons_lang_2_6.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_1_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_1_3.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_pool_commons_pool_1_5_4.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__dom4j_dom4j_1_6_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_4_0_26_Final.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_activation_activation_1_1_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_annotation_javax_annotation_api_1_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_javax_servlet_api_3_0_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_jsp_jsp_api_2_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_jsp_jsp_api_2_2_1_b03.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_jstl_1_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_servlet_api_2_5.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_transaction_jta_1_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_xml_bind_jaxb_api_2_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_xml_stream_stax_api_1_0_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__joda_time_joda_time_2_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_10.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_12.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_5_1_21.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_5_1_25.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_sf_ehcache_ehcache_core_2_5_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_sf_ehcache_ehcache_core_2_6_6.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_activiti_activiti_bpmn_converter_5_21_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_activiti_activiti_bpmn_model_5_21_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_activiti_activiti_cxf_5_21_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_activiti_activiti_engine_5_21_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_activiti_activiti_image_generator_5_21_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_activiti_activiti_process_validation_5_21_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_activiti_activiti_spring_5_21_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_email_1_4.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_5.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_pool2_2_3.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_pool2_2_4_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_curator_curator_test_2_9_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_cxf_cxf_api_2_6_14.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_cxf_cxf_rt_bindings_soap_2_6_14.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_cxf_cxf_rt_bindings_xml_2_6_14.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_cxf_cxf_rt_core_2_6_14.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_cxf_cxf_rt_databinding_jaxb_2_6_14.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_cxf_cxf_rt_frontend_jaxws_2_6_14.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_cxf_cxf_rt_frontend_simple_2_6_14.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_cxf_cxf_rt_transports_http_2_6_14.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_cxf_cxf_rt_ws_addr_2_6_14.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_cxf_cxf_rt_ws_policy_2_6_14.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_poi_poi_3_14.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_poi_poi_ooxml_3_14.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_poi_poi_ooxml_schemas_3_14.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_ws_xmlschema_xmlschema_core_2_0_3.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_xmlbeans_xmlbeans_2_6_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_zookeeper_zookeeper_3_3_3.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjrt_1_7_4.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjweaver_1_7_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjweaver_1_7_4.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_jackson_jackson_core_asl_1_9_13.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_jackson_jackson_mapper_asl_1_9_13.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_woodstox_woodstox_core_asl_4_2_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_common_hibernate_commons_annotations_4_0_1_Final.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_core_4_1_7_Final.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_javax_persistence_hibernate_jpa_2_0_api_1_0_1_Final.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_javassist_javassist_3_15_0_GA.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_1_0_GA.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_netty_netty_3_2_0_Final.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_spec_javax_transaction_jboss_transaction_api_1_1_spec_1_0_0_Final.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_3_2_5.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_opensymphony_quartz_quartz_1_6_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_quartz_scheduler_quartz_1_8_5.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jcl_over_slf4j_1_7_6.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_25.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_5.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_6.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_log4j12_1_7_6.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_redis_1_5_1_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_oauth_spring_security_oauth2_2_0_6_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_acl_3_2_8_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_config_3_2_3_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_config_3_2_8_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_core_3_2_3_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_core_3_2_8_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_crypto_3_2_8_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_taglibs_3_2_8_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_web_3_2_3_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_web_3_2_8_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_4_0_0_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_4_0_4_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_4_0_0_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_4_0_4_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_4_0_0_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_4_0_4_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_4_0_0_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_4_0_4_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_4_0_0_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_4_0_4_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_4_0_0_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_4_0_4_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_4_1_4_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_4_1_5_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_orm_4_1_4_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_test_4_0_0_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_test_4_1_4_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_4_0_0_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_4_0_4_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_4_0_0_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_4_0_4_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_4_0_0_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_4_1_4_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__redis_clients_jedis_2_7_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__redis_clients_jedis_2_8_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__xml_apis_xml_apis_1_0_b2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/zookeeper_config.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.project" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpringMVC-StudyMix/.classpath" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpringMVC-StudyMix/.project" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpringMVC-StudyMix/SpringMVC-StudyMix.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpringMVC-StudyMix/target/classes/com/spring/study/controller/ExceptionController.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpringMVC-StudyMix/target/classes/com/spring/study/controller/UserController.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpringMVC-StudyMix/target/classes/com/spring/study/dao/UserDao.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpringMVC-StudyMix/target/classes/com/spring/study/dao/impl/ExceptionDaoImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpringMVC-StudyMix/target/classes/com/spring/study/dao/impl/UserDaoImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpringMVC-StudyMix/target/classes/com/spring/study/dynamicDataSource/DynamicDataSourceTransactionManager.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpringMVC-StudyMix/target/classes/com/spring/study/dynamicDataSource/TransactionConfig.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpringMVC-StudyMix/target/classes/com/spring/study/exception/BusinessException.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpringMVC-StudyMix/target/classes/com/spring/study/exception/MyExceptionHandler.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpringMVC-StudyMix/target/classes/com/spring/study/exception/ParameterException.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpringMVC-StudyMix/target/classes/com/spring/study/model/Tmenu.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpringMVC-StudyMix/target/classes/com/spring/study/model/pageModel/Message.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpringMVC-StudyMix/target/classes/com/spring/study/service/ExceptionService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpringMVC-StudyMix/target/classes/com/spring/study/service/UserService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpringMVC-StudyMix/target/classes/com/spring/study/utils/JavaReflectUtil.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpringMVC-StudyMix/target/classes/com/spring/study/utils/JedisUtil.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpringMVC-StudyMix/target/classes/com/spring/study/utils/ObjectUtil.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpringMVC-StudyMix/target/classes/com/spring/study/utils/RedisClient.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpringMVC-StudyMix/target/classes/com/spring/study/utils/others/BankCardUtil.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpringMVC-StudyMix/target/classes/com/spring/study/utils/others/Base64.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpringMVC-StudyMix/target/classes/com/spring/study/utils/others/ByteUtils.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpringMVC-StudyMix/target/classes/com/spring/study/utils/others/ClassUtils.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpringMVC-StudyMix/target/classes/com/spring/study/utils/others/ConfUtil.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpringMVC-StudyMix/target/classes/com/spring/study/utils/others/DateUtils.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpringMVC-StudyMix/target/classes/com/spring/study/utils/others/Functions.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpringMVC-StudyMix/target/classes/com/spring/study/utils/others/MD5Util.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpringMVC-StudyMix/target/classes/com/spring/study/utils/others/PKCS1Exception.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpringMVC-StudyMix/target/classes/com/spring/study/utils/others/RSAUtils.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpringMVC-StudyMix/target/classes/com/spring/study/utils/others/RequestUtils.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpringMVC-StudyMix/target/classes/com/spring/study/utils/others/StringCoding$StringDecoder.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpringMVC-StudyMix/target/classes/com/spring/study/utils/others/StringCoding$StringEncoder.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpringMVC-StudyMix/target/classes/com/spring/study/utils/others/StringCoding.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpringMVC-StudyMix/target/classes/com/spring/study/utils/others/StringCompress.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpringMVC-StudyMix/target/classes/com/spring/study/utils/others/exceptions/ServiceException.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpringMVC-StudyMix/target/classes/com/spring/study/utils/others/web/IpUtils.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpringMVC-StudyMix/target/classes/com/spring/study/utils/others/web/PrettyMemoryUtils.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpringMVC-StudyMix/target/classes/com/spring/study/utils/others/web/SpringUtils.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpringMVC-StudyMix/target/test-classes/com/study/curatorDemo/ClientFactory.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpringMVC-StudyMix/target/test-classes/com/study/curatorDemo/CrudExamples.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpringMVC-StudyMix/target/test-classes/com/study/curatorDemo/CuratorDemo$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpringMVC-StudyMix/target/test-classes/com/study/curatorDemo/CuratorDemo$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpringMVC-StudyMix/target/test-classes/com/study/curatorDemo/CuratorDemo$3.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpringMVC-StudyMix/target/test-classes/com/study/curatorDemo/CuratorDemo$4.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpringMVC-StudyMix/target/test-classes/com/study/curatorDemo/DistributedLockExample.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpringMVC-StudyMix/target/test-classes/com/study/curatorDemo/LeaderSelectorClient.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpringMVC-StudyMix/target/test-classes/com/study/curatorDemo/LeaderSelectorExample.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpringMVC-StudyMix/target/test-classes/com/study/curatorDemo/QuartzTest$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpringMVC-StudyMix/target/test-classes/com/study/curatorDemo/QuartzTest$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpringMVC-StudyMix/target/test-classes/com/study/curatorDemo/QuartzTest$4.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpringMVC-StudyMix/target/test-classes/com/study/curatorDemo/QuartzTest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpringMVC-StudyMix/target/test-classes/com/study/curatorDemo/TransactionExamples.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpringMVC-StudyMix/target/test-classes/com/study/quartzDemo/QuartzManager.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpringMVC-StudyMix/target/test-classes/com/study/quartzDemo/QuartzTest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpringMVC-StudyMix/target/test-classes/com/study/quartzDemo/TestJob.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpringMVC-StudyMix/target/test-classes/com/study/test/RedisQueueTest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpringMVC-StudyMix/target/test-classes/com/study/test/Test.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpringMVC-StudyMix/target/test-classes/com/study/testDemo/JavaQueueDemo.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpringMVC-StudyMix/target/test-classes/com/study/testDemo/RedisQueueTest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpringMVC-StudyMix/target/test-classes/com/study/testDemo/SystemProperty.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpringMVC-StudyMix/target/test-classes/com/study/testDemo/ThreadLocalDemo$Student.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpringMVC-StudyMix/target/test-classes/com/study/testDemo/ThreadLocalDemo.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpringMVC-StudyMix/target/test-classes/com/study/testDemo/WaitAndSleepDemo$Thread1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpringMVC-StudyMix/target/test-classes/com/study/testDemo/WaitAndSleepDemo$Thread2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpringMVC-StudyMix/target/test-classes/com/study/testDemo/WaitAndSleepDemo.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpringMVC-StudyMix/target/test-classes/com/study/threadLocal/ThreadLocalTest$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpringMVC-StudyMix/target/test-classes/com/study/threadLocal/ThreadLocalTest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpringMVC-StudyTimeTask/.classpath" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpringMVC-StudyTimeTask/.project" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpringMVC-StudyTimeTask/src/main/java/com/migu/timetask/timetask.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpringMVC-dubboProvider2/target/classes/com/dubbo/main/Provider.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpringMVC-dubboProvider2/target/classes/com/dubbo/service/Impl/DemoServiceImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpringMVC-dubboProvider2/target/test-classes/Study_Parent/SpringMVC_dubboProvider2/AppTest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpringMVC-dubboService/.classpath" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpringMVC-dubboService/.project" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpringMVC-dubboService/target/MANIFEST.MF" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpringMVC-dubboService/target/SpingMVC_dubboService-0.0.1-SNAPSHOT.war" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpringMVC-dubboService/target/SpingMVC_dubboService-0.0.1-SNAPSHOT/META-INF/MANIFEST.MF" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpringMVC-dubboService/target/SpingMVC_dubboService-0.0.1-SNAPSHOT/WEB-INF/classes/com/dubbo/model/PageUser.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpringMVC-dubboService/target/SpingMVC_dubboService-0.0.1-SNAPSHOT/WEB-INF/classes/com/dubbo/service/DemoService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpringMVC-dubboService/target/SpingMVC_dubboService-0.0.1-SNAPSHOT/WEB-INF/web.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpringMVC-dubboService/target/classes/com/dubbo/model/PageUser.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpringMVC-dubboService/target/m2e-jee/web-resources/META-INF/MANIFEST.MF" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpringMVC-dubboService/target/m2e-jee/web-resources/META-INF/maven/SpingMVC_dubboService/SpingMVC_dubboService/pom.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpringMVC-dubboService/target/m2e-jee/web-resources/META-INF/maven/SpingMVC_dubboService/SpingMVC_dubboService/pom.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpringMVC-dubboService/target/maven-archiver/pom.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpringMVC-dubboService/target/surefire-reports/TEST-com.SpringMVC.dubboService.AppTest.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpringMVC-dubboService/target/surefire-reports/com.SpringMVC.dubboService.AppTest.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpringMVC-dubboService/target/test-classes/com/SpringMVC/dubboService/AppTest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Study-Thread/.project" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/StudyAop/target/classes/com/aop/javaProxy/MainClass.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/StudyAop/target/classes/com/aop/javaProxy/MessageHandler.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/StudyAop/target/classes/com/aop/javaProxy/MessageProxy.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/StudyAop/target/classes/com/aop/javaProxy/dynamicProxy/DynamicMessageProxy.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/StudyAop/target/classes/com/aop/javaProxy/dynamicProxy/MainClass.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/StudyAop/target/classes/com/aop/javaProxy/dynamicProxy/SmsMessage.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/StudyThread/StudyThread.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/StudyThread/target/MANIFEST.MF" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/SpringMVC-StudyTimeTask/src/test/test3.iml" afterPath="$PROJECT_DIR$/JavaUtils/JavaUtils.iml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/out/production/StudyThread/pom.xml" afterPath="$PROJECT_DIR$/JavaUtils/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/SpringMVC_StudyMix_war.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/SpringMVC_StudyMix_war.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/SpringMVC_StudyMix_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/SpringMVC_StudyMix_war_exploded.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__aopalliance_aopalliance_1_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__aopalliance_aopalliance_1_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__c3p0_c3p0_0_9_1_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__c3p0_c3p0_0_9_1_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_16_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_16_0_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_thoughtworks_xstream_xstream_1_4_3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_thoughtworks_xstream_xstream_1_4_3.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_beanutils_commons_beanutils_1_8_3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_beanutils_commons_beanutils_1_8_3.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_3_7_0_Final.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_3_7_0_Final.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__jline_jline_0_9_94.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__jline_jline_0_9_94.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_3_8_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_3_8_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__log4j_log4j_1_2_16.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__log4j_log4j_1_2_16.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__log4j_log4j_1_2_17.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__log4j_log4j_1_2_17.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_math_2_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_math_2_2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_curator_curator_client_2_9_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_curator_curator_client_2_9_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_curator_curator_framework_2_9_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_curator_curator_framework_2_9_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_curator_curator_recipes_2_9_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_curator_curator_recipes_2_9_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_curator_curator_test_2_5_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_curator_curator_test_2_5_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_zookeeper_zookeeper_3_4_6.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_zookeeper_zookeeper_3_4_6.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_javassist_javassist_3_18_1_GA.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_javassist_javassist_3_18_1_GA.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_quartz_scheduler_quartz_2_2_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_quartz_scheduler_quartz_2_2_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_6_6.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_6_6.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_log4j12_1_6_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_log4j12_1_6_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_4_1_4_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_4_1_4_RELEASE.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_4_1_4_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_4_1_4_RELEASE.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_4_1_4_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_4_1_4_RELEASE.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_support_4_1_4_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_support_4_1_4_RELEASE.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_4_1_4_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_4_1_4_RELEASE.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_4_1_4_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_4_1_4_RELEASE.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_4_1_4_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_4_1_4_RELEASE.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_4_1_4_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_4_1_4_RELEASE.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__xmlpull_xmlpull_1_1_3_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__xmlpull_xmlpull_1_1_3_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__xpp3_xpp3_min_1_1_4c.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__xpp3_xpp3_min_1_1_4c.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/commons_vfs_1_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/commons_vfs_1_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/commons_vfs_1_01.xml" afterPath="$PROJECT_DIR$/.idea/libraries/commons_vfs_1_01.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/commons_vfs_1_02.xml" afterPath="$PROJECT_DIR$/.idea/libraries/commons_vfs_1_02.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+    <list default="true" id="6c04f624-640e-48b5-afcb-482ee40e15dd" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_druid_0_2_23.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_sgroschupf_zkclient_0_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_hadoop_zookeeper_3_3_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_ehcache_1_2_2.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_quartz_1_2_2.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_spring_1_2_2.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_web_1_2_2.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_6_4.xml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SpringMVC-StudyMix/pom.xml" afterPath="$PROJECT_DIR$/SpringMVC-StudyMix/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SpringMVC-StudyMix/src/main/java/com/spring/study/service/UserService.java" afterPath="$PROJECT_DIR$/SpringMVC-StudyMix/src/main/java/com/spring/study/service/UserService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SpringMVC-StudyTimeTask/src/main/java/com/wwj/timeTask/QuartzManager.java" afterPath="$PROJECT_DIR$/SpringMVC-StudyTimeTask/src/main/java/com/wwj/timeTask/QuartzManager.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SpringMVC-StudyTimeTask/src/main/java/com/wwj/timeTask/TimeTask.java" afterPath="$PROJECT_DIR$/SpringMVC-StudyTimeTask/src/main/java/com/wwj/timeTask/TimeTask.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SpringMVC-dubboProvider/SpringMVC-dubboProvider (1).iml" afterPath="$PROJECT_DIR$/SpringMVC-dubboProvider/SpringMVC-dubboProvider (1).iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SpringMVC-dubboProvider2/SpringMVC-dubboProvider (2).iml" afterPath="$PROJECT_DIR$/SpringMVC-dubboProvider2/SpringMVC-dubboProvider (2).iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SpringMVC-dubboService/SpingMVC_dubboService.iml" afterPath="$PROJECT_DIR$/SpringMVC-dubboService/SpingMVC_dubboService.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Study-JavaBase/Study-JavaBase.iml" afterPath="$PROJECT_DIR$/Study-JavaBase/Study-JavaBase.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Study-JavaBase/pom.xml" afterPath="$PROJECT_DIR$/Study-JavaBase/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Study-JavaBase/src/test/java/com/wwj/TestC.java" afterPath="$PROJECT_DIR$/Study-JavaBase/src/test/java/com/wwj/TestC.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Study-Redis/Study-Redis.iml" afterPath="$PROJECT_DIR$/Study-Redis/Study-Redis.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Study-Redis/src/test/java/com/wwj/redis/test/RedisClient.java" afterPath="$PROJECT_DIR$/Study-Redis/src/test/java/com/wwj/redis/test/RedisClient.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Study-Thread/src/test/java/com/wwj/队列/QueueTest.java" afterPath="$PROJECT_DIR$/Study-Thread/src/test/java/com/wwj/队列/QueueTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Study-Thread/src/test/java/com/wwj/队列/Test.java" afterPath="$PROJECT_DIR$/Study-Thread/src/test/java/com/wwj/队列/Test.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Study-Thread/src/test/java/com/wwj/队列/延迟队列的应用/DelayTest.java" afterPath="$PROJECT_DIR$/Study-Thread/src/test/java/com/wwj/队列/延迟队列的应用/DelayTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -550,7 +197,7 @@
     <property name="LombokPluginIS_RUNTIME_PATCH_Enabled" value="false" />
     <property name="LombokPluginIS_LOMBOK_VERSION_CHECK_Enabled" value="false" />
     <property name="LombokPluginIS_MISSING_LOMBOK_CHECK_Enabled" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Python" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="runEclipseCodeFormatter" value="false" />
@@ -1143,12 +790,20 @@
       <updated>1517111025460</updated>
       <workItem from="1517111027397" duration="1167000" />
       <workItem from="1517210971065" duration="12054000" />
-      <workItem from="1517363742151" duration="1801000" />
+      <workItem from="1517363742151" duration="2223000" />
     </task>
+    <task id="LOCAL-00001" summary="add method">
+      <created>1517471885962</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1517471885962</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15022000" />
+    <option name="totallyTimeSpent" value="15444000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="10" y="53" width="1366" height="805" extended-state="0" />
