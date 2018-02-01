@@ -1,19 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6c04f624-640e-48b5-afcb-482ee40e15dd" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_druid_0_2_23.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_sgroschupf_zkclient_0_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_hadoop_zookeeper_3_3_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_ehcache_1_2_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_quartz_1_2_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_spring_1_2_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_web_1_2_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_6_4.xml" afterPath="" />
+    <list default="true" id="6c04f624-640e-48b5-afcb-482ee40e15dd" name="Default" comment="add method">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SpringMVC-StudyMix/src/main/webapp/WEB-INF/web.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SpringMVC-studyJavaDesign/src/main/java/com/javadesgin/study/责任链模式/过滤器链/Client.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Study-ActivitiDemo/pom.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Study-ActivitiDemo/src/test/resources/activiti.cfg.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Study-JavaBase/src/test/java/com/wwj/xml与java对象互转/test2/entity/Birthday.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Study-Redis/pom.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Study-Redis/src/test/java/com/wwj/redis/test/队列/发布订阅/PubSubTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Study-Shiro/src/main/java/com/wwj/controller/web/exception/MyExceptionHandler.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Study-Shiro/src/main/webapp/META-INF/MANIFEST.MF" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Study-SpringSecurity/pom.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Study-Zookeeper/src/test/java/com/wwj/curator/test/ClientSingleton.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Study-Zookeeper/src/test/java/com/wwj/curator/test/MasterTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SpringMVC-StudyMix/src/main/java/com/spring/study/service/UserService.java" afterPath="$PROJECT_DIR$/SpringMVC-StudyMix/src/main/java/com/spring/study/service/UserService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SpringMVC-StudyTimeTask/src/main/java/com/wwj/timeTask/QuartzManager.java" afterPath="$PROJECT_DIR$/SpringMVC-StudyTimeTask/src/main/java/com/wwj/timeTask/QuartzManager.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SpringMVC-StudyTimeTask/src/main/java/com/wwj/timeTask/TimeTask.java" afterPath="$PROJECT_DIR$/SpringMVC-StudyTimeTask/src/main/java/com/wwj/timeTask/TimeTask.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Study-JavaBase/src/test/java/com/wwj/TestC.java" afterPath="$PROJECT_DIR$/Study-JavaBase/src/test/java/com/wwj/TestC.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -32,7 +37,20 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="TestC.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Study-JavaBase/src/test/java/com/wwj/TestC.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="97">
+              <caret line="26" column="30" lean-forward="false" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="30" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -790,7 +808,7 @@
       <updated>1517111025460</updated>
       <workItem from="1517111027397" duration="1167000" />
       <workItem from="1517210971065" duration="12054000" />
-      <workItem from="1517363742151" duration="2223000" />
+      <workItem from="1517363742151" duration="2573000" />
     </task>
     <task id="LOCAL-00001" summary="add method">
       <created>1517471885962</created>
@@ -799,14 +817,22 @@
       <option name="project" value="LOCAL" />
       <updated>1517471885962</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="add method">
+      <created>1517472283603</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1517472283603</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15444000" />
+    <option name="totallyTimeSpent" value="15794000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="10" y="53" width="1366" height="805" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -833,7 +859,7 @@
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run with VisualVM" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25755286" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25755286" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="BPMNPalette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -884,16 +910,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="143">
           <caret line="81" column="112" lean-forward="false" selection-start-line="81" selection-start-column="112" selection-end-line="81" selection-end-column="112" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Study-JavaBase/src/test/java/com/wwj/TestC.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="39" column="43" lean-forward="true" selection-start-line="39" selection-start-column="43" selection-end-line="39" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1062,6 +1078,16 @@
         <state relative-caret-position="342">
           <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Study-JavaBase/src/test/java/com/wwj/TestC.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="97">
+          <caret line="26" column="30" lean-forward="false" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
